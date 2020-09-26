@@ -1,29 +1,22 @@
 SCSS=sassc
 THEMES_DIR=../../
 
-.PHONY: install clean
+.PHONY: build clean
 
 build:
 	for scss in *.scss ; \
 	do \
 		echo ; \
-		echo Generating $${scss%.scss}.css ; \
-		$(SCSS) $$scss > $${scss%.scss}.css ; \
+		dir=$(THEMES_DIR)$${scss%.scss} ; \
+		css_file=$${scss%.scss}.css ; \
+		echo Generating $$css_file ; \
+		$(SCSS) $$scss > $$css_file ; \
+		if [ -d $$dir ] ; \
+		then \
+			mkdir -p $$dir/gtk-3.0 ; \
+			cp $$css_file $$dir/gtk-3.0/gtk.css ; \
+		fi ; \
 	done
-	
-	mkdir -p $(THEMES_DIR)/Skeuos-Light/gtk-3.0/applications
-	mkdir -p $(THEMES_DIR)/Skeuos-Dark/gtk-3.0/applications
-	
-	cp -r gtk-sass/applications/* $(THEMES_DIR)/Skeuos-Light/gtk-3.0/applications
-	cp -r gtk-sass/applications/* $(THEMES_DIR)/Skeuos-Dark/gtk-3.0/applications
-	
-	find $(THEMES_DIR)/Skeuos-*/gtk-3.0/applications \
-			! \( -type d -or -name "*.css" -or -name "*.scss" \) \
-			-exec rm {} \;
-	
-	cp gtk.css $(THEMES_DIR)/Skeuos-Light/gtk-3.0/gtk.css
-	cp gtk-dark.css $(THEMES_DIR)/Skeuos-Light/gtk-3.0/gtk-dark.css
-	cp gtk-dark.css $(THEMES_DIR)/Skeuos-Dark/gtk-3.0/gtk.css
 
 clean:
 	-rm *.css

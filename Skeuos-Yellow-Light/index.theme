@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Skeuos-Light
+Comment=The Skeuos Default Theme
+Encoding=UTF-8
+
+
+[X-GNOME-Metatheme]
+GtkTheme=Skeuos-Light
+MetacityTheme=Skeuos-Light
+IconTheme=Flat-Remix-Blue-Light
+CursorTheme=Adwaita
+ButtonLayout=:minimize,maximize,close
