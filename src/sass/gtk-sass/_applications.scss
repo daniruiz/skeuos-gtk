@@ -1,0 +1,212 @@
+$panel_bg : transparentize($bg_color, if($variant=='light', .1, .2));
+
+/* Nautilus */
+@import url('applications/nautilus/Adwaita.css');
+
+@define-color disk_space_unknown #383c4a;
+@define-color disk_space_used #{"" +$selected_bg_color};
+@define-color disk_space_free white;
+
+
+$_glow_shadow: 0 1px 4px transparentize($selected_bg_color, .5);
+filechooser,
+.nautilus-window {
+  placessidebar.sidebar {
+    box-shadow: inset 0 8px 4px -8px transparentize(black, .7);
+
+    &:dir(ltr) {
+      background-image: linear-gradient(to right, darken($bg_color, 4%) 41px, $bg_color 0);
+    }
+    &:dir(rtl) {
+      background-image: linear-gradient(to left, darken($bg_color, 4%) 41px, $bg_color 0);
+    }
+
+    &:backdrop { box-shadow: none; }
+
+    row.sidebar-row {
+      &:selected {
+        @extend %selected_items;
+
+        margin-left: 6px;
+        margin-right: 6px;
+        border-radius: $button_radius;
+        box-shadow: $_glow_shadow;
+        transition: box-shadow $backdrop_transition;
+
+        &:backdrop { box-shadow: none; }
+
+        &:dir(ltr) {
+          background-image: linear-gradient(to right, darken($selected_bg_color, 10%) 35px, transparent 0);
+        }
+        &:dir(rtl) {
+          background-image: linear-gradient(to left, darken($selected_bg_color, 10%) 35px, transparent 0);
+        }
+
+        revealer {
+          padding-left: 8px;
+          padding-right: 8px;
+
+          .sidebar-icon, .sidebar-label { color: white; }
+        }
+      }
+
+      .sidebar-icon { padding-right: 20px; }
+    }
+  }
+}
+
+.floating-bar {
+  color: $selected_fg_color;
+  background-color: $selected_bg_color;
+  border-color: $selected_borders_color;
+  margin: 10px;
+  box-shadow: $_glow_shadow;
+  transition: background-color $backdrop_transition;
+
+  &:backdrop {
+    color: inherit;
+    box-shadow: none;
+    border-color: $borders_color;
+  }
+
+  &.bottom {
+    &.left, &.right{
+      border-radius: $button_radius;
+      border-style: solid;
+    }
+  }
+}
+
+/* XFCE4 PANEL */
+.xfce4-panel {
+  &.background { background: $panel_bg; }
+
+  button {
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    text-shadow: none;
+    background: transparent;
+    color: if($variant=='light', darken($fg_color, 10%), $fg_color);
+
+    $_highlight_bg_color: if($variant=='light', $bg_color, rgba(black, .2));
+
+    &:hover {
+      background: $_highlight_bg_color;
+    }
+
+    &:not(#whiskermenu-button) {
+      &:checked, &:active {
+        box-shadow: inset 0 4px 0 $selected_bg_color;
+        background: $_highlight_bg_color;
+      }
+    }
+  }
+
+  &.vertical button:not(#whiskermenu-button) {
+    &:checked, &:active { box-shadow: inset 4px 0 0 $selected_bg_color; }
+  }
+}
+
+/* XFCE4 NOTIFICATIONS */
+#XfceNotifyWindow { background-color: darken($osd_bg_color, 4%); }
+
+/* Whisker menu */
+#whiskermenu-window {
+  entry {
+    border-radius: 100px;
+    border: 2px solid $selected_bg_color;
+    box-shadow: none;
+  }
+
+  .frame { border: 0; }
+
+  scrolledwindow  treeview {
+    padding: 0 5px;
+    background: $bg_color;
+    border-left: 1px solid $borders_color;
+
+    &:hover, &:active, &:selected {
+      background-color: transparentize($shadow_color, 0.03);
+      color: inherit;
+    }
+  }
+}
+
+/* Gedit */
+@import url('applications/gedit/Adwaita.css');
+
+/* XFCE4 panel action buttons */
+#XfcePanelWindowWrapper > widget > box > #xfce-panel-button > image {
+  -gtk-icon-style: symbolic;
+  -gtk-icon-transform: scale(.7);
+}
+
+/* XFCE4 workspace switcher */
+wnck-pager {
+  background-color: lighten($base_color, 10%);
+  &:selected { background-color: darken($bg_color, 20%); }
+  &:hover { background-color: darken($bg_color, 20%); }
+}
+
+/* LightDM */
+
+.lightdm-gtk-greeter {
+  #panel_window {
+    background: $panel_bg;
+    color: $fg_color;
+    text-shadow: none;
+    -gtk-icon-shadow: none;
+  }
+
+  #login_window {
+    border: 0;
+    background-color: $panel_bg;
+    border-radius: $button_radius;
+    box-shadow: inset 0 1px transparentize(white, .85);
+
+    entry {
+      background: transparentize($bg_color, .6);
+      border-color: transparentize($bg_color, .7);
+      min-height: 32px;
+      box-shadow: inset 0 1px transparentize(white, .95),
+                  0 1px 2px opacify($shadow_color, 0.1);
+
+      image { margin: 0; }
+    }
+
+    #buttonbox_frame {
+      padding-top: 20px;
+      background: $bg_color;
+      border-top: 1px solid transparentize(black, .9);
+      border-radius: 0 0 $button_radius $button_radius;
+      box-shadow: inset 0 -4px transparentize(black, .8),
+                  inset 0 1px 2px transparentize($shadow_color, 0.03);
+
+      button {
+        border: 0;
+        color: white;
+        text-shadow: none;
+      }
+
+      #cancel_button {
+        background: transparentize($shadow_color, 0.03);
+        box-shadow: none;
+        color: $fg_color;
+      }
+
+      #login_button {
+        background: $selected_bg_color;
+        box-shadow: inset 0 -2px transparentize(black, 0.8);
+      }
+    }
+  }
+}
+
+/* Thunar */
+// Hide root user warning
+.thunar .warning {
+  opacity: 0;
+  font-size: 0;
+  margin: -10px 0;
+}

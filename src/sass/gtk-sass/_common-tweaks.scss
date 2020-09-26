@@ -1,0 +1,367 @@
+$_menu_shadow: 0 1px 6px transparentize(black, if($variant == 'light', .85, .5));
+$_widget_inset_shadow: inset 0 3px 5px -4px $shadow_color;
+$_wm_border: if($variant=='light', transparentize(black, 0.9), transparentize($borders_color, 0.25));
+
+* {
+  outline-style: solid;
+  outline-offset: -4px;
+  outline-width: 2px;
+  -gtk-outline-radius: 3px;
+  outline-color: gtkalpha(currentColor, 0.07);
+
+  button {
+    &, &:hover, &:active, &:checked, &:focus {
+      outline-color: gtkalpha(currentColor, if($variant == 'light', 0.15, 0.07));
+    }
+  }
+}
+
+/**********
+ * Button *
+ **********/
+%button_active,
+button:active,
+button:checked, {
+  background: $dark_fill;
+  box-shadow: $_widget_inset_shadow;
+}
+
+/**********
+ * Entry *
+ **********/
+%entry,
+entry {
+  box-shadow: $_widget_inset_shadow;
+  @if ($variant == 'dark') {
+    background-color: $dark_fill;
+  }
+}
+
+headerbar %entry,
+headerbar entry {
+  background: $base_color;
+}
+
+/**********
+ * Slider *
+ **********/
+%slider_active {
+  background-image: if($variant == 'light', image(lighten($bg_color, 14%)), image(darken($bg_color, 9%)));
+}
+
+/**********
+ * Switch *
+ **********/
+switch {
+  $_slider_border_color: darken($alt_borders_color, 3%);
+
+  box-shadow: inset 0 1px 2px -1px transparentize(black, if($variant=='light', .8, .4));
+
+  slider {
+      @include button(normal-alt, $edge: $shadow_color);
+
+      border: 1px solid $_slider_border_color;
+      border-radius: 50%;
+      transition-property: background, border, box-shadow;
+  }
+
+  &:hover slider {
+    @extend %slider_active;
+    border-color: $suggested_bg_color;
+  }
+
+  &:checked {
+    border-color: transparentize(black, .8);
+    border-right-width: 0; // Hack to prevent dirty right border-radius
+    margin-right: 1px; // Compensate missing right border
+    box-shadow: inset 0 1px 2px -1px transparentize(black, .4);
+    slider {
+      border-color: if($variant=='light', $suggested_border_color, $_slider_border_color);
+    }
+  }
+
+  &:backdrop, &:disabled {
+    box-shadow: none;
+
+    slider { border-color: $backdrop_borders_color; }
+
+    &:checked slider {
+      border-color: if($variant=='light', $suggested_bg_color, $backdrop_borders_color);
+    }
+  }
+}
+
+/*************************
+ * Check and Radio items *
+ *************************/
+check,
+radio {
+  $_c: if($variant=='light', white, darken($bg_color, 2%));
+  $_shadow: 0 1px 2px transparentize($shadow_color, 0.03);
+
+  &, menu menuitem &, menu menuitem:hover & {
+    background-image: linear-gradient(to bottom, $_c 20%, darken($_c, 2%) 90%);
+    border-color: $alt_borders_color;
+    box-shadow: $_shadow;
+
+    &:disabled, &:disabled:backdrop {
+      &, &:checked, &:indeterminate {
+        border-color: $borders_color;
+        background-image: image($bg_color);
+        color: $fg_color;
+      }
+    }
+  }
+
+  &, menu menuitem & {
+    &:checked, &:indeterminate {
+      background-image: linear-gradient(to bottom, $selected_bg_color 20%, darken($selected_bg_color, 2%) 90%);
+      border-color: $selected_borders_color;
+      box-shadow: inset 0 1px transparentize(white, .9), $_shadow;
+      color: white;
+
+      &:active { box-shadow: none; }
+      &:backdrop { background-image: image($checkradio_bg_color); }
+    }
+  }
+}
+
+/************
+ * GtkScale *
+ ************/
+scale slider:active {
+  @extend %slider_active;
+
+  border-color: $suggested_bg_color;
+}
+
+/***************
+ * Header bars *
+ ***************/
+.titlebar,
+headerbar {
+  $_border_color: darken($bg_color, 20%);
+  border-color: $_border_color;
+
+  @include headerbar_fill(darken($bg_color, if($variant == 'light', 7%, 10%)));
+  box-shadow: 0 1px 2px transparentize($_border_color, .25);
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: auto 150%;
+
+  &:backdrop {
+    background-repeat: no-repeat;
+    background-position: left;
+  }
+
+  stackswitcher button:checked,
+  button.toggle {
+    &:active, &:checked { @extend %button_active; }
+  }
+
+  hdyviewswitcher > button box {
+    &.narrow { margin: -7px 0 -5px; }
+    &.wide { margin: -8px 0; }
+  }
+
+  &.default-decoration {
+    min-height: 0;
+    padding: 3px;
+    border-color: $borders_color;
+
+    &:backdrop { background-color: $base_color; }
+
+    button.titlebutton {
+      min-height: 20px;
+      min-width: 20px;
+      margin: 0 4px;
+      padding: 0;
+    }
+  }
+}
+
+paned, hdyleaflet, headerbar.titlebar {
+  & headerbar:first-child {
+    border-color: transparent;
+    background: $base_color;
+    box-shadow: none;
+
+    &:backdrop { background: $backdrop_base_color; }
+  }
+}
+
+/***************
+ * Popovers   *
+ ***************/
+popover.background {
+  box-shadow: $_menu_shadow;
+  .csd &, & { border-color: if($variant=='light', transparentize(black, 0.9), transparentize($borders_color, 0.25)); }
+}
+
+/**************
+ * GtkInfoBar *
+ **************/
+infobar {
+  @mixin _infobar_button($bg) {
+    button {
+      // FIXME: extend selection mode buttons
+      @include button(normal, $bg, $selected_fg_color, none);
+
+      &:hover { @include button(hover, $bg, $selected_fg_color, none); }
+
+      &:active,
+      &:checked { @include button(active, $bg, $selected_fg_color, none); }
+
+      &:disabled { @include button(insensitive,$bg,$selected_fg_color,none); }
+
+      &:backdrop {
+        @include button(backdrop, $bg, $selected_fg_color, none);
+        border-color: _border_color($bg);
+
+        &:disabled {
+          @include button(backdrop-insensitive, $bg,
+                          $selected_fg_color, none);
+          border-color: _border_color($bg);
+        }
+      }
+      &:backdrop, & {
+        label, & { color: $selected_fg_color; }
+      }
+    }
+  }
+
+  &,
+  &.info,
+  &.question,
+  &.warning,
+  &.error {
+
+    border-style: none;
+    text-shadow: none;
+
+    &:backdrop > revealer > box, & > revealer > box {
+      label, & { color: $selected_fg_color; }
+    }
+
+    &:backdrop { text-shadow: none; }
+
+    selection { background-color: darken($bg_color, 10%); }
+
+    *:link { color: $link_color; }
+  }
+
+  &.info, &.info.action:hover {
+    &:backdrop > revealer > box, & > revealer > box {
+      background-color: $selected_bg_color;
+    }
+
+    @include _infobar_button($selected_bg_color);
+  }
+
+  &.question, &.warning, &.question.action:hover, &.warning.action:hover {
+    &:backdrop > revealer > box, & > revealer > box {
+      background-color: $warning_color;
+    }
+
+    @include _infobar_button($warning_color);
+  }
+
+  &.error, &.error.action:hover {
+    &:backdrop > revealer > box, & > revealer > box {
+      background-color: $error_color;
+
+      @include _infobar_button($error_color);
+    }
+  }
+}
+
+/*********************
+ * App Notifications *
+ *********************/
+.app-notification,
+.app-notification.frame {
+  padding: 5px 10px;
+  margin: 20px;
+  border-radius: $button_radius;
+  border: 1px solid transparentize($_wm_border, 0.1);
+  box-shadow: $_menu_shadow;
+  background-image: none;
+
+  &:backdrop { box-shadow: none; }
+}
+
+/***********
+ * Dialogs *
+ ***********/
+messagedialog .titlebar:backdrop { background-image: none; }
+
+
+/***********
+ * Sidebar *
+ ***********/
+.sidebar {
+  background-color: $bg_color;
+}
+
+/****************
+ * File chooser *
+ ****************/
+placessidebar {
+  row {
+    min-height: 30px;
+  }
+}
+
+/**********************
+ * Window Decorations *
+ *********************/
+decoration {
+  $_border_width: 1px;
+  border-radius: $window_radius+$_border_width $window_radius+$_border_width $button_radius $button_radius;
+  border: $_border_width solid $base_color;
+
+  box-shadow: 0 2px 8px 0 transparentize(black, 0.6),
+              0 0 0 1px $_wm_border;
+
+  &:backdrop {
+    box-shadow: 0 2px 8px 0 transparent,
+                0 0 0 3px transparentize(black, if($variant == 'light', .85, .75));
+  }
+
+  .maximized &,
+  .fullscreen &,
+  .tiled &,
+  .tiled-top &,
+  .tiled-right &,
+  .tiled-bottom &,
+  .tiled-left & { border-width: 0; }
+
+  .popup & { border-width: 0; }
+
+  .ssd & {
+    box-shadow: 0 0 0 1px $_wm_border;
+    border-width: 0;
+  }
+
+  .csd.popup & {
+    box-shadow: $_menu_shadow,
+                0 0 0 1px transparentize($_wm_border, 0.1);
+    border-width: 0;
+  }
+
+  tooltip.csd & { border: 0; }
+
+  messagedialog.csd & {
+    border-width: 0;
+    box-shadow: 0 1px 4px transparentize(black, 0.8);
+  }
+}
+
+// Window Close button
+button.titlebutton {
+  &:not(.appmenu) { margin: 0; }
+  &:backdrop {
+    background: transparent;
+    &:not(:hover) { border-color: transparent; }
+  }
+}

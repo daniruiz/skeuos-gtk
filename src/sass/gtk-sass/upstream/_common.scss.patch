@@ -1,0 +1,4 @@
+15c15
+< $_sizevariant: 'default'; //compact otherwise
+---
+> $_sizevariant: 'compact'; //compact otherwise
