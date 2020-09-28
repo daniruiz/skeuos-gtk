@@ -5173,7 +5173,7 @@ switch {
  *************************/
 check, menu menuitem check, menu menuitem:hover check,
 radio, menu menuitem radio, menu menuitem:hover radio {
-  background-image: linear-gradient(to bottom, white 20%, #fafafa 90%);
+  background-image: linear-gradient(to bottom, #ffffff 20%, #fafafa 90%);
   border-color: #c2c2c2;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07); }
   check:disabled, check:disabled:checked, check:disabled:indeterminate, check:disabled:backdrop, check:disabled:backdrop:checked, check:disabled:backdrop:indeterminate, menu menuitem check:disabled, menu menuitem check:disabled:checked, menu menuitem check:disabled:indeterminate, menu menuitem check:disabled:backdrop, menu menuitem check:disabled:backdrop:checked, menu menuitem check:disabled:backdrop:indeterminate, menu menuitem:hover check:disabled, menu menuitem:hover check:disabled:checked, menu menuitem:hover check:disabled:indeterminate, menu menuitem:hover check:disabled:backdrop, menu menuitem:hover check:disabled:backdrop:checked, menu menuitem:hover check:disabled:backdrop:indeterminate,
@@ -5193,7 +5193,7 @@ radio:indeterminate, menu menuitem radio:checked, menu menuitem radio:indetermin
   background-image: linear-gradient(to bottom, #2777ff 20%, #1d71ff 90%);
   border-color: #0051da;
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), 0 1px 2px rgba(0, 0, 0, 0.07);
-  color: white; }
+  color: #ffffff; }
   check:checked:active, check:indeterminate:active, menu menuitem check:checked:active, menu menuitem check:indeterminate:active,
   radio:checked:active,
   radio:indeterminate:active, menu menuitem radio:checked:active, menu menuitem radio:indeterminate:active {
@@ -5549,7 +5549,7 @@ filechooser placessidebar.sidebar,
       filechooser placessidebar.sidebar row.sidebar-row:selected revealer .sidebar-icon, filechooser placessidebar.sidebar row.sidebar-row:selected revealer .sidebar-label,
       .nautilus-window placessidebar.sidebar row.sidebar-row:selected revealer .sidebar-icon,
       .nautilus-window placessidebar.sidebar row.sidebar-row:selected revealer .sidebar-label {
-        color: white; }
+        color: #ffffff; }
   filechooser placessidebar.sidebar row.sidebar-row .sidebar-icon,
   .nautilus-window placessidebar.sidebar row.sidebar-row .sidebar-icon {
     padding-right: 20px; }

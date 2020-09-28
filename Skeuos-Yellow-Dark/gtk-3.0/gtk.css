@@ -5172,7 +5172,7 @@ radio:indeterminate, menu menuitem radio:checked, menu menuitem radio:indetermin
   background-image: linear-gradient(to bottom, #ffd86e 20%, #ffd564 90%);
   border-color: #d49b00;
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), 0 1px 2px rgba(0, 0, 0, 0.27);
-  color: white; }
+  color: #000000; }
   check:checked:active, check:indeterminate:active, menu menuitem check:checked:active, menu menuitem check:indeterminate:active,
   radio:checked:active,
   radio:indeterminate:active, menu menuitem radio:checked:active, menu menuitem radio:indeterminate:active {
@@ -5528,7 +5528,7 @@ filechooser placessidebar.sidebar,
       filechooser placessidebar.sidebar row.sidebar-row:selected revealer .sidebar-icon, filechooser placessidebar.sidebar row.sidebar-row:selected revealer .sidebar-label,
       .nautilus-window placessidebar.sidebar row.sidebar-row:selected revealer .sidebar-icon,
       .nautilus-window placessidebar.sidebar row.sidebar-row:selected revealer .sidebar-label {
-        color: white; }
+        color: #000000; }
   filechooser placessidebar.sidebar row.sidebar-row .sidebar-icon,
   .nautilus-window placessidebar.sidebar row.sidebar-row .sidebar-icon {
     padding-right: 20px; }

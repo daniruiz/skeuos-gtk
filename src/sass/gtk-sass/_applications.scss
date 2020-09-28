@@ -46,7 +46,7 @@ filechooser,
           padding-left: 8px;
           padding-right: 8px;
 
-          .sidebar-icon, .sidebar-label { color: white; }
+          .sidebar-icon, .sidebar-label { color: $selected_fg_color; }
         }
       }
 
