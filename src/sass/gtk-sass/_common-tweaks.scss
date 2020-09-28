@@ -162,6 +162,7 @@ headerbar {
     &:active, &:checked { @extend %button_active; }
   }
 
+  viewswitcher button > stack > box,
   hdyviewswitcher > button box {
     &.narrow { margin: -7px 0 -5px; }
     &.wide { margin: -8px 0; }
