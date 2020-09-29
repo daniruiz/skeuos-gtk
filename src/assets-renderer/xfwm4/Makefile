@@ -36,12 +36,12 @@ build: $(ASSETS)
 			&& $(OPTIPNG) -o7 --quiet $$variant@2/$$i.png ; \
 		done ; \
 	done
-	cp assets/* $(THEMES_DIR)/Skeuos-Light/xfwm4/
-	cp assets-dark/* $(THEMES_DIR)/Skeuos-Dark/xfwm4/
-	cp assets@1.5/* $(THEMES_DIR)/Skeuos-Light-HiDPI/xfwm4/
-	cp assets-dark@1.5/* $(THEMES_DIR)/Skeuos-Dark-HiDPI/xfwm4/
-	cp assets@2/* $(THEMES_DIR)/Skeuos-Light-xHiDPI/xfwm4/
-	cp assets-dark@2/* $(THEMES_DIR)/Skeuos-Dark-xHiDPI/xfwm4/
+	cp assets/* $(THEMES_DIR)Skeuos-XFWM4-Light/xfwm4/
+	cp assets-dark/* $(THEMES_DIR)Skeuos-XFWM4-Dark/xfwm4/
+	cp assets@1.5/* $(THEMES_DIR)Skeuos-XFWM4-Light-HiDPI/xfwm4/
+	cp assets-dark@1.5/* $(THEMES_DIR)Skeuos-XFWM4-Dark-HiDPI/xfwm4/
+	cp assets@2/* $(THEMES_DIR)Skeuos-XFWM4-Light-xHiDPI/xfwm4/
+	cp assets-dark@2/* $(THEMES_DIR)Skeuos-XFWM4-Dark-xHiDPI/xfwm4/
 
 clean:
 	-rm -r assets assets@1.5 assets@2 assets-dark assets-dark@1.5 assets-dark@2
