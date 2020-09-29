@@ -7,31 +7,39 @@ SYMBOLIC_ASSETS_DIR=symbolic
 INDEX=assets.txt
 THEMES_DIR=../../../
 
-.PHONY: build clean
+include ../../Makefile.inc
 
-build: $(SRC_FILE)
-	mkdir -p $(ASSETS_DIR)
-	cp $(SYMBOLIC_ASSETS_DIR)/* $(ASSETS_DIR)
+.PHONY: build $(COLOR_VARIANTS) clean
+
+build: $(COLOR_VARIANTS)
+
+$(COLOR_VARIANTS):
+	$(eval CURRENT_ASSETS_DIR=$(ASSETS_DIR)-$@/)
+	sed 's/$(DEFAULT_THEME_COLOR)/$(COLOR_$@)/gi' $(SRC_FILE) > assets-$@.svg
+	mkdir -p $(CURRENT_ASSETS_DIR)
+	cp $(SYMBOLIC_ASSETS_DIR)/* $(CURRENT_ASSETS_DIR)
 	for i in $$(xargs < $(INDEX)) ; \
 	do \
 		echo ; \
-		echo Rendering $(ASSETS_DIR)/$$i.png ; \
+		echo Rendering $(CURRENT_ASSETS_DIR)$$i.png ; \
 		$(INKSCAPE) --export-id=$$i \
 		            --export-id-only \
-		            --export-png=$(ASSETS_DIR)/$$i.png $(SRC_FILE) > /dev/null 2>&1 \
-		&& $(OPTIPNG) -o7 --quiet $(ASSETS_DIR)/$$i.png ; \
+		            --export-png=$(CURRENT_ASSETS_DIR)$$i.png assets-$@.svg > /dev/null 2>&1 \
+		&& $(OPTIPNG) -o7 --quiet $(CURRENT_ASSETS_DIR)$$i.png ; \
 		echo ; \
-		echo Rendering $(ASSETS_DIR)/$$i@2.png ; \
+		echo Rendering $(CURRENT_ASSETS_DIR)$$i@2.png ; \
 		$(INKSCAPE) --export-id=$$i \
 		            --export-dpi=180 \
 		            --export-id-only \
-		            --export-png=$(ASSETS_DIR)/$$i@2.png $(SRC_FILE) > /dev/null 2>&1 \
-		&& $(OPTIPNG) -o7 --quiet $(ASSETS_DIR)/$$i@2.png ; \
+		            --export-png=$(CURRENT_ASSETS_DIR)$$i@2.png assets-$@.svg > /dev/null 2>&1 \
+		&& $(OPTIPNG) -o7 --quiet $(CURRENT_ASSETS_DIR)$$i@2.png ; \
 	done
-	mkdir -p $(THEMES_DIR)/Skeuos-Light/gtk-3.0/assets/
-	cp assets/* $(THEMES_DIR)/Skeuos-Light/gtk-3.0/assets/
-	mkdir -p $(THEMES_DIR)/Skeuos-Dark/gtk-3.0/assets/
-	cp assets/* $(THEMES_DIR)/Skeuos-Dark/gtk-3.0/assets/
+	mkdir -p $(THEMES_DIR)Skeuos-$@-Light/gtk-3.0/assets/
+	cp $(CURRENT_ASSETS_DIR)* $(THEMES_DIR)Skeuos-$@-Light/gtk-3.0/assets/
+	mkdir -p $(THEMES_DIR)Skeuos-$@-Dark/gtk-3.0/assets/
+	cp $(CURRENT_ASSETS_DIR)* $(THEMES_DIR)Skeuos-$@-Dark/gtk-3.0/assets/
 
 clean:
-	-rm -r $(ASSETS_DIR)
+	-rm -r $(foreach COLOR_VARIANT, $(COLOR_VARIANTS), \
+	  $(ASSETS_DIR)-$(COLOR_VARIANT) \
+	  assets-$(COLOR_VARIANT).svg)
