@@ -50,9 +50,6 @@ entry-disabled-bg
 entry-notebook
 entry-active-notebook
 entry-disabled-notebook
-entry-toolbar
-entry-active-toolbar
-entry-disabled-toolbar
 combo-entry
 combo-entry-focus
 combo-entry-insensitive
@@ -87,7 +84,6 @@ line-h
 line-v
 menu
 menuitem
-menubar_button
 null
 tree_header
 progressbar
@@ -121,5 +117,4 @@ tab-left-active
 tab-right-active
 inline-toolbar
 toolbar
-menubar
 focus-line

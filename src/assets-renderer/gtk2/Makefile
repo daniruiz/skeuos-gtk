@@ -9,50 +9,57 @@ ASSETS_DIR_DARK=assets-dark
 
 MENU_TOOLBAR_DIR=menubar-toolbar
 
-INDEX=assets.txt
+ASSETS=$(shell xargs < assets.txt)
+MENU_ASSETS=$(shell xargs < menu_assets.txt)
+DARK_MENU_EXTRA_ASSETS=button button-hover button-active button-insensitive
 THEMES_DIR=../../../
 
-.PHONY: build clean
+include ../../Makefile.inc
 
-build: $(SRC_FILE) $(SRC_FILE_DARK)
-	mkdir -p $(ASSETS_DIR) $(ASSETS_DIR_DARK) $(MENU_TOOLBAR_DIR)
-	for i in $$(xargs < $(INDEX)) ; \
+.PHONY: build $(COLOR_VARIANTS) clean
+
+build: $(COLOR_VARIANTS)
+
+$(COLOR_VARIANTS):
+	$(eval CURRENT_ASSETS_DIR=$(ASSETS_DIR)-$@/)
+	$(eval CURRENT_ASSETS_DIR_DARK=$(ASSETS_DIR_DARK)-$@/)
+	$(eval CURRENT_MENU_TOOLBAR_DIR=$(MENU_TOOLBAR_DIR)-$@/)
+	mkdir -p $(CURRENT_ASSETS_DIR) $(CURRENT_ASSETS_DIR_DARK) $(CURRENT_MENU_TOOLBAR_DIR)
+	sed 's/$(DEFAULT_THEME_COLOR)/$(COLOR_$@)/gi' $(SRC_FILE) > assets-$@.svg
+	sed 's/$(DEFAULT_THEME_COLOR)/$(COLOR_$@)/gi' $(SRC_FILE_DARK) > assets-$@-dark.svg
+	for i in $(ASSETS) $(MENU_ASSETS) ; \
 	do \
 		echo ; \
-		echo Rendering $(ASSETS_DIR)/$$i.png ; \
+		echo Rendering $(CURRENT_ASSETS_DIR)$$i.png ; \
 		$(INKSCAPE) --export-id=$$i \
 		          --export-id-only \
-		          --export-png=$(ASSETS_DIR)/$$i.png $(SRC_FILE) > /dev/null 2>&1 \
-		&& $(OPTIPNG) -o7 --quiet $(ASSETS_DIR)/$$i.png ; \
+		          --export-png=$(CURRENT_ASSETS_DIR)$$i.png assets-$@.svg > /dev/null 2>&1 \
+		&& $(OPTIPNG) -o7 --quiet $(CURRENT_ASSETS_DIR)$$i.png ; \
 		echo ; \
-		echo Rendering $(ASSETS_DIR_DARK)/$$i.png ; \
+		echo Rendering $(CURRENT_ASSETS_DIR_DARK)$$i.png ; \
 		$(INKSCAPE) --export-id=$$i \
 		          --export-id-only \
-		          --export-png=$(ASSETS_DIR_DARK)/$$i.png $(SRC_FILE_DARK) > /dev/null 2>&1 \
-		&& $(OPTIPNG) -o7 --quiet $(ASSETS_DIR_DARK)/$$i.png ; \
+		          --export-png=$(CURRENT_ASSETS_DIR_DARK)$$i.png assets-$@-dark.svg > /dev/null 2>&1 \
+		&& $(OPTIPNG) -o7 --quiet $(CURRENT_ASSETS_DIR_DARK)$$i.png ; \
 	done
-	cp $(ASSETS_DIR)/entry-toolbar.png $(MENU_TOOLBAR_DIR)/entry-toolbar.png
-	cp $(ASSETS_DIR)/entry-active-toolbar.png $(MENU_TOOLBAR_DIR)/entry-active-toolbar.png
-	cp $(ASSETS_DIR)/entry-disabled-toolbar.png $(MENU_TOOLBAR_DIR)/entry-disabled-toolbar.png
-	cp $(ASSETS_DIR)/menubar.png $(MENU_TOOLBAR_DIR)/menubar.png
-	cp $(ASSETS_DIR)/menubar_button.png $(MENU_TOOLBAR_DIR)/menubar_button.png
-	cp $(ASSETS_DIR_DARK)/button.png $(MENU_TOOLBAR_DIR)/button.png
-	cp $(ASSETS_DIR_DARK)/button-hover.png $(MENU_TOOLBAR_DIR)/button-hover.png
-	cp $(ASSETS_DIR_DARK)/button-active.png $(MENU_TOOLBAR_DIR)/button-active.png
-	cp $(ASSETS_DIR_DARK)/button-insensitive.png $(MENU_TOOLBAR_DIR)/button-insensitive.png
-	cp $(ASSETS_DIR_DARK)/entry-toolbar.png $(MENU_TOOLBAR_DIR)/entry-toolbar-dark.png
-	cp $(ASSETS_DIR_DARK)/entry-active-toolbar.png $(MENU_TOOLBAR_DIR)/entry-active-toolbar-dark.png
-	cp $(ASSETS_DIR_DARK)/entry-disabled-toolbar.png $(MENU_TOOLBAR_DIR)/entry-disabled-toolbar-dark.png
-	cp $(ASSETS_DIR_DARK)/menubar.png $(MENU_TOOLBAR_DIR)/menubar-dark.png
-	cp $(ASSETS_DIR_DARK)/menubar_button.png $(MENU_TOOLBAR_DIR)/menubar_button-dark.png
-	mkdir -p $(THEMES_DIR)/Skeuos-Light/gtk-2.0/assets/
-	cp assets/* $(THEMES_DIR)/Skeuos-Light/gtk-2.0/assets/
-	mkdir -p $(THEMES_DIR)/Skeuos-Light/gtk-2.0/menubar-toolbar/
-	cp menubar-toolbar/* $(THEMES_DIR)/Skeuos-Light/gtk-2.0/menubar-toolbar/
-	mkdir -p $(THEMES_DIR)/Skeuos-Dark/gtk-2.0/assets/
-	cp assets-dark/* $(THEMES_DIR)/Skeuos-Dark/gtk-2.0/assets/
-	mkdir -p $(THEMES_DIR)/Skeuos-Dark/gtk-2.0/menubar-toolbar/
-	cp menubar-toolbar/* $(THEMES_DIR)/Skeuos-Dark/gtk-2.0/menubar-toolbar/
-	
+	$(foreach ASSET, $(MENU_ASSETS), \
+	  cp $(CURRENT_ASSETS_DIR)$(ASSET).png $(CURRENT_MENU_TOOLBAR_DIR)$(ASSET).png && \
+	  cp $(CURRENT_ASSETS_DIR_DARK)$(ASSET).png $(CURRENT_MENU_TOOLBAR_DIR)$(ASSET)-dark.png &&) true
+	$(foreach ASSET, $(DARK_MENU_EXTRA_ASSETS), \
+	  cp $(CURRENT_ASSETS_DIR_DARK)$(ASSET).png $(CURRENT_MENU_TOOLBAR_DIR)$(ASSET).png &&) true
+	mkdir -p $(THEMES_DIR)Skeuos-$@-Light/gtk-2.0/assets/
+	cp $(CURRENT_ASSETS_DIR)* $(THEMES_DIR)Skeuos-$@-Light/gtk-2.0/assets/
+	mkdir -p $(THEMES_DIR)Skeuos-$@-Light/gtk-2.0/menubar-toolbar/
+	cp $(CURRENT_MENU_TOOLBAR_DIR)* $(THEMES_DIR)Skeuos-$@-Light/gtk-2.0/menubar-toolbar/
+	mkdir -p $(THEMES_DIR)Skeuos-$@-Dark/gtk-2.0/assets/
+	cp $(CURRENT_ASSETS_DIR_DARK)* $(THEMES_DIR)Skeuos-$@-Dark/gtk-2.0/assets/
+	mkdir -p $(THEMES_DIR)Skeuos-$@-Dark/gtk-2.0/menubar-toolbar/
+	cp $(CURRENT_MENU_TOOLBAR_DIR)* $(THEMES_DIR)Skeuos-$@-Dark/gtk-2.0/menubar-toolbar/
+
 clean:
-	-rm -r $(ASSETS_DIR) $(ASSETS_DIR_DARK) $(MENU_TOOLBAR_DIR)
+	-rm -r $(foreach COLOR_VARIANT, $(COLOR_VARIANTS), \
+	  $(ASSETS_DIR)-$(COLOR_VARIANT) \
+	  $(ASSETS_DIR_DARK)-$(COLOR_VARIANT) \
+	  $(MENU_TOOLBAR_DIR)-$(COLOR_VARIANT) \
+	  assets-$(COLOR_VARIANT).svg \
+	  assets-$(COLOR_VARIANT)-dark.svg)

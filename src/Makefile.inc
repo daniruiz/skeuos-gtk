@@ -1,0 +1,6 @@
+DEFAULT_THEME_COLOR=\#2777ff
+COLOR_VARIANTS=Blue Green Red Yellow
+COLOR_Blue=\#2777ff
+COLOR_Green=\#06a284
+COLOR_Red=\#ec0101
+COLOR_Yellow=\#ffd86e
