@@ -3,20 +3,13 @@ THEMES_DIR=../../
 
 .PHONY: build clean
 
-build:
-	for scss in *.scss ; \
-	do \
-		echo ; \
-		dir=$(THEMES_DIR)$${scss%.scss} ; \
-		css_file=$${scss%.scss}.css ; \
-		echo Generating $$css_file ; \
-		$(SCSS) $$scss > $$css_file ; \
-		if [ -d $$dir ] ; \
-		then \
-			mkdir -p $$dir/gtk-3.0 ; \
-			cp $$css_file $$dir/gtk-3.0/gtk.css ; \
-		fi ; \
-	done
+build: $(patsubst %.scss, %.css, $(wildcard *.scss))
+
+%.css: %.scss
+	$(SCSS) $< > $@
+	mkdir -p $(THEMES_DIR)$(basename $@)/gtk-3.0
+	cp $@ $(THEMES_DIR)$(basename $@)/gtk-3.0/gtk.css
+	$(if $(findstring -Light, $@), cp $(patsubst %-Light%, %-Dark%, $@) $(THEMES_DIR)$(basename $@)/gtk-3.0/gtk-dark.css,)
 
 clean:
 	-rm *.css
