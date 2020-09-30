@@ -1,13 +1,13 @@
 [Desktop Entry]
 Type=X-GNOME-Metatheme
-Name=Skeuos-Light
-Comment=The Skeuos Default Theme
+Name=Skeuos-Yellow-Light
+Comment=Skeuos-Yellow-Light theme"
 Encoding=UTF-8
 
 
 [X-GNOME-Metatheme]
-GtkTheme=Skeuos-Light
-MetacityTheme=Skeuos-Light
-IconTheme=Flat-Remix-Blue-Light
+GtkTheme=Skeuos-Yellow-Light
+MetacityTheme=Skeuos-Yellow-Light
+IconTheme=Flat-Remix-Blue-Dark
 CursorTheme=Adwaita
 ButtonLayout=:minimize,maximize,close

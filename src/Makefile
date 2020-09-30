@@ -1,4 +1,4 @@
-SUBDIRS=$(foreach SUBDIR,gtk2 gtk3 xfwm4,assets-renderer/$(SUBDIR)) sass
+SUBDIRS=$(foreach SUBDIR,gtk2 gtk3 xfwm4,assets-renderer/$(SUBDIR)) sass templates
 
 .PHONY: build $(SUBDIRS) clean
 
