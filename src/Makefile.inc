@@ -1,3 +1,7 @@
+INKSCAPE=/usr/bin/inkscape
+OPTIPNG=/usr/bin/optipng -o7 --strip all --quiet
+SCSS=sassc
+
 DEFAULT_THEME_COLOR=\#2777ff
 COLOR_VARIANTS=Blue Green Red Yellow
 COLOR_Blue=\#2777ff

@@ -1,4 +1,5 @@
-SCSS=sassc
+include ../Makefile.inc
+
 THEMES_DIR=../../
 
 .PHONY: build clean

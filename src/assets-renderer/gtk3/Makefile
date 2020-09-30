@@ -1,5 +1,4 @@
-INKSCAPE=/usr/bin/inkscape
-OPTIPNG=/usr/bin/optipng
+include ../../Makefile.inc
 
 SRC_FILE=assets.svg
 ASSETS_DIR=assets
@@ -25,14 +24,14 @@ $(COLOR_VARIANTS):
 		$(INKSCAPE) --export-id=$$i \
 		            --export-id-only \
 		            --export-png=$(CURRENT_ASSETS_DIR)$$i.png assets-$@.svg > /dev/null 2>&1 \
-		&& $(OPTIPNG) -o7 --quiet $(CURRENT_ASSETS_DIR)$$i.png ; \
+		&& $(OPTIPNG) $(CURRENT_ASSETS_DIR)$$i.png ; \
 		echo ; \
 		echo Rendering $(CURRENT_ASSETS_DIR)$$i@2.png ; \
 		$(INKSCAPE) --export-id=$$i \
 		            --export-dpi=180 \
 		            --export-id-only \
 		            --export-png=$(CURRENT_ASSETS_DIR)$$i@2.png assets-$@.svg > /dev/null 2>&1 \
-		&& $(OPTIPNG) -o7 --quiet $(CURRENT_ASSETS_DIR)$$i@2.png ; \
+		&& $(OPTIPNG) $(CURRENT_ASSETS_DIR)$$i@2.png ; \
 	done
 	mkdir -p $(THEMES_DIR)Skeuos-$@-Light/gtk-3.0/assets/
 	cp $(CURRENT_ASSETS_DIR)* $(THEMES_DIR)Skeuos-$@-Light/gtk-3.0/assets/

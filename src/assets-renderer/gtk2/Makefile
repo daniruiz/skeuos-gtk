@@ -1,5 +1,4 @@
-INKSCAPE=/usr/bin/inkscape
-OPTIPNG=/usr/bin/optipng
+include ../../Makefile.inc
 
 SRC_FILE=assets.svg
 ASSETS_DIR=assets
@@ -34,13 +33,13 @@ $(COLOR_VARIANTS):
 		$(INKSCAPE) --export-id=$$i \
 		          --export-id-only \
 		          --export-png=$(CURRENT_ASSETS_DIR)$$i.png assets-$@.svg > /dev/null 2>&1 \
-		&& $(OPTIPNG) -o7 --quiet $(CURRENT_ASSETS_DIR)$$i.png ; \
+		&& $(OPTIPNG) $(CURRENT_ASSETS_DIR)$$i.png ; \
 		echo ; \
 		echo Rendering $(CURRENT_ASSETS_DIR_DARK)$$i.png ; \
 		$(INKSCAPE) --export-id=$$i \
 		          --export-id-only \
 		          --export-png=$(CURRENT_ASSETS_DIR_DARK)$$i.png assets-$@-dark.svg > /dev/null 2>&1 \
-		&& $(OPTIPNG) -o7 --quiet $(CURRENT_ASSETS_DIR_DARK)$$i.png ; \
+		&& $(OPTIPNG) $(CURRENT_ASSETS_DIR_DARK)$$i.png ; \
 	done
 	$(foreach ASSET, $(MENU_ASSETS), \
 	  cp $(CURRENT_ASSETS_DIR)$(ASSET).png $(CURRENT_MENU_TOOLBAR_DIR)$(ASSET).png && \
