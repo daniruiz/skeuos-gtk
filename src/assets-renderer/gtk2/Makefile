@@ -6,6 +6,10 @@ ASSETS_DIR=assets
 SRC_FILE_DARK=assets-dark.svg
 ASSETS_DIR_DARK=assets-dark
 
+# https://en.wikipedia.org/wiki/Hexspeak
+# It's still a color 🤷‍
+TEMPLATE_SELECTED_COLOR=\#DEADBEEF
+
 MENU_TOOLBAR_DIR=menubar-toolbar
 
 ASSETS=$(shell xargs < assets.txt)
@@ -24,8 +28,12 @@ $(COLOR_VARIANTS):
 	$(eval CURRENT_ASSETS_DIR_DARK=$(ASSETS_DIR_DARK)-$@/)
 	$(eval CURRENT_MENU_TOOLBAR_DIR=$(MENU_TOOLBAR_DIR)-$@/)
 	mkdir -p $(CURRENT_ASSETS_DIR) $(CURRENT_ASSETS_DIR_DARK) $(CURRENT_MENU_TOOLBAR_DIR)
-	sed 's/$(DEFAULT_THEME_COLOR)/$(COLOR_$@)/gi' $(SRC_FILE) > assets-$@.svg
-	sed 's/$(DEFAULT_THEME_COLOR)/$(COLOR_$@)/gi' $(SRC_FILE_DARK) > assets-$@-dark.svg
+	sed -e 's/$(DEFAULT_THEME_COLOR)/$(COLOR_$@)/gi' \
+	  -e 's/$(TEMPLATE_SELECTED_COLOR)/$(TEXT_COLOR_$@)/' \
+	  $(SRC_FILE) > assets-$@.svg
+	sed -e 's/$(DEFAULT_THEME_COLOR)/$(COLOR_$@)/gi' \
+	  -e 's/$(TEMPLATE_SELECTED_COLOR)/$(TEXT_COLOR_$@)/' \
+	  $(SRC_FILE_DARK) > assets-$@-dark.svg
 	for i in $(ASSETS) $(MENU_ASSETS) ; \
 	do \
 		echo ; \
