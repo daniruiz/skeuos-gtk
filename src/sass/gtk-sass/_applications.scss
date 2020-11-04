@@ -111,22 +111,41 @@ filechooser,
 
 /* Whisker menu */
 #whiskermenu-window {
+  $_dark_bg: if($variant == 'light', $bg_color, darken($bg_color, 3%));
   entry {
     border-radius: 100px;
     border: 2px solid $selected_bg_color;
     box-shadow: none;
   }
 
-  .frame { border: 0; }
+  button {
+    transition-duration: 0s;
+    @if $variant == 'dark' {
+      &:hover {
+        @include button(osd);
+        border-color: transparent;
+        border-bottom-color: $_dark_bg;
+      }
+    }
+    &:checked { border-color: transparent; }
+  }
 
-  scrolledwindow  treeview {
-    padding: 0 5px;
-    background: $bg_color;
-    border-left: 1px solid $borders_color;
+  scrolledwindow.frame {
+    border: 0;
+    border-radius: 8px;
+    box-shadow: inset 0 0 10px $shadow_color;
+    background: $_dark_bg;
+    padding: 7px 10px;
+    margin: 0 5px;
 
-    &:hover, &:active, &:selected {
-      background-color: transparentize($shadow_color, 0.03);
-      color: inherit;
+    treeview {
+      background: transparent;
+      border-radius: $button_radius;
+
+      &:hover, &:active, &:selected {
+        background-color: transparentize($shadow_color, 0.03);
+        color: inherit;
+      }
     }
   }
 }
