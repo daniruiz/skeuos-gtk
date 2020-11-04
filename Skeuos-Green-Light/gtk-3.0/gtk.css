@@ -5597,16 +5597,24 @@ filechooser placessidebar.sidebar,
   border: 2px solid #06a284;
   box-shadow: none; }
 
-#whiskermenu-window .frame {
-  border: 0; }
+#whiskermenu-window button {
+  transition-duration: 0s; }
+  #whiskermenu-window button:checked {
+    border-color: transparent; }
 
-#whiskermenu-window scrolledwindow treeview {
-  padding: 0 5px;
+#whiskermenu-window scrolledwindow.frame {
+  border: 0;
+  border-radius: 8px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
   background: #ffffff;
-  border-left: 1px solid #d9d9d9; }
-  #whiskermenu-window scrolledwindow treeview:hover, #whiskermenu-window scrolledwindow treeview:active, #whiskermenu-window scrolledwindow treeview:selected {
-    background-color: rgba(0, 0, 0, 0.07);
-    color: inherit; }
+  padding: 7px 10px;
+  margin: 0 5px; }
+  #whiskermenu-window scrolledwindow.frame treeview {
+    background: transparent;
+    border-radius: 5px; }
+    #whiskermenu-window scrolledwindow.frame treeview:hover, #whiskermenu-window scrolledwindow.frame treeview:active, #whiskermenu-window scrolledwindow.frame treeview:selected {
+      background-color: rgba(0, 0, 0, 0.07);
+      color: inherit; }
 
 /* XFCE4 workspace switcher */
 wnck-pager {
