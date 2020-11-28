@@ -5567,6 +5567,9 @@ filechooser placessidebar.sidebar,
     border-radius: 5px;
     border-style: solid; }
 
+.path-bar-box:backdrop {
+  border-color: #e0e0e0; }
+
 /* XFCE4 PANEL */
 .xfce4-panel.background {
   background: rgba(255, 255, 255, 0.9); }
@@ -5615,6 +5618,11 @@ filechooser placessidebar.sidebar,
     #whiskermenu-window scrolledwindow.frame treeview:hover, #whiskermenu-window scrolledwindow.frame treeview:active, #whiskermenu-window scrolledwindow.frame treeview:selected {
       background-color: rgba(0, 0, 0, 0.07);
       color: inherit; }
+
+/* XFCE4 panel action buttons */
+#XfcePanelWindowWrapper > widget > box > #xfce-panel-button > image {
+  -gtk-icon-style: symbolic;
+  -gtk-icon-transform: scale(0.7); }
 
 /* XFCE4 workspace switcher */
 wnck-pager {

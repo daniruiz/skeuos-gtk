@@ -75,6 +75,8 @@ filechooser,
   }
 }
 
+.path-bar-box:backdrop { border-color: $backdrop_borders_color}
+
 /* XFCE4 PANEL */
 .xfce4-panel {
   &.background { background: $panel_bg; }
