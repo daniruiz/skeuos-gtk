@@ -194,6 +194,12 @@ headerbar {
       padding: 0;
     }
   }
+
+  dialog &,
+  dialog &:backdrop {
+    background: $bg_color;
+    border: 0;
+  }
 }
 
 paned, hdyleaflet, headerbar.titlebar {
