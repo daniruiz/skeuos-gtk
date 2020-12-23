@@ -11,3 +11,20 @@
 <                                               linear-gradient(to top, darken($c,1%) 2px, $c)),
 ---
 >     background-image: linear-gradient(to top, if($c != $bg_color, $c, lighten($c, 3%)) 2px, lighten($c, 5%)),
+201c201
+<     @include _button_text_shadow($tc, $c);
+---
+>     //@include _button_text_shadow($tc, $c);
+216c216
+<       @include _button_text_shadow($tc, lighten($c, 6%));
+---
+>       //@include _button_text_shadow($tc, lighten($c, 6%));
+222c222
+<       @include _button_text_shadow($tc,lighten($c, 6%));
+---
+>       //@include _button_text_shadow($tc,lighten($c, 6%));
+234c234
+<     @include _button_text_shadow($tc, $c);
+---
+>     //@include _button_text_shadow($tc, $c);
+
