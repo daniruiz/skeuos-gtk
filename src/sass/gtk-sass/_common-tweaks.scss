@@ -19,11 +19,23 @@ $_wm_border: if($variant=='light', transparentize(black, 0.9), transparentize($b
 /**********
  * Button *
  **********/
-%button_active,
-button:active,
-button:checked, {
-  background: $dark_fill;
-  box-shadow: $_widget_inset_shadow;
+button {
+  @at-root %button_active,
+  &:active,
+  &:checked, {
+    background: $dark_fill;
+    box-shadow: $_widget_inset_shadow;
+  }
+
+  &.flat {
+    border-color: transparent;
+    transition: $button_transition;
+
+    &:hover:not(:backdrop):not(:link):not(:visited) {
+      @extend %button_active;
+      transition: none;
+    }
+  }
 }
 
 /**********
