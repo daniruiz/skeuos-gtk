@@ -310,6 +310,17 @@ infobar {
   &:backdrop { box-shadow: none; }
 }
 
+/************
+ * Calendar *
+ ***********/
+calendar {
+  border-radius: 6px;
+  border:0;
+  padding: 1px;
+
+  &:selected { border-radius: 999px; }
+}
+
 /***********
  * Dialogs *
  ***********/
