@@ -1,5 +1,5 @@
 $_menu_shadow: 0 1px 6px transparentize(black, if($variant == 'light', .85, .5));
-$_widget_inset_shadow: inset 0 3px 5px -4px $shadow_color;
+$_widget_inset_shadow: inset 0 3px 5px -4px $shadow_color, 0 1px rgba(255, 255, 255, .05);
 $_wm_border: if($variant=='light', transparentize(black, 0.9), transparentize($borders_color, 0.25));
 
 * {
@@ -67,7 +67,7 @@ headerbar entry {
 switch {
   $_slider_border_color: darken($alt_borders_color, 3%);
 
-  box-shadow: inset 0 1px 2px -1px transparentize(black, if($variant=='light', .8, .4));
+  box-shadow: $_widget_inset_shadow;
 
   &:checked {
     border-color: transparentize(black, .8);
@@ -117,7 +117,7 @@ radio {
   &, menu menuitem &, menu menuitem:hover & {
     background-image: linear-gradient(to bottom, $_c 20%, darken($_c, 2%) 90%);
     border-color: $alt_borders_color;
-    box-shadow: $_shadow;
+    box-shadow: $_widget_inset_shadow;
 
     &:disabled, &:disabled:backdrop {
       &, &:checked, &:indeterminate {
