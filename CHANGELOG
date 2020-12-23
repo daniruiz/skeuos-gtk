@@ -1,3 +1,18 @@
+[20201223]
+ * Remove background-size from headerbar
+ * Use the same shadows for the switch, check, radio, switch and entry widgets
+ * Fix hovered inforbar flat buttons
+ * Make dialog headerbar blend with the window content
+ * Theme flat buttons
+ * Theme notebook tabs
+ * Theme calendar
+ * Theme treeviews
+ * Remove text-shadow from buttons
+ * Improve button visibility with lighter background colors
+ * Reduce border-radius to button like widgets
+ * Update gtk 3.24.24
+ * Update libhandy from upstream
+
 [20201128]
  * Make nautilus path-bar-box border lighter in backdrop mode
  * Lighten backdrop border color
