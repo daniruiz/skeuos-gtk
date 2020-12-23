@@ -321,7 +321,7 @@ placessidebar {
  *********************/
 decoration {
   $_border_width: 1px;
-  border-radius: $window_radius+$_border_width $window_radius+$_border_width $button_radius $button_radius;
+  border-radius: $window_radius+$_border_width $window_radius+$_border_width $button_radius+$_border_width $button_radius+$_border_width;
   border: $_border_width solid $base_color;
 
   box-shadow: 0 2px 8px 0 transparentize(black, 0.6),
