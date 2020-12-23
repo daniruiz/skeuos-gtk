@@ -218,6 +218,74 @@ popover.background {
   .csd &, & { border-color: if($variant=='light', transparentize(black, 0.9), transparentize($borders_color, 0.25)); }
 }
 
+/*************
+ * Notebooks *
+ *************/
+notebook {
+  > header {
+    border: 0;
+    padding: 0;
+    background-color: $dark_fill;
+
+    &.top,
+    &.bottom,
+    &.left,
+    &.right {
+      > tabs {
+        margin: 0;
+
+        > tab,
+        > tab.reorderable-page {
+          border: 1px solid transparent;
+          margin: 3px;
+
+          &:hover:not(:backdrop) { @include button(hover); }
+
+          &:checked {
+            @include button(normal);
+            background: $base_color;
+
+            &:backdrop { @include button(backdrop); }
+          }
+        }
+      }
+    }
+
+    $gradient:
+      rgba(black, 0),
+      rgba(black, 0) calc(100% - 2px),
+      rgba(black, 0.05) calc(100% - 1px),
+      rgba(black, 0.15);
+
+    &.top {
+      background-image: linear-gradient(to bottom, $gradient);
+    }
+
+    &.bottom {
+      background-image: linear-gradient(to top, $gradient);
+    }
+
+    &.right {
+      background-image: linear-gradient(to left, $gradient);
+    }
+
+    &.left {
+      background-image: linear-gradient(to right, $gradient);
+    }
+
+    tab {
+      border-radius: $button_radius;
+      transition: $button_transition;
+      min-height: 24px;
+
+      button.flat {
+        margin-top: 1px;
+        margin-bottom: 1px;
+      }
+    }
+  }
+}
+
 /**************
  * GtkInfoBar *
  **************/
