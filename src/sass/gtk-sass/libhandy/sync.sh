@@ -7,7 +7,7 @@ RESET='\033[0m'
 while read file;
 do
 	echo
-	echo -e " $GREEN[ * ]$RESET Downloading file $file"
+	printf " $GREEN[ * ]$RESET Downloading file $file\n"
 	wget https://gitlab.gnome.org/GNOME/libhandy/-/raw/master/src/themes/$file --timestamping --quiet
 done <<- EOF
 	_definitions.scss
