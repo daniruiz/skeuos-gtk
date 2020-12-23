@@ -142,7 +142,7 @@
   @else if lightness($c)>80% { @return transparentize(white, 0.5); }
   @else if lightness($c)>50% { @return transparentize(white, 0.8); }
   @else if lightness($c)>40% { @return transparentize(white, 0.9); }
-  @else { @return transparentize(white, 0.98); }
+  @else { @return transparentize(white, 0.95); }
 }
 
 @mixin _button_text_shadow ($tc:$fg_color, $bg:$bg_color) {
@@ -196,8 +196,7 @@
     outline-color: transparentize($tc, 0.7);
     border-color: if($c != $bg_color, _border_color($c), $borders_color);
     border-bottom-color: if($c != $bg_color, _border_color($c, true), $alt_borders_color);
-    background-image: if($variant == 'light', linear-gradient(to top, darken($c, 4%) 2px, $c),
-                                              linear-gradient(to top, darken($c,1%) 2px, $c)),
+    background-image: linear-gradient(to top, if($c != $bg_color, $c, lighten($c, 3%)) 2px, lighten($c, 5%)),
                       $backimage;
     @include _button_text_shadow($tc, $c);
     @include _shadows(inset 0 1px $_hilight_color, $_button_edge, $_button_shadow);
