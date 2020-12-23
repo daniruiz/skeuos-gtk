@@ -309,7 +309,8 @@ notebook {
  **************/
 infobar {
   @mixin _infobar_button($bg) {
-    button {
+    button,
+    button.flat {
       // FIXME: extend selection mode buttons
       @include button(normal, $bg, $selected_fg_color, none);
 
