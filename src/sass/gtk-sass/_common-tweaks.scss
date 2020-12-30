@@ -31,10 +31,13 @@ button {
     border-color: transparent;
     transition: $button_transition;
 
-    &:hover:not(:backdrop):not(:link):not(:visited) {
+    &:hover {
       @extend %button_active;
       transition: none;
     }
+
+    &:link,
+    &:backdrop { @include button(undecorated); }
   }
 }
 
