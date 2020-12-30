@@ -1,3 +1,9 @@
+[20201230]
+ * Update scale slider assets matching the new slider design
+ * Match titlebutton placement with xfwm4 theme
+ * Use button styling for switch and scale sliders
+ * Fix flat button styles override the background of other hovered buttons
+
 [20201223]
  * Remove background-size from headerbar
  * Use the same shadows for the switch, check, radio, switch and entry widgets
