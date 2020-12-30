@@ -58,18 +58,9 @@ headerbar entry {
 }
 
 /**********
- * Slider *
- **********/
-%slider_active {
-  background-image: if($variant == 'light', image(lighten($bg_color, 14%)), image(darken($bg_color, 9%)));
-}
-
-/**********
  * Switch *
  **********/
 switch {
-  $_slider_border_color: darken($alt_borders_color, 3%);
-
   box-shadow: $_widget_inset_shadow;
 
   &:checked {
@@ -85,14 +76,10 @@ switch {
   }
 
   slider {
-    @include button(normal-alt, $edge: $shadow_color);
-
-    border: 1px solid $_slider_border_color;
-    border-radius: 50%;
-    transition-property: background, border, box-shadow;
+    @extend %slider;
 
     &:checked {
-      border-color: if($variant=='light', $suggested_border_color, $_slider_border_color);
+      border-color: if($variant=='light', $suggested_border_color, $borders_color);
       &:backdrop:not(:disabled) {
         border-color: if($variant=='light', $suggested_bg_color, $backdrop_borders_color);
       }
@@ -103,10 +90,7 @@ switch {
     }
   }
 
-  &:hover slider {
-    @extend %slider_active;
-    border-color: $suggested_bg_color;
-  }
+  &:hover slider { @extend %slider_active; }
 }
 
 /*************************
@@ -144,13 +128,18 @@ radio {
   }
 }
 
-/************
- * GtkScale *
- ************/
-scale slider:active {
-  @extend %slider_active;
+%slider,
+scale slider {
+  @include button(normal, $edge: $shadow_color);
 
-  border-color: $suggested_bg_color;
+  border-color: darken($alt_borders_color, 3%);
+  @at-root %slider_active,
+  &:active {
+    background-image: if($variant == 'light', image(lighten($bg_color, 14%)), image(darken($bg_color, 9%)));
+    border-color: $suggested_bg_color;
+  }
+
+  &:disabled { border-color: $backdrop_borders_color; }
 }
 
 /***************
