@@ -25,6 +25,8 @@ button {
   &:checked, {
     background: $dark_fill;
     box-shadow: $_widget_inset_shadow;
+
+    &:backdrop { box-shadow: none; }
   }
 
   &.flat {
@@ -212,6 +214,8 @@ treeview.view {
 
     &:hover,
     &:active { border-color: $borders_color; }
+
+    &:backdrop { box-shadow: none; }
   }
 }
 
