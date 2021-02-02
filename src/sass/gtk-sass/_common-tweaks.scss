@@ -153,13 +153,14 @@ headerbar {
   border-color: $_border_color;
 
   @include headerbar_fill(darken($bg_color, if($variant == 'light', 7%, 10%)));
-  box-shadow: 0 1px 2px transparentize($_border_color, .25);
+  box-shadow: 0 1px 4px transparentize($_border_color, .25);
   background-repeat: no-repeat;
   background-position: left;
 
   &:backdrop {
     background-repeat: no-repeat;
     background-position: left;
+    box-shadow: none;
   }
 
   stackswitcher button:checked,
@@ -188,12 +189,13 @@ headerbar {
   dialog &:backdrop {
     background: $bg_color;
     border: 0;
+    box-shadow: none;
   }
 }
 
 paned, hdyleaflet, headerbar.titlebar {
   & headerbar:first-child {
-    border-color: transparent;
+    border-color: $backdrop_borders_color;
     background: $base_color;
     box-shadow: none;
 
