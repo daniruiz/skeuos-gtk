@@ -10,9 +10,9 @@ $selected_bg_color: #ffd86e;
 $selected_fg_color: #000000;
 
 @import 'gtk-sass/_colors';
-@import 'gtk-sass/upstream/_drawing';
-@import 'gtk-sass/upstream/_common';
-@import 'gtk-sass/libhandy/Adwaita-base';
+@import 'gtk-sass/upstream-gtk-3/_drawing';
+@import 'gtk-sass/upstream-gtk-3/_common';
+@import 'gtk-sass/upstream-gtk-3/libhandy/Adwaita-base';
 @import 'gtk-sass/_common-tweaks';
 @import 'gtk-sass/_applications';
-@import 'gtk-sass/upstream/_colors-public';
+@import 'gtk-sass/upstream-gtk-3/_colors-public';
