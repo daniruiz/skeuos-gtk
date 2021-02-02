@@ -196,7 +196,7 @@
     outline-color: transparentize($tc, 0.7);
     border-color: if($c != $bg_color, _border_color($c), $borders_color);
     border-bottom-color: if($c != $bg_color, _border_color($c, true), $alt_borders_color);
-    background-image: linear-gradient(to top, if($c != $bg_color, $c, lighten($c, 3%)) 2px, lighten($c, 5%)),
+    background-image: image(lighten($c, 5%)),
                       $backimage;
     //@include _button_text_shadow($tc, $c);
     @include _shadows(inset 0 1px $_hilight_color, $_button_edge, $_button_shadow);
