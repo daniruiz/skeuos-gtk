@@ -492,7 +492,7 @@ button {
   outline-color: rgba(92, 97, 108, 0.3);
   border-color: #d9d9d9;
   border-bottom-color: #c2c2c2;
-  background-image: linear-gradient(to top, white 2px, white);
+  background-image: image(white);
   box-shadow: inset 0 1px white, inset 0 -1px 0 rgba(217, 217, 217, 0.75), 0 1px 2px rgba(0, 0, 0, 0.07); }
   button.titlebutton, button.sidebar-button, notebook > header > tabs > arrow, notebook > header > tabs > arrow.flat,
   button.flat {
@@ -801,7 +801,7 @@ button.suggested-action {
   outline-color: rgba(255, 255, 255, 0.3);
   border-color: #005af3;
   border-bottom-color: #0047c0;
-  background-image: linear-gradient(to top, #2777ff 2px, #4187ff);
+  background-image: image(#4187ff);
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), inset 0 -1px 0 rgba(0, 90, 243, 0.75), 0 1px 2px rgba(0, 0, 0, 0.07); }
   
   button.suggested-action.flat {
@@ -947,7 +947,7 @@ button.destructive-action {
   outline-color: rgba(255, 255, 255, 0.3);
   border-color: #a61414;
   border-bottom-color: #790e0e;
-  background-image: linear-gradient(to top, #d41919 2px, #e52222);
+  background-image: image(#e52222);
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), inset 0 -1px 0 rgba(166, 20, 20, 0.75), 0 1px 2px rgba(0, 0, 0, 0.07); }
   
   button.destructive-action.flat {
@@ -1138,7 +1138,7 @@ button.circular {
     outline-color: rgba(92, 97, 108, 0.3);
     border-color: #d9d9d9;
     border-bottom-color: #c2c2c2;
-    background-image: linear-gradient(to top, white 2px, white), linear-gradient(to top, #c2c2c2 25%, #d9d9d9 50%);
+    background-image: image(white), linear-gradient(to top, #c2c2c2 25%, #d9d9d9 50%);
     box-shadow: inset 0 1px white, inset 0 -1px 0 rgba(217, 217, 217, 0.75), 0 1px 2px rgba(0, 0, 0, 0.07);
     border-color: transparent; }
   
@@ -1170,7 +1170,7 @@ stacksidebar row.needs-attention > label, .stack-switcher > button.needs-attenti
   outline-color: rgba(92, 97, 108, 0.3);
   border-color: #d9d9d9;
   border-bottom-color: #c2c2c2;
-  background-image: linear-gradient(to top, white 2px, white);
+  background-image: image(white);
   box-shadow: inset 0 1px white, inset 0 -1px 0 rgba(217, 217, 217, 0.75), 0 1px 2px rgba(0, 0, 0, 0.07); }
   .inline-toolbar toolbutton > button:hover {
     color: #5c616c;
@@ -1724,7 +1724,7 @@ headerbar {
       outline-color: rgba(255, 255, 255, 0.3);
       border-color: #005af3;
       border-bottom-color: #0047c0;
-      background-image: linear-gradient(to top, #2777ff 2px, #4187ff);
+      background-image: image(#4187ff);
       box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), inset 0 -1px 0 rgba(0, 90, 243, 0.75), 0 1px 2px rgba(0, 0, 0, 0.07); }
       .selection-mode button.titlebutton, .selection-mode .titlebar:not(headerbar) button.flat, .selection-mode.titlebar:not(headerbar) button.flat, .selection-mode headerbar button.flat,
       headerbar.selection-mode button.flat {
@@ -1824,7 +1824,7 @@ headerbar {
         outline-color: rgba(92, 97, 108, 0.3);
         border-color: #d9d9d9;
         border-bottom-color: #c2c2c2;
-        background-image: linear-gradient(to top, white 2px, white);
+        background-image: image(white);
         box-shadow: inset 0 1px white, inset 0 -1px 0 rgba(217, 217, 217, 0.75), 0 1px 2px rgba(0, 0, 0, 0.07);
         border-color: #0051da; }
         .selection-mode .titlebar:not(headerbar) button.suggested-action:hover, .selection-mode.titlebar:not(headerbar) button.suggested-action:hover, .selection-mode headerbar button.suggested-action:hover,
@@ -4272,7 +4272,7 @@ infobar {
       outline-color: rgba(92, 97, 108, 0.3);
       border-color: #d9d9d9;
       border-bottom-color: #c2c2c2;
-      background-image: linear-gradient(to top, white 2px, white);
+      background-image: image(white);
       box-shadow: inset 0 1px white, inset 0 -1px 0 rgba(217, 217, 217, 0.75), 0 1px 2px rgba(0, 0, 0, 0.07); }
       infobar.info button:hover, infobar.question button:hover, infobar.warning button:hover, infobar.error button:hover {
         color: #5c616c;
@@ -4417,7 +4417,7 @@ colorswatch#add-color-button {
     outline-color: rgba(92, 97, 108, 0.3);
     border-color: #d9d9d9;
     border-bottom-color: #c2c2c2;
-    background-image: linear-gradient(to top, white 2px, white);
+    background-image: image(white);
     box-shadow: inset 0 1px white, inset 0 -1px 0 rgba(217, 217, 217, 0.75), 0 1px 2px rgba(0, 0, 0, 0.07); }
     colorswatch#add-color-button overlay:hover {
       color: #5c616c;
@@ -4761,41 +4761,33 @@ row.expander {
   row.expander image.expander-row-arrow:disabled {
     color: #aeb0b6; }
 
-flap > dimming,
 deck > dimming,
 leaflet > dimming {
   background: rgba(0, 0, 0, 0.12); }
 
-flap > border,
 deck > border,
 leaflet > border {
   min-width: 1px;
   min-height: 1px;
   background: #d9d9d9; }
 
-flap > shadow,
 deck > shadow,
 leaflet > shadow {
   min-width: 56px;
   min-height: 56px; }
-  flap > shadow.left,
   deck > shadow.left,
   leaflet > shadow.left {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.01) 40px, rgba(0, 0, 0, 0) 56px), linear-gradient(to right, rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.01) 7px, rgba(0, 0, 0, 0) 24px); }
-  flap > shadow.right,
   deck > shadow.right,
   leaflet > shadow.right {
     background-image: linear-gradient(to left, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.01) 40px, rgba(0, 0, 0, 0) 56px), linear-gradient(to left, rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.01) 7px, rgba(0, 0, 0, 0) 24px); }
-  flap > shadow.up,
   deck > shadow.up,
   leaflet > shadow.up {
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.01) 40px, rgba(0, 0, 0, 0) 56px), linear-gradient(to bottom, rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.01) 7px, rgba(0, 0, 0, 0) 24px); }
-  flap > shadow.down,
   deck > shadow.down,
   leaflet > shadow.down {
     background-image: linear-gradient(to top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.01) 40px, rgba(0, 0, 0, 0) 56px), linear-gradient(to top, rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.01) 7px, rgba(0, 0, 0, 0) 24px); }
 
-flap > outline,
 deck > outline,
 leaflet > outline {
   min-width: 1px;
@@ -4856,16 +4848,6 @@ avatar {
 viewswitchertitle viewswitcher {
   margin-left: 12px;
   margin-right: 12px; }
-
-statuspage > scrolledwindow > viewport > box {
-  margin: 36px 12px; }
-  statuspage > scrolledwindow > viewport > box > clamp > box > .icon {
-    margin-bottom: 36px;
-    opacity: 0.5; }
-  statuspage > scrolledwindow > viewport > box > clamp > box > .title {
-    margin-bottom: 12px; }
-  statuspage > scrolledwindow > viewport > box > clamp > box > .description {
-    margin-bottom: 36px; }
 
 /***************************
  * Check and Radio buttons *
@@ -5089,6 +5071,14 @@ headerbar button.toggle:active,
 headerbar button.toggle:checked, button.flat:hover, button:active, button:checked {
   background: #f2f2f2;
   box-shadow: inset 0 3px 5px -4px rgba(0, 0, 0, 0.1), 0 1px rgba(255, 255, 255, 0.05); }
+  .titlebar stackswitcher button:backdrop:checked,
+  .titlebar button.toggle:backdrop:active,
+  .titlebar button.toggle:backdrop:checked,
+  headerbar stackswitcher button:backdrop:checked:active,
+  headerbar stackswitcher button:backdrop:checked,
+  headerbar button.toggle:backdrop:active,
+  headerbar button.toggle:backdrop:checked, button.flat:backdrop:hover, button:active:backdrop, button:checked:backdrop {
+    box-shadow: none; }
 
 button.flat {
   border-color: transparent;
@@ -5175,7 +5165,7 @@ scale slider {
   outline-color: rgba(92, 97, 108, 0.3);
   border-color: #d9d9d9;
   border-bottom-color: #c2c2c2;
-  background-image: linear-gradient(to top, white 2px, white);
+  background-image: image(white);
   box-shadow: inset 0 1px white, 0 1px rgba(0, 0, 0, 0.1), inset 0 -1px 0 rgba(217, 217, 217, 0.75), 0 1px 2px rgba(0, 0, 0, 0.07);
   border-color: #bababa; }
   switch:hover slider, switch slider:active,
@@ -5194,13 +5184,14 @@ headerbar {
   border-color: #cccccc;
   background: #ededed linear-gradient(to top, #e8e8e8, #f0f0f0);
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.8);
-  box-shadow: 0 1px 2px rgba(204, 204, 204, 0.75);
+  box-shadow: 0 1px 4px rgba(204, 204, 204, 0.75);
   background-repeat: no-repeat;
   background-position: left; }
   .titlebar:backdrop,
   headerbar:backdrop {
     background-repeat: no-repeat;
-    background-position: left; }
+    background-position: left;
+    box-shadow: none; }
   .titlebar viewswitcher button > stack > box.narrow,
   .titlebar hdyviewswitcher > button box.narrow,
   headerbar viewswitcher button > stack > box.narrow,
@@ -5222,10 +5213,11 @@ headerbar {
       margin: 0; }
   dialog .titlebar, dialog .titlebar:backdrop, dialog headerbar, dialog headerbar:backdrop {
     background: #ffffff;
-    border: 0; }
+    border: 0;
+    box-shadow: none; }
 
 paned headerbar:first-child, hdyleaflet headerbar:first-child, headerbar.titlebar headerbar:first-child {
-  border-color: transparent;
+  border-color: #e0e0e0;
   background: #fafafa;
   box-shadow: none; }
   paned headerbar:first-child:backdrop, hdyleaflet headerbar:first-child:backdrop, headerbar.titlebar headerbar:first-child:backdrop {
@@ -5243,10 +5235,12 @@ treeview.view {
     outline-color: rgba(92, 97, 108, 0.3);
     border-color: #d9d9d9;
     border-bottom-color: #c2c2c2;
-    background-image: linear-gradient(to top, white 2px, white);
+    background-image: image(white);
     box-shadow: inset 0 1px white, inset 0 -1px 0 rgba(217, 217, 217, 0.75), 0 1px 2px rgba(0, 0, 0, 0.07); }
     treeview.view header button:hover, treeview.view header button:active {
       border-color: #d9d9d9; }
+    treeview.view header button:backdrop {
+      box-shadow: none; }
 
 /***************
  * Popovers   *
@@ -5292,9 +5286,8 @@ notebook > header {
         outline-color: rgba(92, 97, 108, 0.3);
         border-color: #d9d9d9;
         border-bottom-color: #c2c2c2;
-        background-image: linear-gradient(to top, white 2px, white);
-        box-shadow: inset 0 1px white, inset 0 -1px 0 rgba(217, 217, 217, 0.75), 0 1px 2px rgba(0, 0, 0, 0.07);
-        background: #fafafa; }
+        background-image: image(white);
+        box-shadow: inset 0 1px white, inset 0 -1px 0 rgba(217, 217, 217, 0.75), 0 1px 2px rgba(0, 0, 0, 0.07); }
         notebook > header.top > tabs > tab:checked:backdrop,
         notebook > header.top > tabs > tab.reorderable-page:checked:backdrop, notebook > header.bottom > tabs > tab:checked:backdrop,
         notebook > header.bottom > tabs > tab.reorderable-page:checked:backdrop, notebook > header.left > tabs > tab:checked:backdrop,
@@ -5347,7 +5340,7 @@ infobar.info.action:hover button.flat {
   outline-color: rgba(255, 255, 255, 0.3);
   border-color: #005af3;
   border-bottom-color: #0047c0;
-  background-image: linear-gradient(to top, #2777ff 2px, #4187ff);
+  background-image: image(#4187ff);
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), inset 0 -1px 0 rgba(0, 90, 243, 0.75), 0 1px 2px rgba(0, 0, 0, 0.07); }
   infobar.info button:hover,
   infobar.info button.flat:hover, infobar.info.action:hover button:hover,
@@ -5422,7 +5415,7 @@ infobar.warning.action:hover button.flat {
   outline-color: rgba(255, 255, 255, 0.3);
   border-color: #ca6400;
   border-bottom-color: #974b00;
-  background-image: linear-gradient(to top, #fd7d00 2px, #ff8a18);
+  background-image: image(#ff8a18);
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), inset 0 -1px 0 rgba(202, 100, 0, 0.75), 0 1px 2px rgba(0, 0, 0, 0.07); }
   infobar.question button:hover,
   infobar.question button.flat:hover, infobar.warning button:hover,
@@ -5516,7 +5509,7 @@ infobar.error:backdrop > revealer > box, infobar.error > revealer > box, infobar
     outline-color: rgba(255, 255, 255, 0.3);
     border-color: #911212;
     border-bottom-color: #640c0c;
-    background-image: linear-gradient(to top, #bf1717 2px, #d61a1a);
+    background-image: image(#d61a1a);
     box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), inset 0 -1px 0 rgba(145, 18, 18, 0.75), 0 1px 2px rgba(0, 0, 0, 0.07); }
     infobar.error:backdrop > revealer > box button:hover,
     infobar.error:backdrop > revealer > box button.flat:hover, infobar.error > revealer > box button:hover,
@@ -5696,45 +5689,46 @@ button.titlebutton:not(.appmenu) {
 @define-color disk_space_unknown #383c4a;
 @define-color disk_space_used #2777ff;
 @define-color disk_space_free white;
-filechooser placessidebar.sidebar,
-.nautilus-window placessidebar.sidebar {
-  box-shadow: inset 0 8px 4px -8px rgba(0, 0, 0, 0.3); }
-  filechooser placessidebar.sidebar:dir(ltr),
-  .nautilus-window placessidebar.sidebar:dir(ltr) {
-    background-image: linear-gradient(to right, whitesmoke 41px, #ffffff 0); }
-  filechooser placessidebar.sidebar:dir(rtl),
-  .nautilus-window placessidebar.sidebar:dir(rtl) {
-    background-image: linear-gradient(to left, whitesmoke 41px, #ffffff 0); }
-  filechooser placessidebar.sidebar:backdrop,
-  .nautilus-window placessidebar.sidebar:backdrop {
+filechooser placessidebar.sidebar:dir(ltr),
+.nautilus-window placessidebar.sidebar:dir(ltr) {
+  background-image: linear-gradient(to right, whitesmoke 41px, #ffffff 0); }
+
+filechooser placessidebar.sidebar:dir(rtl),
+.nautilus-window placessidebar.sidebar:dir(rtl) {
+  background-image: linear-gradient(to left, whitesmoke 41px, #ffffff 0); }
+
+filechooser placessidebar.sidebar:backdrop,
+.nautilus-window placessidebar.sidebar:backdrop {
+  box-shadow: none; }
+
+filechooser placessidebar.sidebar row.sidebar-row:selected,
+.nautilus-window placessidebar.sidebar row.sidebar-row:selected {
+  margin-left: 6px;
+  margin-right: 6px;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px rgba(39, 119, 255, 0.5);
+  transition: box-shadow 200ms ease-out; }
+  filechooser placessidebar.sidebar row.sidebar-row:selected:backdrop,
+  .nautilus-window placessidebar.sidebar row.sidebar-row:selected:backdrop {
     box-shadow: none; }
-  filechooser placessidebar.sidebar row.sidebar-row:selected,
-  .nautilus-window placessidebar.sidebar row.sidebar-row:selected {
-    margin-left: 6px;
-    margin-right: 6px;
-    border-radius: 4px;
-    box-shadow: 0 1px 4px rgba(39, 119, 255, 0.5);
-    transition: box-shadow 200ms ease-out; }
-    filechooser placessidebar.sidebar row.sidebar-row:selected:backdrop,
-    .nautilus-window placessidebar.sidebar row.sidebar-row:selected:backdrop {
-      box-shadow: none; }
-    filechooser placessidebar.sidebar row.sidebar-row:selected:dir(ltr),
-    .nautilus-window placessidebar.sidebar row.sidebar-row:selected:dir(ltr) {
-      background-image: linear-gradient(to right, #005af3 35px, transparent 0); }
-    filechooser placessidebar.sidebar row.sidebar-row:selected:dir(rtl),
-    .nautilus-window placessidebar.sidebar row.sidebar-row:selected:dir(rtl) {
-      background-image: linear-gradient(to left, #005af3 35px, transparent 0); }
-    filechooser placessidebar.sidebar row.sidebar-row:selected revealer,
-    .nautilus-window placessidebar.sidebar row.sidebar-row:selected revealer {
-      padding-left: 8px;
-      padding-right: 8px; }
-      filechooser placessidebar.sidebar row.sidebar-row:selected revealer .sidebar-icon, filechooser placessidebar.sidebar row.sidebar-row:selected revealer .sidebar-label,
-      .nautilus-window placessidebar.sidebar row.sidebar-row:selected revealer .sidebar-icon,
-      .nautilus-window placessidebar.sidebar row.sidebar-row:selected revealer .sidebar-label {
-        color: #ffffff; }
-  filechooser placessidebar.sidebar row.sidebar-row .sidebar-icon,
-  .nautilus-window placessidebar.sidebar row.sidebar-row .sidebar-icon {
-    padding-right: 20px; }
+  filechooser placessidebar.sidebar row.sidebar-row:selected:dir(ltr),
+  .nautilus-window placessidebar.sidebar row.sidebar-row:selected:dir(ltr) {
+    background-image: linear-gradient(to right, #005af3 35px, transparent 0); }
+  filechooser placessidebar.sidebar row.sidebar-row:selected:dir(rtl),
+  .nautilus-window placessidebar.sidebar row.sidebar-row:selected:dir(rtl) {
+    background-image: linear-gradient(to left, #005af3 35px, transparent 0); }
+  filechooser placessidebar.sidebar row.sidebar-row:selected revealer,
+  .nautilus-window placessidebar.sidebar row.sidebar-row:selected revealer {
+    padding-left: 8px;
+    padding-right: 8px; }
+    filechooser placessidebar.sidebar row.sidebar-row:selected revealer .sidebar-icon, filechooser placessidebar.sidebar row.sidebar-row:selected revealer .sidebar-label,
+    .nautilus-window placessidebar.sidebar row.sidebar-row:selected revealer .sidebar-icon,
+    .nautilus-window placessidebar.sidebar row.sidebar-row:selected revealer .sidebar-label {
+      color: #ffffff; }
+
+filechooser placessidebar.sidebar row.sidebar-row .sidebar-icon,
+.nautilus-window placessidebar.sidebar row.sidebar-row .sidebar-icon {
+  padding-right: 20px; }
 
 .nautilus-window .floating-bar {
   color: #ffffff;
