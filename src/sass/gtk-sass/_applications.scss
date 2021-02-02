@@ -10,7 +10,6 @@ $_glow_shadow: 0 1px 4px transparentize($selected_bg_color, .5);
 filechooser,
 .nautilus-window {
   placessidebar.sidebar {
-    box-shadow: inset 0 8px 4px -8px transparentize(black, .7);
 
     &:dir(ltr) {
       background-image: linear-gradient(to right, darken($bg_color, 4%) 41px, $bg_color 0);
