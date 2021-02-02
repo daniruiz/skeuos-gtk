@@ -4,11 +4,17 @@ GREEN='\033[0;32m'
 YELLOW='\033[0;33m'
 RESET='\033[0m'
 
+VERSION=1.0.3
+
+echo
+printf " $YELLOW[ i ]$RESET Upstream version $VERSION\n"
+echo
+
 while read file;
 do
 	echo
 	printf " $GREEN[ * ]$RESET Downloading file $file\n"
-	wget https://gitlab.gnome.org/GNOME/libhandy/-/raw/master/src/themes/$file --timestamping --quiet
+	wget https://gitlab.gnome.org/GNOME/libhandy/raw/$VERSION/src/themes/$file --timestamping --quiet
 done <<- EOF
 	_definitions.scss
 	_shared-base.scss
@@ -17,4 +23,4 @@ done <<- EOF
 EOF
 echo
 
-ln -rsfv ../upstream/_drawing.scss
+ln -rsfv ../_drawing.scss
