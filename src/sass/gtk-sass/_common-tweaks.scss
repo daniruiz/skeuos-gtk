@@ -303,7 +303,6 @@ infobar {
   @mixin _infobar_button($bg) {
     button,
     button.flat {
-      // FIXME: extend selection mode buttons
       @include button(normal, $bg, $selected_fg_color, none);
 
       &:hover { @include button(hover, $bg, $selected_fg_color, none); }
@@ -311,7 +310,7 @@ infobar {
       &:active,
       &:checked { @include button(active, $bg, $selected_fg_color, none); }
 
-      &:disabled { @include button(insensitive,$bg,$selected_fg_color,none); }
+      &:disabled { @include button(insensitive, $bg, $selected_fg_color, none); }
 
       &:backdrop {
         @include button(backdrop, $bg, $selected_fg_color, none);
