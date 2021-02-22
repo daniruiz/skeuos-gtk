@@ -211,7 +211,7 @@
     border-color: if($c != $bg_color, _border_color($c), $borders_color);
     border-bottom-color: if($c != $bg_color, _border_color($c, true), $alt_borders_color);
     @if $variant == 'light' {
-      background-image: linear-gradient(to top, $c, lighten($c, 1%) 1px),
+      background-image: image(darken($c, 4%)),
                         $backimage;
       //@include _button_text_shadow($tc, lighten($c, 6%));
       @include _shadows(inset 0 1px _button_hilight_color(lighten($c, 6%)), $_button_edge, $_button_shadow);

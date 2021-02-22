@@ -15,6 +15,10 @@
 <     @include _button_text_shadow($tc, $c);
 ---
 >     //@include _button_text_shadow($tc, $c);
+215c214
+<       background-image: linear-gradient(to top, $c, lighten($c, 1%) 1px),
+---
+>       background-image: image(darken($c, 4%)),
 217c216
 <       @include _button_text_shadow($tc, lighten($c, 6%));
 ---
