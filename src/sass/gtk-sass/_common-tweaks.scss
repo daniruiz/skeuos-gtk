@@ -468,24 +468,33 @@ decoration {
 
 // Window Close button
 button.titlebutton:not(.appmenu) {
+  $_titlebutton_bg: lighten($bg_color, 10%);
+  color: transparent;
+  background: $_titlebutton_bg;
   margin: 0;
   margin-left: 6px;
   padding: 0;
   min-width: 0;
   min-height: 0;
   border: 0;
+  box-shadow: inset 0 0 0 1px darken($borders_color, 5%),
+              inset 0 3px 2px $shadow_color,
+                    0 1px rgba(255, 255, 255, .1);
   -gtk-icon-shadow: none;
+  transition-property: color, background, box-shadow;
+  transition-duration: .2s;
 
   & + & { margin-left: 0; }
   &:last-child { margin-right: 6px; }
 
-  &:hover:not(:backdrop) {
-    transition: 0;
-    background: transparentize(white, .8);
-    box-shadow: inset 0 0 0 1px $borders_color;
+  &:hover {
+    color: $fg_color;
+    background: $_titlebutton_bg;
+    box-shadow: inset 0 0 0 1px $_titlebutton_bg,
+                inset 0 0 0 $_titlebutton_bg,
+                      0 1px 1px 1px $shadow_color;
   }
 
-  @at-root
   .maximized &,
   .fullscreen &,
   .tiled &,
@@ -499,6 +508,6 @@ button.titlebutton:not(.appmenu) {
 
   &:backdrop {
     background: transparent;
-    &:not(:hover) { border-color: transparent; }
+    box-shadow: inset 0 0 0 1px $backdrop_borders_color;
   }
 }
