@@ -1,3 +1,9 @@
+[20210225]
+ * Update screenshots
+ * Add new design title-buttons design for xfce
+ * Add new design for titlebuttons
+ * Fix hover highlights for light theme
+
 [20201230]
  * Update scale slider assets matching the new slider design
  * Match titlebutton placement with xfwm4 theme
