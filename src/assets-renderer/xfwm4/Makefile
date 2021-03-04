@@ -35,6 +35,12 @@ build: $(ASSETS)
 			&& $(OPTIPNG) $$variant@2/$$i.png ; \
 		done ; \
 	done
+	mkdir -p $(THEMES_DIR)Skeuos-XFWM4-Light/xfwm4/
+	mkdir -p $(THEMES_DIR)Skeuos-XFWM4-Dark/xfwm4/
+	mkdir -p $(THEMES_DIR)Skeuos-XFWM4-Light-HiDPI/xfwm4/
+	mkdir -p $(THEMES_DIR)Skeuos-XFWM4-Dark-HiDPI/xfwm4/
+	mkdir -p $(THEMES_DIR)Skeuos-XFWM4-Light-xHiDPI/xfwm4/
+	mkdir -p $(THEMES_DIR)Skeuos-XFWM4-Dark-xHiDPI/xfwm4/
 	cp assets/* $(THEMES_DIR)Skeuos-XFWM4-Light/xfwm4/
 	cp assets-dark/* $(THEMES_DIR)Skeuos-XFWM4-Dark/xfwm4/
 	cp assets@1.5/* $(THEMES_DIR)Skeuos-XFWM4-Light-HiDPI/xfwm4/
