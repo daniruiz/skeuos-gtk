@@ -8,10 +8,10 @@ $variant: 'light';
 $high-contrast:'false';
 $selected_bg_color: #ec0101;
 
-@import 'gtk-sass/_colors';
-@import 'gtk-sass/upstream-gtk-3/_drawing';
-@import 'gtk-sass/upstream-gtk-3/_common';
-@import 'gtk-sass/upstream-gtk-3/libhandy/Adwaita-base';
-@import 'gtk-sass/_common-tweaks';
-@import 'gtk-sass/_applications';
-@import 'gtk-sass/upstream-gtk-3/_colors-public';
+@import 'common/_colors';
+@import 'gtk3/upstream/_drawing';
+@import 'gtk3/upstream/_common';
+@import 'gtk3/upstream/libhandy/Adwaita-base';
+@import 'gtk3/_common-tweaks';
+@import 'gtk3/_applications';
+@import 'gtk3/upstream/_colors-public';
