@@ -297,6 +297,14 @@ notebook {
 }
 
 /**************
+ * Scrollbars *
+ **************/
+scrollbar slider {
+  min-width: 6px;
+  min-height: 6px;
+}
+
+/**************
  * GtkInfoBar *
  **************/
 infobar {
