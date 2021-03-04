@@ -2640,6 +2640,9 @@ notebook {
  **************/
 scrollbar {
   $_slider_min_length: 40px;
+  $_slider_width: 8px;
+  $_scrollbar_transition: all 300ms $ease-out-quad;
+  $_fine-tune_slider_border: $_slider_width - 3; //3672
 
   // disable steppers
   @at-root * {
@@ -2648,7 +2651,7 @@ scrollbar {
   }
 
   background-color: $scrollbar_bg_color;
-  transition: 300ms $ease-out-quad;
+  transition: $_scrollbar_transition;
 
   // scrollbar border
   &.top { border-bottom: 1px solid $borders_color; }
@@ -2664,13 +2667,14 @@ scrollbar {
 
   // slider
   slider {
-    min-width: 6px;
-    min-height: 6px;
+    min-width: $_slider_width;
+    min-height: $_slider_width;
     margin: -1px;
     border: 4px solid transparent;
-    border-radius: 8px;
+    border-radius: 10px;
     background-clip: padding-box;
     background-color: $scrollbar_slider_color;
+    transition: $_scrollbar_transition;
 
     &:hover { background-color: $scrollbar_slider_hover_color; }
 
@@ -2683,12 +2687,13 @@ scrollbar {
 
   &.fine-tune {
     slider {
-      min-width: 4px;
-      min-height: 4px;
+      transition: none;
+      min-width: $_fine-tune_slider_border+1;
+      min-height: $_fine-tune_slider_border+1;
     }
 
-    &.horizontal slider { border-width: 5px 4px; }
-    &.vertical slider { border-width: 4px 5px; }
+    &.horizontal slider { border-width: $_fine-tune_slider_border 4px; }
+    &.vertical slider { border-width: 4px $_fine-tune_slider_border; }
   }
 
   &.overlay-indicator {
@@ -4574,12 +4579,21 @@ decoration {
   }
 
   .maximized &,
-  .fullscreen &,
+  .fullscreen & { border-radius: 0; box-shadow: none; }
+
   .tiled &,
   .tiled-top &,
   .tiled-right &,
   .tiled-bottom &,
-  .tiled-left & { border-radius: 0; }
+  .tiled-left & {
+    border-radius: 0;
+    box-shadow: 0 0 0 1px $_wm_border_backdrop,
+                0 0 0 20px transparent; //transparent control workaround -- #3670
+
+    &:backdrop { box-shadow: 0 0 0 1px $_wm_border_backdrop,
+                             0 0 0 20px transparent; // #3670
+    }
+   }
 
   .popup & { box-shadow: none; }
 
