@@ -19,6 +19,8 @@ $(THEMES):
 	  $(THEME_INDEX_TEMPLATE) > $(THEMES_DIR)$@/index.theme
 
 $(COLOR_VARIANTS):
+	mkdir -p $(THEMES_DIR)Skeuos-$@-Light/gtk-2.0/
+	mkdir -p $(THEMES_DIR)Skeuos-$@-Dark/gtk-2.0/
 	sed -e 's/$(DEFAULT_THEME_COLOR)/$(COLOR_$@)/gi' \
 	  -e 's/selected_fg_color:/selected_fg_color: $(TEXT_COLOR_$@)/' \
 	  $(GTKRC_TEMPLATE) > $(THEMES_DIR)Skeuos-$@-Light/gtk-2.0/gtkrc
