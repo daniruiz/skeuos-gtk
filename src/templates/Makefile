@@ -1,22 +1,27 @@
 include ../Makefile.inc
 
 THEMES_DIR=../../
-THEMES=$(patsubst $(THEMES_DIR)%/index.theme,%,$(wildcard $(THEMES_DIR)*/index.theme))
+GTK_THEMES=$(patsubst $(THEMES_DIR)%,%,$(wildcard $(THEMES_DIR)Skeuos*))
+IGNORE=$(patsubst $(THEMES_DIR)%,%,$(wildcard $(THEMES_DIR)Skeuos-XFWM4*))
+GTK_THEMES:=$(filter-out $(IGNORE),$(GTK_THEMES))
+
 
 GTKRC_TEMPLATE=gtkrc-light
 GTKRC_DARK_TEMPLATE=gtkrc-dark
 THEME_INDEX_TEMPLATE=index.theme
+STATIC_TEMPLATE_DIR=static/
 
-.PHONY: build $(THEMES) $(COLOR_VARIANTS) clean
+.PHONY: build $(GTK_THEMES) $(COLOR_VARIANTS) clean
 
-build: $(THEMES) $(COLOR_VARIANTS)
+build: $(GTK_THEMES) $(COLOR_VARIANTS)
 
-$(THEMES):
+$(GTK_THEMES):
 	sed -e 's/Name=/Name=$@/' \
 	  -e 's/Comment=/Comment=$@ theme"/' \
 	  -e 's/GtkTheme=/GtkTheme=$@/' \
 	  -e 's/MetacityTheme=/MetacityTheme=$@/' \
 	  $(THEME_INDEX_TEMPLATE) > $(THEMES_DIR)$@/index.theme
+	cp -r $(STATIC_TEMPLATE_DIR)* $(THEMES_DIR)$@
 
 $(COLOR_VARIANTS):
 	mkdir -p $(THEMES_DIR)Skeuos-$@-Light/gtk-2.0/
