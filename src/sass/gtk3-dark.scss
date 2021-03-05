@@ -6,7 +6,8 @@
 
 $variant: 'dark';
 $high-contrast:'false';
-$selected_bg_color: #ec0101;
+$selected_bg_color: #2777ff;
+$selected_fg_color: #ffffff;
 
 @import 'common/_colors';
 @import 'gtk3/upstream/_drawing';
