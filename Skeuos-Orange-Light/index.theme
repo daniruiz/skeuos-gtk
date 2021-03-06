@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Skeuos-Orange-Light
+Comment=Skeuos-Orange-Light theme"
+Encoding=UTF-8
+
+
+[X-GNOME-Metatheme]
+GtkTheme=Skeuos-Orange-Light
+MetacityTheme=Skeuos-Orange-Light
+IconTheme=Flat-Remix-Blue-Dark
+CursorTheme=Adwaita
+ButtonLayout=:minimize,maximize,close

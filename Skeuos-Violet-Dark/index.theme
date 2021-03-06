@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Skeuos-Violet-Dark
+Comment=Skeuos-Violet-Dark theme"
+Encoding=UTF-8
+
+
+[X-GNOME-Metatheme]
+GtkTheme=Skeuos-Violet-Dark
+MetacityTheme=Skeuos-Violet-Dark
+IconTheme=Flat-Remix-Blue-Dark
+CursorTheme=Adwaita
+ButtonLayout=:minimize,maximize,close
