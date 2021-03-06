@@ -1,18 +1,22 @@
+[20210306]
+ * Add lots of new variants
+ * Add all variants to the script
+ * Add script to generate custom color themes
+ * Improve templates script
+ * Improve gtk css Makefile to allow color variants
+ * Ensure template script creates the required dirs
+ * Ensure xfwm4 theme dirs are created with the asset render script
+ * Remove kali-dragon from gtk3 assets template
+ * Move files for GTK4
+ * Reduce scrollbar size
+ * Cleaner patch for _drawing.scss
+ * Update gtk upstream to 3.24.26
+
 [20210225]
  * Update screenshots
  * Add new design title-buttons design for xfce
  * Add new design for titlebuttons
  * Fix hover highlights for light theme
-
-[20210202]
- * Cleaup _common-tweaks.scss
- * Improve headerbar shadows
- * Hide all shadows in backdrop mode
- * Use button's background for tabs
- * Remove inset box-shadow from nautilus sidebar
- * Prepare source layout for gtk4
- * Update libhandy to version 1.0.3
- * Make button's background flat and lighter
 
 [20201230]
  * Update scale slider assets matching the new slider design
