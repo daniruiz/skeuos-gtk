@@ -2,6 +2,7 @@ PKGNAME = skeuos-gtk
 MAINTAINER = Daniel Ruiz de Alegría <daniel@drasite.com>
 PREFIX ?= /usr
 THEMES ?= $(patsubst %/index.theme,%,$(wildcard */index.theme))
+COLOR_VARIANTS = Blue Green Red Yellow Black Brown Cyan Grey Magenta Orange Teal Violet
 
 all:
 
@@ -24,16 +25,16 @@ _get_tag:
 	@echo $(TAG)
 
 dist: _get_version
-	variants="-Light -Dark"; \
+	variants="Light Dark"; \
 	color_variants="-Blue -Green -Red -Yellow"; \
 	count=1; \
-	for variant in $$variants; \
+	for color_variant in $(COLOR_VARIANTS); \
 	do \
-		for color_variant in $$color_variants; \
+		for variant in $$variants; \
 		do \
 			count_pretty=$$(echo "0$${count}" | tail -c 3); \
-			tar -c "Skeuos$${color_variant}$${variant}" "Skeuos-XFWM4$${variant}"* | \
-				xz -z - > "$${count_pretty}-Skeuos$${color_variant}$${variant}_$(VERSION).tar.xz"; \
+			tar -c "Skeuos-$${color_variant}-$${variant}" "Skeuos-XFWM4-$${variant}"* | \
+				xz -z - > "$${count_pretty}-Skeuos-$${color_variant}-$${variant}_$(VERSION).tar.xz"; \
 			count=$$((count+1)); \
 		done; \
 	done; \
