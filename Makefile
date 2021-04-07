@@ -39,6 +39,12 @@ dist: _get_version
 		done; \
 	done; \
 
+release: _get_version
+	$(MAKE) generate_changelog VERSION=$(VERSION)
+	git tag -f $(VERSION)
+	git push origin --tags
+	$(MAKE) dist
+
 generate_changelog: _get_version _get_tag
 	git checkout $(TAG) CHANGELOG
 	mv CHANGELOG CHANGELOG.old
