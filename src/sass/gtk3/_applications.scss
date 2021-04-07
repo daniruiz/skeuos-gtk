@@ -151,8 +151,9 @@ filechooser,
   }
 }
 
-/* XFCE4 panel action buttons */
-#XfcePanelWindowWrapper > widget > box > #xfce-panel-button > image {
+/* XFCE4 panel action & battery buttons */
+#XfcePanelWindowWrapper > widget > box > #xfce-panel-button > image,
+#xfce4-power-manager-plugin > box > image {
   -gtk-icon-style: symbolic;
   -gtk-icon-transform: scale(.7);
 }
