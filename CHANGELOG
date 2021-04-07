@@ -1,3 +1,20 @@
+[20210407]
+ * Regenerate gtk3 css
+ * Generate GTK4 css
+ * Add assets for GTK4
+ * Improve gitignores
+ * Update symbolic icons for GTK 3 & 4
+ * Port gtk3 tweaks for upstream Adwaita to GTK4
+ * Set default bg and fg color for GTK4 base scss
+ * Add scss base files for GTK4
+ * Update _colors.scss for GTK4
+ * Theme buttons for GTK4
+ * Reduce gtk4 border-radius
+ * Add gtk4 upstream scss code
+ * sass make build, run clean first
+ * Fix xfce4-panel battery icon-size
+ * Make backdrop border color more visible
+
 [20210315]
  * Update gtk 3.24.27
 
