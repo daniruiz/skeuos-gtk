@@ -5809,8 +5809,9 @@ filechooser placessidebar.sidebar row.sidebar-row .sidebar-icon,
       background-color: rgba(0, 0, 0, 0.27);
       color: inherit; }
 
-/* XFCE4 panel action buttons */
-#XfcePanelWindowWrapper > widget > box > #xfce-panel-button > image {
+/* XFCE4 panel action & battery buttons */
+#XfcePanelWindowWrapper > widget > box > #xfce-panel-button > image,
+#xfce4-power-manager-plugin > box > image {
   -gtk-icon-style: symbolic;
   -gtk-icon-transform: scale(0.7); }
 
