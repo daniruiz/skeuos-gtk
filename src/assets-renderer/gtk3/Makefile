@@ -34,11 +34,13 @@ $(COLOR_VARIANTS):
 		&& $(OPTIPNG) $(CURRENT_ASSETS_DIR)$$i@2.png ; \
 	done
 	mkdir -p $(THEMES_DIR)Skeuos-$@-Light/gtk-3.0/assets/
-	cp $(CURRENT_ASSETS_DIR)* $(THEMES_DIR)Skeuos-$@-Light/gtk-3.0/assets/
+	mkdir -p $(THEMES_DIR)Skeuos-$@-Light/gtk-4.0/
 	mkdir -p $(THEMES_DIR)Skeuos-$@-Dark/gtk-3.0/assets/
+	mkdir -p $(THEMES_DIR)Skeuos-$@-Dark/gtk-4.0/
+	cp $(CURRENT_ASSETS_DIR)* $(THEMES_DIR)Skeuos-$@-Light/gtk-3.0/assets/
 	cp $(CURRENT_ASSETS_DIR)* $(THEMES_DIR)Skeuos-$@-Dark/gtk-3.0/assets/
-	ln -rsvf $(THEMES_DIR)Skeuos-$@-Light/gtk-3.0/assets/ $(THEMES_DIR)Skeuos-$@-Light/gtk-4.0/assets/
-	ln -rsvf $(THEMES_DIR)Skeuos-$@-Dark/gtk-3.0/assets/ $(THEMES_DIR)Skeuos-$@-Dark/gtk-4.0/assets/
+	ln -rsvf $(THEMES_DIR)Skeuos-$@-Light/gtk-3.0/assets/ $(THEMES_DIR)Skeuos-$@-Light/gtk-4.0/assets
+	ln -rsvf $(THEMES_DIR)Skeuos-$@-Dark/gtk-3.0/assets/ $(THEMES_DIR)Skeuos-$@-Dark/gtk-4.0/assets
 
 clean:
 	-rm -r $(foreach COLOR_VARIANT, $(COLOR_VARIANTS), \
