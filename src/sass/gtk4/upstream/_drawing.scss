@@ -122,7 +122,9 @@ $_default_button_c: lighten($bg_color,2%);
 // backdrop, backdrop-active, backdrop-insensitive, backdrop-insensitive-active,
 // osd, osd-hover, osd-active, osd-insensitive, osd-backdrop, undecorated
 //
-  $_button_shadow: 0 1px 2px transparentize($shadow_color, 0.03);
+  $_button_shadow: inset 0 1px transparentize(white, .95),
+                   inset 0 -1px 0px transparentize(if($c != $bg_color, _border_color($c), $borders_color), .25),
+                         0  1px 2px transparentize($shadow_color, 0.03);
 
   @if $t==normal {
   //
@@ -131,8 +133,7 @@ $_default_button_c: lighten($bg_color,2%);
     color: $tc;
     outline-color: if($c != $_default_button_c, $alt_focus_border_color, $focus_border_color);
     border-color: if($c!=$_default_button_c, _border_color($c, true), $borders_color); //tint if not default button color
-    background-image: if($variant == 'light', linear-gradient(to top, darken($c, 2%) 2px, $c),
-                                              linear-gradient(to top, darken($c,1%) 2px, $c));
+    background-image: image(lighten($c, 5%));
     @include _shadows($_button_shadow);
   }
 
