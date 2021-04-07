@@ -14,7 +14,7 @@ THEMES_DIR=../../
 #	$(if $(findstring -Dark, $@), \
 #	  cp $@ $(THEMES_DIR)$(subst Dark,Light,$(basename $@))/gtk-3.0/gtk-dark.css,)
 
-build:
+build: clean
 	$(MAKE) $(TARGETS)
 	$(MAKE) copy_css_files
 
