@@ -26,7 +26,6 @@ _get_tag:
 
 dist: _get_version
 	variants="Light Dark"; \
-	color_variants="-Blue -Green -Red -Yellow"; \
 	count=1; \
 	for color_variant in $(COLOR_VARIANTS); \
 	do \
