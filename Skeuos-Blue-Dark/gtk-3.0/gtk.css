@@ -492,7 +492,7 @@ button {
   outline-color: rgba(238, 238, 236, 0.3);
   border-color: #0d0e11;
   border-bottom-color: black;
-  background-image: image(#2e313d);
+  background-image: image(#323643);
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.05), inset 0 -1px 0px rgba(13, 14, 17, 0.75), 0 1px 2px rgba(0, 0, 0, 0.27); }
   button.titlebutton, button.sidebar-button, notebook > header > tabs > arrow, notebook > header > tabs > arrow.flat,
   button.flat {
@@ -798,7 +798,7 @@ button.suggested-action {
   outline-color: rgba(255, 255, 255, 0.3);
   border-color: #005af3;
   border-bottom-color: #0047c0;
-  background-image: image(#4187ff);
+  background-image: image(#4b8dff);
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), inset 0 -1px 0px rgba(0, 90, 243, 0.75), 0 1px 2px rgba(0, 0, 0, 0.27); }
   
   button.suggested-action.flat {
@@ -944,7 +944,7 @@ button.destructive-action {
   outline-color: rgba(255, 255, 255, 0.3);
   border-color: #790e0e;
   border-bottom-color: #4b0909;
-  background-image: image(#bd1616);
+  background-image: image(#c61717);
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.05), inset 0 -1px 0px rgba(121, 14, 14, 0.75), 0 1px 2px rgba(0, 0, 0, 0.27); }
   
   button.destructive-action.flat {
@@ -1135,7 +1135,7 @@ button.circular {
     outline-color: rgba(238, 238, 236, 0.3);
     border-color: #0d0e11;
     border-bottom-color: black;
-    background-image: image(#2e313d), linear-gradient(to top, black 25%, #0d0e11 50%);
+    background-image: image(#323643), linear-gradient(to top, black 25%, #0d0e11 50%);
     box-shadow: inset 0 1px rgba(255, 255, 255, 0.05), inset 0 -1px 0px rgba(13, 14, 17, 0.75), 0 1px 2px rgba(0, 0, 0, 0.27);
     border-color: transparent; }
   
@@ -1167,7 +1167,7 @@ stacksidebar row.needs-attention > label, .stack-switcher > button.needs-attenti
   outline-color: rgba(238, 238, 236, 0.3);
   border-color: #0d0e11;
   border-bottom-color: black;
-  background-image: image(#2e313d);
+  background-image: image(#323643);
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.05), inset 0 -1px 0px rgba(13, 14, 17, 0.75), 0 1px 2px rgba(0, 0, 0, 0.27); }
   .inline-toolbar toolbutton > button:hover {
     color: #eeeeec;
@@ -1715,7 +1715,7 @@ headerbar {
       outline-color: rgba(255, 255, 255, 0.3);
       border-color: #005af3;
       border-bottom-color: #0047c0;
-      background-image: image(#4187ff);
+      background-image: image(#4b8dff);
       box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), inset 0 -1px 0px rgba(0, 90, 243, 0.75), 0 1px 2px rgba(0, 0, 0, 0.27); }
       .selection-mode button.titlebutton, .selection-mode .titlebar:not(headerbar) button.flat, .selection-mode.titlebar:not(headerbar) button.flat, .selection-mode headerbar button.flat,
       headerbar.selection-mode button.flat {
@@ -1815,7 +1815,7 @@ headerbar {
         outline-color: rgba(238, 238, 236, 0.3);
         border-color: #0d0e11;
         border-bottom-color: black;
-        background-image: image(#2e313d);
+        background-image: image(#323643);
         box-shadow: inset 0 1px rgba(255, 255, 255, 0.05), inset 0 -1px 0px rgba(13, 14, 17, 0.75), 0 1px 2px rgba(0, 0, 0, 0.27);
         border-color: #00348d; }
         .selection-mode .titlebar:not(headerbar) button.suggested-action:hover, .selection-mode.titlebar:not(headerbar) button.suggested-action:hover, .selection-mode headerbar button.suggested-action:hover,
@@ -4252,7 +4252,7 @@ infobar {
       outline-color: rgba(238, 238, 236, 0.3);
       border-color: #0d0e11;
       border-bottom-color: black;
-      background-image: image(#2e313d);
+      background-image: image(#323643);
       box-shadow: inset 0 1px rgba(255, 255, 255, 0.05), inset 0 -1px 0px rgba(13, 14, 17, 0.75), 0 1px 2px rgba(0, 0, 0, 0.27); }
       infobar.info button:hover, infobar.question button:hover, infobar.warning button:hover, infobar.error button:hover {
         color: #eeeeec;
@@ -4397,7 +4397,7 @@ colorswatch#add-color-button {
     outline-color: rgba(238, 238, 236, 0.3);
     border-color: #0d0e11;
     border-bottom-color: black;
-    background-image: image(#2e313d);
+    background-image: image(#323643);
     box-shadow: inset 0 1px rgba(255, 255, 255, 0.05), inset 0 -1px 0px rgba(13, 14, 17, 0.75), 0 1px 2px rgba(0, 0, 0, 0.27); }
     colorswatch#add-color-button overlay:hover {
       color: #eeeeec;
@@ -5154,7 +5154,7 @@ scale slider {
   outline-color: rgba(238, 238, 236, 0.3);
   border-color: #0d0e11;
   border-bottom-color: black;
-  background-image: image(#2e313d);
+  background-image: image(#323643);
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.05), 0 1px rgba(0, 0, 0, 0.3), inset 0 -1px 0px rgba(13, 14, 17, 0.75), 0 1px 2px rgba(0, 0, 0, 0.27);
   border-color: black; }
   switch:hover slider, switch slider:active,
@@ -5224,7 +5224,7 @@ treeview.view {
     outline-color: rgba(238, 238, 236, 0.3);
     border-color: #0d0e11;
     border-bottom-color: black;
-    background-image: image(#2e313d);
+    background-image: image(#323643);
     box-shadow: inset 0 1px rgba(255, 255, 255, 0.05), inset 0 -1px 0px rgba(13, 14, 17, 0.75), 0 1px 2px rgba(0, 0, 0, 0.27); }
     treeview.view header button:hover, treeview.view header button:active {
       border-color: #0d0e11; }
@@ -5275,7 +5275,7 @@ notebook > header {
         outline-color: rgba(238, 238, 236, 0.3);
         border-color: #0d0e11;
         border-bottom-color: black;
-        background-image: image(#2e313d);
+        background-image: image(#323643);
         box-shadow: inset 0 1px rgba(255, 255, 255, 0.05), inset 0 -1px 0px rgba(13, 14, 17, 0.75), 0 1px 2px rgba(0, 0, 0, 0.27); }
         notebook > header.top > tabs > tab:checked:backdrop,
         notebook > header.top > tabs > tab.reorderable-page:checked:backdrop, notebook > header.bottom > tabs > tab:checked:backdrop,
@@ -5336,7 +5336,7 @@ infobar.info.action:hover button.flat {
   outline-color: rgba(255, 255, 255, 0.3);
   border-color: #005af3;
   border-bottom-color: #0047c0;
-  background-image: image(#4187ff);
+  background-image: image(#4b8dff);
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), inset 0 -1px 0px rgba(0, 90, 243, 0.75), 0 1px 2px rgba(0, 0, 0, 0.27); }
   infobar.info button:hover,
   infobar.info button.flat:hover, infobar.info.action:hover button:hover,
@@ -5411,7 +5411,7 @@ infobar.warning.action:hover button.flat {
   outline-color: rgba(255, 255, 255, 0.3);
   border-color: #ca6400;
   border-bottom-color: #974b00;
-  background-image: image(#ff8a18);
+  background-image: image(#ff8f22);
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), inset 0 -1px 0px rgba(202, 100, 0, 0.75), 0 1px 2px rgba(0, 0, 0, 0.27); }
   infobar.question button:hover,
   infobar.question button.flat:hover, infobar.warning button:hover,
@@ -5505,7 +5505,7 @@ infobar.error:backdrop > revealer > box, infobar.error > revealer > box, infobar
     outline-color: rgba(255, 255, 255, 0.3);
     border-color: #911212;
     border-bottom-color: #640c0c;
-    background-image: image(#d61a1a);
+    background-image: image(#df1b1b);
     box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), inset 0 -1px 0px rgba(145, 18, 18, 0.75), 0 1px 2px rgba(0, 0, 0, 0.27); }
     infobar.error:backdrop > revealer > box button:hover,
     infobar.error:backdrop > revealer > box button.flat:hover, infobar.error > revealer > box button:hover,

@@ -801,7 +801,7 @@ button.suggested-action {
   outline-color: rgba(255, 255, 255, 0.3);
   border-color: #5b5d65;
   border-bottom-color: #43444a;
-  background-image: image(#80838d);
+  background-image: image(#858892);
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), inset 0 -1px 0px rgba(91, 93, 101, 0.75), 0 1px 2px rgba(0, 0, 0, 0.07); }
   
   button.suggested-action.flat {
@@ -947,7 +947,7 @@ button.destructive-action {
   outline-color: rgba(255, 255, 255, 0.3);
   border-color: #a61414;
   border-bottom-color: #790e0e;
-  background-image: image(#e52222);
+  background-image: image(#e62b2b);
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), inset 0 -1px 0px rgba(166, 20, 20, 0.75), 0 1px 2px rgba(0, 0, 0, 0.07); }
   
   button.destructive-action.flat {
@@ -1724,7 +1724,7 @@ headerbar {
       outline-color: rgba(255, 255, 255, 0.3);
       border-color: #5b5d65;
       border-bottom-color: #43444a;
-      background-image: image(#80838d);
+      background-image: image(#858892);
       box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), inset 0 -1px 0px rgba(91, 93, 101, 0.75), 0 1px 2px rgba(0, 0, 0, 0.07); }
       .selection-mode button.titlebutton, .selection-mode .titlebar:not(headerbar) button.flat, .selection-mode.titlebar:not(headerbar) button.flat, .selection-mode headerbar button.flat,
       headerbar.selection-mode button.flat {
@@ -5357,7 +5357,7 @@ infobar.info.action:hover button.flat {
   outline-color: rgba(255, 255, 255, 0.3);
   border-color: #5b5d65;
   border-bottom-color: #43444a;
-  background-image: image(#80838d);
+  background-image: image(#858892);
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), inset 0 -1px 0px rgba(91, 93, 101, 0.75), 0 1px 2px rgba(0, 0, 0, 0.07); }
   infobar.info button:hover,
   infobar.info button.flat:hover, infobar.info.action:hover button:hover,
@@ -5432,7 +5432,7 @@ infobar.warning.action:hover button.flat {
   outline-color: rgba(255, 255, 255, 0.3);
   border-color: #ca6400;
   border-bottom-color: #974b00;
-  background-image: image(#ff8a18);
+  background-image: image(#ff8f22);
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), inset 0 -1px 0px rgba(202, 100, 0, 0.75), 0 1px 2px rgba(0, 0, 0, 0.07); }
   infobar.question button:hover,
   infobar.question button.flat:hover, infobar.warning button:hover,
@@ -5526,7 +5526,7 @@ infobar.error:backdrop > revealer > box, infobar.error > revealer > box, infobar
     outline-color: rgba(255, 255, 255, 0.3);
     border-color: #911212;
     border-bottom-color: #640c0c;
-    background-image: image(#d61a1a);
+    background-image: image(#df1b1b);
     box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), inset 0 -1px 0px rgba(145, 18, 18, 0.75), 0 1px 2px rgba(0, 0, 0, 0.07); }
     infobar.error:backdrop > revealer > box button:hover,
     infobar.error:backdrop > revealer > box button.flat:hover, infobar.error > revealer > box button:hover,
