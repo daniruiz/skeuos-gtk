@@ -481,7 +481,7 @@ button {
   button.flat:backdrop,
   button:backdrop {
     color: #aeb0b6;
-    border-color: #e0e0e0;
+    border-color: #d9d9d9;
     background-image: image(#ffffff);
     box-shadow: none;
     transition: 200ms ease-out;
@@ -492,14 +492,14 @@ button {
     button:backdrop:active,
     button:backdrop:checked {
       color: #aeb0b6;
-      border-color: #e0e0e0;
+      border-color: #d9d9d9;
       background-image: image(#eaeaea);
       box-shadow: none; }
     notebook > header > tabs > arrow:backdrop:disabled,
     button.flat:backdrop:disabled,
     button:backdrop:disabled {
       color: #d9d9d9;
-      border-color: #e0e0e0;
+      border-color: #d9d9d9;
       background-image: image(#fdfdfd);
       box-shadow: none; }
       notebook > header > tabs > arrow:backdrop:disabled:active, notebook > header > tabs > arrow:backdrop:disabled:checked,
@@ -508,7 +508,7 @@ button {
       button:backdrop:disabled:active,
       button:backdrop:disabled:checked {
         color: #d9d9d9;
-        border-color: #e0e0e0;
+        border-color: #d9d9d9;
         background-image: image(#eaeaea);
         box-shadow: none; }
   notebook > header > tabs > arrow:disabled,
@@ -1001,12 +1001,12 @@ modelbutton.flat arrow {
     background-image: image(#fdfdfd); }
   .toolbar button:backdrop {
     color: #aeb0b6;
-    border-color: #e0e0e0;
+    border-color: #d9d9d9;
     background-image: image(#ffffff);
     box-shadow: none; }
   .toolbar button:backdrop:disabled {
     color: #d9d9d9;
-    border-color: #e0e0e0;
+    border-color: #d9d9d9;
     background-image: image(#fdfdfd);
     box-shadow: none; }
 
@@ -1325,8 +1325,8 @@ searchbar > revealer > box {
   border-color: #d9d9d9;
   background-color: #f4f4f4; }
   searchbar > revealer > box:backdrop {
-    border-color: #e0e0e0;
-    background-color: #f4f4f4;
+    border-color: #d9d9d9;
+    background-color: #f2f2f2;
     box-shadow: none;
     transition: 200ms ease-out; }
 
@@ -1402,7 +1402,7 @@ headerbar {
   /* Darken switchbuttons for headerbars. issue #1588 */ }
   .titlebar:backdrop:not(headerbar),
   headerbar:backdrop {
-    border-color: #e0e0e0;
+    border-color: #d9d9d9;
     background-color: #ffffff;
     background-image: none;
     box-shadow: inset 0 1px rgba(255, 255, 255, 0.8);
@@ -1429,7 +1429,7 @@ headerbar {
     headerbar stackswitcher > button:checked:backdrop,
     headerbar button.toggle:checked:backdrop {
       color: #aeb0b6;
-      border-color: #e0e0e0;
+      border-color: #d9d9d9;
       background-image: image(#eaeaea);
       box-shadow: none; }
   .tiled .titlebar:not(headerbar), .tiled-top .titlebar:not(headerbar), .tiled-left .titlebar:not(headerbar), .tiled-right .titlebar:not(headerbar), .tiled-bottom .titlebar:not(headerbar), .maximized .titlebar:not(headerbar), .fullscreen .titlebar:not(headerbar), .tiled headerbar, .tiled-top headerbar, .tiled-left headerbar, .tiled-right headerbar, .tiled-bottom headerbar, .maximized headerbar, .fullscreen headerbar {
@@ -1562,8 +1562,8 @@ treeview.view {
     color: #dfdfdf; }
   columnview.view:backdrop,
   treeview.view:backdrop {
-    border-left-color: #e5e5e5;
-    border-top: #e5e5e5; }
+    border-left-color: #dfdfdf;
+    border-top: #dfdfdf; }
   columnview.view:drop(active),
   treeview.view:drop(active) {
     box-shadow: none; }
@@ -3059,7 +3059,7 @@ list {
   list:backdrop {
     color: #313131;
     background-color: #f7f7f7;
-    border-color: #e0e0e0; }
+    border-color: #d9d9d9; }
   listview > row,
   list > row {
     padding: 2px; }
@@ -3888,7 +3888,7 @@ entry:not(:disabled) {
 spinbutton:backdrop:not(.vertical), spinbutton.vertical > text:backdrop,
 entry:backdrop {
   box-shadow: none;
-  border-color: #e0e0e0; }
+  border-color: #d9d9d9; }
 
 headerbar spinbutton:not(.vertical), headerbar spinbutton.vertical > text,
 headerbar entry {
@@ -3911,9 +3911,9 @@ switch {
         border-color: #c37837; }
   switch:backdrop, switch:disabled {
     box-shadow: none;
-    border-color: #e0e0e0; }
+    border-color: #d9d9d9; }
     switch:backdrop slider, switch:disabled slider {
-      border-color: #e0e0e0; }
+      border-color: #d9d9d9; }
 
 /*************************
  * Check and Radio items *
@@ -4031,7 +4031,7 @@ headerbar switch {
 treeview.view {
   border-top-color: #d9d9d9; }
   treeview.view:backdrop {
-    border-top-color: #e0e0e0; }
+    border-top-color: #d9d9d9; }
   treeview.view header button {
     color: #5c616c;
     outline-color: rgba(195, 120, 55, 0.5);
@@ -4097,7 +4097,7 @@ notebook > header {
         notebook > header.left > tabs > tab.reorderable-page:checked:backdrop, notebook > header.right > tabs > tab:checked:backdrop,
         notebook > header.right > tabs > tab.reorderable-page:checked:backdrop {
           color: #aeb0b6;
-          border-color: #e0e0e0;
+          border-color: #d9d9d9;
           background-image: image(#ffffff);
           box-shadow: none;
           transition: 200ms ease-out; }
@@ -4208,7 +4208,7 @@ widgets main borders color */
 @define-color borders #d9d9d9;
 /*
 widgets main borders color on backdrop windows */
-@define-color unfocused_borders #e0e0e0;
+@define-color unfocused_borders #d9d9d9;
 /*
 these are pretty self explicative */
 @define-color warning_color #fd7d00;
