@@ -254,6 +254,7 @@ notebook {
 
           &:checked {
             @include button(normal);
+            background: $base_color;
 
             &:backdrop { @include button(backdrop); }
           }
