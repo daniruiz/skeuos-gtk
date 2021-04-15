@@ -1,3 +1,18 @@
+[20210415]
+ * Use darker color for xfwm close icon
+ * Update assets
+ * Recover lost changes 'Fix hover highlights for light theme'
+ * Increase app-notification border-radius
+ * Add new titlebuttons for XFWM
+ * Update gtk3 upstream sync script to 3.24.28
+ * Set close button background to theme color to easily differentiate the focused window
+ * Match tab background with notebook stack
+ * Make buttons lighter for dark themes
+ * Make backdrop border color more visible (again :D)
+ * Remove unused variable from make dist
+ * Fix gtk3 makefile missing directory
+ * Add release rule to Makefile
+
 [20210407]
  * Regenerate gtk3 css
  * Generate GTK4 css
