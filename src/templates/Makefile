@@ -32,3 +32,9 @@ $(COLOR_VARIANTS):
 	sed -e 's/$(DEFAULT_THEME_COLOR)/$(COLOR_$@)/gi' \
 	  -e 's/selected_fg_color:/selected_fg_color: $(TEXT_COLOR_$@)/' \
 	  $(GTKRC_DARK_TEMPLATE) > $(THEMES_DIR)Skeuos-$@-Dark/gtk-2.0/gtkrc
+	cp themerc-light $(THEMES_DIR)Skeuos-$@-Light-XFWM/xfwm4/themerc
+	cp themerc-light-HiDPI $(THEMES_DIR)Skeuos-$@-Light-XFWM-HiDPI/xfwm4/themerc
+	cp themerc-light-xHiDPI $(THEMES_DIR)Skeuos-$@-Light-XFWM-xHiDPI/xfwm4/themerc
+	cp themerc-dark $(THEMES_DIR)Skeuos-$@-Dark-XFWM/xfwm4/themerc
+	cp themerc-dark-HiDPI $(THEMES_DIR)Skeuos-$@-Dark-XFWM-HiDPI/xfwm4/themerc
+	cp themerc-dark-xHiDPI $(THEMES_DIR)Skeuos-$@-Dark-XFWM-xHiDPI/xfwm4/themerc

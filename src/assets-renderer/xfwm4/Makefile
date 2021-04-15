@@ -1,17 +1,26 @@
 include ../../Makefile.inc
 
-ASSETS=assets*.svg
-INDEX=assets.txt
+SRC_FILE=assets.svg
+
+SRC_FILE_DARK=assets-dark.svg
+
+ASSETS=$(shell xargs < assets.txt)
 THEMES_DIR=../../../
 
-.PHONY: build clean
+.PHONY: build $(COLOR_VARIANTS) clean
 
-build: $(ASSETS)
-	for src_file in $(ASSETS); \
+build: $(COLOR_VARIANTS)
+
+$(COLOR_VARIANTS):
+	$(eval CURRENT_ASSET=assets-$@.svg)
+	$(eval CURRENT_ASSET_DARK=assets-$@-dark.svg)
+	sed 's/$(DEFAULT_THEME_COLOR)/$(COLOR_$@)/gi' $(SRC_FILE) > $(CURRENT_ASSET)
+	sed 's/$(DEFAULT_THEME_COLOR)/$(COLOR_$@)/gi' $(SRC_FILE_DARK) > $(CURRENT_ASSET_DARK)
+	for src_file in $(CURRENT_ASSET) $(CURRENT_ASSET_DARK); \
 	do \
 		variant=$$(basename $${src_file%.svg}) ; \
 		mkdir -p $$variant $$variant@1.5 $$variant@2 ; \
-		for i in $$(xargs < $(INDEX)) ; \
+		for i in $(ASSETS) ; \
 		do \
 			echo ; \
 			echo Rendering $$variant/$$i.png ; \
@@ -35,18 +44,26 @@ build: $(ASSETS)
 			&& $(OPTIPNG) $$variant@2/$$i.png ; \
 		done ; \
 	done
-	mkdir -p $(THEMES_DIR)Skeuos-XFWM4-Light/xfwm4/
-	mkdir -p $(THEMES_DIR)Skeuos-XFWM4-Dark/xfwm4/
-	mkdir -p $(THEMES_DIR)Skeuos-XFWM4-Light-HiDPI/xfwm4/
-	mkdir -p $(THEMES_DIR)Skeuos-XFWM4-Dark-HiDPI/xfwm4/
-	mkdir -p $(THEMES_DIR)Skeuos-XFWM4-Light-xHiDPI/xfwm4/
-	mkdir -p $(THEMES_DIR)Skeuos-XFWM4-Dark-xHiDPI/xfwm4/
-	cp assets/* $(THEMES_DIR)Skeuos-XFWM4-Light/xfwm4/
-	cp assets-dark/* $(THEMES_DIR)Skeuos-XFWM4-Dark/xfwm4/
-	cp assets@1.5/* $(THEMES_DIR)Skeuos-XFWM4-Light-HiDPI/xfwm4/
-	cp assets-dark@1.5/* $(THEMES_DIR)Skeuos-XFWM4-Dark-HiDPI/xfwm4/
-	cp assets@2/* $(THEMES_DIR)Skeuos-XFWM4-Light-xHiDPI/xfwm4/
-	cp assets-dark@2/* $(THEMES_DIR)Skeuos-XFWM4-Dark-xHiDPI/xfwm4/
+	mkdir -p $(THEMES_DIR)Skeuos-$@-Light-XFWM/xfwm4/
+	mkdir -p $(THEMES_DIR)Skeuos-$@-Dark-XFWM/xfwm4/
+	mkdir -p $(THEMES_DIR)Skeuos-$@-Light-XFWM-HiDPI/xfwm4/
+	mkdir -p $(THEMES_DIR)Skeuos-$@-Dark-XFWM-HiDPI/xfwm4/
+	mkdir -p $(THEMES_DIR)Skeuos-$@-Light-XFWM-xHiDPI/xfwm4/
+	mkdir -p $(THEMES_DIR)Skeuos-$@-Dark-XFWM-xHiDPI/xfwm4/
+	cp assets-$@/* $(THEMES_DIR)Skeuos-$@-Light-XFWM/xfwm4/
+	cp assets-$@-dark/* $(THEMES_DIR)Skeuos-$@-Dark-XFWM/xfwm4/
+	cp assets-$@@1.5/* $(THEMES_DIR)Skeuos-$@-Light-XFWM-HiDPI/xfwm4/
+	cp assets-$@-dark@1.5/* $(THEMES_DIR)Skeuos-$@-Dark-XFWM-HiDPI/xfwm4/
+	cp assets-$@@2/* $(THEMES_DIR)Skeuos-$@-Light-XFWM-xHiDPI/xfwm4/
+	cp assets-$@-dark@2/* $(THEMES_DIR)Skeuos-$@-Dark-XFWM-xHiDPI/xfwm4/
 
 clean:
-	-rm -r assets assets@1.5 assets@2 assets-dark assets-dark@1.5 assets-dark@2
+	-rm -r $(foreach COLOR_VARIANT, $(COLOR_VARIANTS), \
+	  assets-$(COLOR_VARIANT)/ \
+	  assets-$(COLOR_VARIANT)-dark/ \
+	  assets-$(COLOR_VARIANT)@1.5/ \
+	  assets-$(COLOR_VARIANT)-dark@1.5/ \
+	  assets-$(COLOR_VARIANT)@2/ \
+	  assets-$(COLOR_VARIANT)-dark@2/ \
+	  assets-$(COLOR_VARIANT).svg \
+	  assets-$(COLOR_VARIANT)-dark.svg)

@@ -32,7 +32,7 @@ dist: _get_version
 		for variant in $$variants; \
 		do \
 			count_pretty=$$(echo "0$${count}" | tail -c 3); \
-			tar -c "Skeuos-$${color_variant}-$${variant}" "Skeuos-XFWM4-$${variant}"* | \
+			tar -c "Skeuos-$${color_variant}-$${variant}"* | \
 				xz -z - > "$${count_pretty}-Skeuos-$${color_variant}-$${variant}_$(VERSION).tar.xz"; \
 			count=$$((count+1)); \
 		done; \
