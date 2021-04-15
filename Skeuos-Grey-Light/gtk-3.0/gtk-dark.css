@@ -5678,6 +5678,15 @@ button.titlebutton:not(.appmenu) {
     color: #eeeeec;
     background: #383d4b;
     box-shadow: inset 0 0 0 1px #383d4b, inset 0 0 0 #383d4b, 0 1px 1px 1px rgba(0, 0, 0, 0.3); }
+  button.titlebutton.close:not(.appmenu):not(:backdrop) {
+    color: #0d0e11;
+    -gtk-icon-shadow: 0 -1px 1px rgba(0, 0, 0, 0.2);
+    background: #737680;
+    box-shadow: none; }
+    button.titlebutton.close:not(.appmenu):not(:backdrop):hover {
+      color: white;
+      -gtk-icon-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+      box-shadow: inset 0 0 0 1px #737680, 0 0 0 1px #737680; }
   .maximized button.titlebutton:not(.appmenu):last-child, .fullscreen button.titlebutton:not(.appmenu):last-child, .tiled button.titlebutton:not(.appmenu):last-child, .tiled-top button.titlebutton:not(.appmenu):last-child, .tiled-right button.titlebutton:not(.appmenu):last-child, .tiled-bottom button.titlebutton:not(.appmenu):last-child, .tiled-left button.titlebutton:not(.appmenu):last-child {
     margin-right: 0; }
   .maximized button.titlebutton:not(.appmenu):first-child, .fullscreen button.titlebutton:not(.appmenu):first-child, .tiled button.titlebutton:not(.appmenu):first-child, .tiled-top button.titlebutton:not(.appmenu):first-child, .tiled-right button.titlebutton:not(.appmenu):first-child, .tiled-bottom button.titlebutton:not(.appmenu):first-child, .tiled-left button.titlebutton:not(.appmenu):first-child {
