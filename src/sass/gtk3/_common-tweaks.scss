@@ -390,7 +390,7 @@ infobar {
 .app-notification.frame {
   padding: 5px 10px;
   margin: 20px;
-  border-radius: $button_radius;
+  border-radius: $button_radius+1;
   border: 1px solid transparentize($_wm_border, 0.1);
   box-shadow: $_menu_shadow;
   background-image: none;

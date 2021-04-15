@@ -5596,7 +5596,7 @@ infobar.error:backdrop > revealer > box, infobar.error > revealer > box, infobar
 .app-notification.frame {
   padding: 5px 10px;
   margin: 20px;
-  border-radius: 4px;
+  border-radius: 5px;
   border: 1px solid rgba(13, 14, 17, 0.65);
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
   background-image: none; }
