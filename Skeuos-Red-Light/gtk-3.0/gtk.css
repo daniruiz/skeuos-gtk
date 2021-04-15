@@ -516,7 +516,7 @@ button {
     outline-color: rgba(92, 97, 108, 0.3);
     border-color: #d9d9d9;
     border-bottom-color: #c2c2c2;
-    background-image: linear-gradient(to top, #ffffff, white 1px);
+    background-image: image(whitesmoke);
     box-shadow: inset 0 1px white, inset 0 -1px 0px rgba(217, 217, 217, 0.75), 0 1px 2px rgba(0, 0, 0, 0.07);
     -gtk-icon-effect: highlight; }
   notebook > header > tabs > arrow:active, notebook > header > tabs > arrow:checked,
@@ -818,7 +818,7 @@ button.suggested-action {
     outline-color: rgba(255, 255, 255, 0.3);
     border-color: #b90101;
     border-bottom-color: #860101;
-    background-image: linear-gradient(to top, #ec0101, #f10101 1px);
+    background-image: image(#d80101);
     box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), inset 0 -1px 0px rgba(185, 1, 1, 0.75), 0 1px 2px rgba(0, 0, 0, 0.07); }
   
   button.suggested-action:active,
@@ -964,7 +964,7 @@ button.destructive-action {
     outline-color: rgba(255, 255, 255, 0.3);
     border-color: #a61414;
     border-bottom-color: #790e0e;
-    background-image: linear-gradient(to top, #d41919, #d91a1a 1px);
+    background-image: image(#c21717);
     box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), inset 0 -1px 0px rgba(166, 20, 20, 0.75), 0 1px 2px rgba(0, 0, 0, 0.07); }
   
   button.destructive-action:active,
@@ -1147,7 +1147,7 @@ button.circular {
     outline-color: rgba(92, 97, 108, 0.3);
     border-color: #d9d9d9;
     border-bottom-color: #c2c2c2;
-    background-image: linear-gradient(to top, #ffffff, white 1px), linear-gradient(to top, #c2c2c2 25%, #d9d9d9 50%);
+    background-image: image(whitesmoke), linear-gradient(to top, #c2c2c2 25%, #d9d9d9 50%);
     box-shadow: inset 0 1px white, inset 0 -1px 0px rgba(217, 217, 217, 0.75), 0 1px 2px rgba(0, 0, 0, 0.07);
     border-color: transparent; }
 
@@ -1177,7 +1177,7 @@ stacksidebar row.needs-attention > label, .stack-switcher > button.needs-attenti
     outline-color: rgba(92, 97, 108, 0.3);
     border-color: #d9d9d9;
     border-bottom-color: #c2c2c2;
-    background-image: linear-gradient(to top, #ffffff, white 1px);
+    background-image: image(whitesmoke);
     box-shadow: inset 0 1px white, inset 0 -1px 0px rgba(217, 217, 217, 0.75), 0 1px 2px rgba(0, 0, 0, 0.07); }
   .inline-toolbar toolbutton > button:active, .inline-toolbar toolbutton > button:checked {
     color: #5c616c;
@@ -1324,7 +1324,7 @@ list row button.image-button:not(.flat) {
     outline-color: rgba(92, 97, 108, 0.3);
     border-color: #d9d9d9;
     border-bottom-color: #c2c2c2;
-    background-image: linear-gradient(to top, #ffffff, white 1px);
+    background-image: image(whitesmoke);
     box-shadow: inset 0 1px white, inset 0 -1px 0px rgba(217, 217, 217, 0.75), 0 1px 2px rgba(0, 0, 0, 0.07); }
   list row button.image-button:not(.flat):active, list row button.image-button:not(.flat):checked {
     color: #5c616c;
@@ -1740,7 +1740,7 @@ headerbar {
         outline-color: rgba(255, 255, 255, 0.3);
         border-color: #b90101;
         border-bottom-color: #860101;
-        background-image: linear-gradient(to top, #ec0101, #f10101 1px);
+        background-image: image(#d80101);
         box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), inset 0 -1px 0px rgba(185, 1, 1, 0.75), 0 1px 2px rgba(0, 0, 0, 0.07); }
       .selection-mode .titlebar:not(headerbar) button:active, .selection-mode .titlebar:not(headerbar) button:checked, .selection-mode.titlebar:not(headerbar) button:active, .selection-mode.titlebar:not(headerbar) button:checked, .selection-mode headerbar button:active, .selection-mode headerbar button:checked, .selection-mode headerbar button.toggle:checked, .selection-mode headerbar button.toggle:active,
       headerbar.selection-mode button:active,
@@ -1833,7 +1833,7 @@ headerbar {
           outline-color: rgba(92, 97, 108, 0.3);
           border-color: #d9d9d9;
           border-bottom-color: #c2c2c2;
-          background-image: linear-gradient(to top, #ffffff, white 1px);
+          background-image: image(whitesmoke);
           box-shadow: inset 0 1px white, inset 0 -1px 0px rgba(217, 217, 217, 0.75), 0 1px 2px rgba(0, 0, 0, 0.07);
           border-color: #a00101; }
         .selection-mode .titlebar:not(headerbar) button.suggested-action:active, .selection-mode.titlebar:not(headerbar) button.suggested-action:active, .selection-mode headerbar button.suggested-action:active,
@@ -4281,7 +4281,7 @@ infobar {
         outline-color: rgba(92, 97, 108, 0.3);
         border-color: #d9d9d9;
         border-bottom-color: #c2c2c2;
-        background-image: linear-gradient(to top, #ffffff, white 1px);
+        background-image: image(whitesmoke);
         box-shadow: inset 0 1px white, inset 0 -1px 0px rgba(217, 217, 217, 0.75), 0 1px 2px rgba(0, 0, 0, 0.07); }
       infobar.info button:active, infobar.info button:checked, infobar.question button:active, infobar.question button:checked, infobar.warning button:active, infobar.warning button:checked, infobar.error button:active, infobar.error button:checked {
         color: #5c616c;
@@ -4426,7 +4426,7 @@ colorswatch#add-color-button {
       outline-color: rgba(92, 97, 108, 0.3);
       border-color: #d9d9d9;
       border-bottom-color: #c2c2c2;
-      background-image: linear-gradient(to top, #ffffff, white 1px);
+      background-image: image(whitesmoke);
       box-shadow: inset 0 1px white, inset 0 -1px 0px rgba(217, 217, 217, 0.75), 0 1px 2px rgba(0, 0, 0, 0.07); }
     colorswatch#add-color-button overlay:backdrop {
       color: #aeb0b6;
@@ -5285,7 +5285,7 @@ notebook > header {
         outline-color: rgba(92, 97, 108, 0.3);
         border-color: #d9d9d9;
         border-bottom-color: #c2c2c2;
-        background-image: linear-gradient(to top, #ffffff, white 1px);
+        background-image: image(whitesmoke);
         box-shadow: inset 0 1px white, inset 0 -1px 0px rgba(217, 217, 217, 0.75), 0 1px 2px rgba(0, 0, 0, 0.07); }
       notebook > header.top > tabs > tab:checked,
       notebook > header.top > tabs > tab.reorderable-page:checked, notebook > header.bottom > tabs > tab:checked,
@@ -5367,7 +5367,7 @@ infobar.info.action:hover button.flat {
     outline-color: rgba(255, 255, 255, 0.3);
     border-color: #b90101;
     border-bottom-color: #860101;
-    background-image: linear-gradient(to top, #ec0101, #f10101 1px);
+    background-image: image(#d80101);
     box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), inset 0 -1px 0px rgba(185, 1, 1, 0.75), 0 1px 2px rgba(0, 0, 0, 0.07); }
   infobar.info button:active, infobar.info button:checked,
   infobar.info button.flat:active,
@@ -5444,7 +5444,7 @@ infobar.warning.action:hover button.flat {
     outline-color: rgba(255, 255, 255, 0.3);
     border-color: #ca6400;
     border-bottom-color: #974b00;
-    background-image: linear-gradient(to top, #fd7d00, #ff8003 1px);
+    background-image: image(#e97300);
     box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), inset 0 -1px 0px rgba(202, 100, 0, 0.75), 0 1px 2px rgba(0, 0, 0, 0.07); }
   infobar.question button:active, infobar.question button:checked,
   infobar.question button.flat:active,
@@ -5538,7 +5538,7 @@ infobar.error:backdrop > revealer > box, infobar.error > revealer > box, infobar
       outline-color: rgba(255, 255, 255, 0.3);
       border-color: #911212;
       border-bottom-color: #640c0c;
-      background-image: linear-gradient(to top, #bf1717, #c41818 1px);
+      background-image: image(#ad1515);
       box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), inset 0 -1px 0px rgba(145, 18, 18, 0.75), 0 1px 2px rgba(0, 0, 0, 0.07); }
     infobar.error:backdrop > revealer > box button:active, infobar.error:backdrop > revealer > box button:checked,
     infobar.error:backdrop > revealer > box button.flat:active,
