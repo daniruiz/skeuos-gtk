@@ -1,3 +1,10 @@
+[20210504]
+ * Remove unnecessary gtk2 them files inside XFWM4 themes
+ * Add metacity themes
+ * templates makefile: ensure all directories are created
+ * Fix ln inside gtk3 assets makefile
+ * Fix generate-color-theme.sh issue with COLOR_VARIANTS variable (fixes !4)
+
 [20210415]
  * Use darker color for xfwm close icon
  * Update assets
