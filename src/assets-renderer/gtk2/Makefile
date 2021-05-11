@@ -17,8 +17,6 @@ MENU_ASSETS=$(shell xargs < menu_assets.txt)
 DARK_MENU_EXTRA_ASSETS=button button-hover button-active button-insensitive
 THEMES_DIR=../../../
 
-include ../../Makefile.inc
-
 .PHONY: build $(COLOR_VARIANTS) clean
 
 build: $(COLOR_VARIANTS)

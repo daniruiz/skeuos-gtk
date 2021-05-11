@@ -6,8 +6,6 @@ SYMBOLIC_ASSETS_DIR=symbolic
 INDEX=assets.txt
 THEMES_DIR=../../../
 
-include ../../Makefile.inc
-
 .PHONY: build $(COLOR_VARIANTS) clean
 
 build: $(COLOR_VARIANTS)
