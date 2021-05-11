@@ -1,3 +1,18 @@
+[20210511]
+ * Tweak cinnamon menu design
+ * Fix text color for cinnamon's panel taskmanager
+ * New cinnamon switches assets
+ * Remove cinnamon menus tranparency
+ * Improve cinnamon switches visibility
+ * Make tabs more visible for dark themes
+ * Update sync.sh for gtk 3.24.29
+ * Fix make clean
+ * Generate variants for cinnamon assets
+ * Fix cinnamon css file names
+ * Add cinnamon base assets
+ * Generate cinnamon css
+ * Add scss files for cinnamon themes
+
 [20210504]
  * Remove unnecessary gtk2 them files inside XFWM4 themes
  * Add metacity themes
