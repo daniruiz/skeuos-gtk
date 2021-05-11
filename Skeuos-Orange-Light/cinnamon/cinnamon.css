@@ -219,7 +219,7 @@ StScrollBar {
   border: 1px solid #d9d9d9;
   border-radius: 6px;
   margin: 10px 5px;
-  background-color: rgba(250, 250, 250, 0.925); }
+  background-color: #fafafa; }
 
 .popup-sub-menu {
   background-color: #fafafa;
