@@ -955,7 +955,7 @@ StScrollBar {
   padding: 10px;
   transition-duration: 300;
   background-color: #fafafa;
-  border: 1px solid #d9d9d9; }
+  border: none; }
 
 .menu-favorites-button {
   padding: .9em 1em;
@@ -986,7 +986,8 @@ StScrollBar {
     padding: 7px;
     color: #ffffff;
     background-color: #2777ff;
-    border: 1px solid #d9d9d9; }
+    border: 1px solid #d9d9d9;
+    border-radius: 6px; }
     .menu-application-button-selected:highlighted {
       font-weight: bold; }
   .menu-application-button-label:ltr {
@@ -996,14 +997,13 @@ StScrollBar {
 
 .menu-category-button {
   padding: 7px;
-  border: 1px solid rgba(0, 0, 0, 0); }
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-radius: 6px; }
   .menu-category-button-selected {
     padding: 7px;
     color: #ffffff;
     background-color: #2777ff;
-    border: 1px solid #d9d9d9; }
-  .menu-category-button-hover {
-    background-color: red;
+    border: 1px solid #d9d9d9;
     border-radius: 6px; }
   .menu-category-button-greyed {
     padding: 7px;
