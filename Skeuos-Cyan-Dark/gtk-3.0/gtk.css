@@ -5276,8 +5276,7 @@ notebook > header {
         border-color: #0d0e11;
         border-bottom-color: black;
         background-image: image(#323643);
-        box-shadow: inset 0 1px rgba(255, 255, 255, 0.05), inset 0 -1px 0px rgba(13, 14, 17, 0.75), 0 1px 2px rgba(0, 0, 0, 0.27);
-        background: #272a34; }
+        box-shadow: inset 0 1px rgba(255, 255, 255, 0.05), inset 0 -1px 0px rgba(13, 14, 17, 0.75), 0 1px 2px rgba(0, 0, 0, 0.27); }
         notebook > header.top > tabs > tab:checked:backdrop,
         notebook > header.top > tabs > tab.reorderable-page:checked:backdrop, notebook > header.bottom > tabs > tab:checked:backdrop,
         notebook > header.bottom > tabs > tab.reorderable-page:checked:backdrop, notebook > header.left > tabs > tab:checked:backdrop,
