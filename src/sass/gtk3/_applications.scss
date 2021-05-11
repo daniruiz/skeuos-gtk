@@ -1,5 +1,3 @@
-$panel_bg : transparentize($bg_color, if($variant=='light', .1, .2));
-
 /* Nautilus */
 @define-color disk_space_unknown #383c4a;
 @define-color disk_space_used #{"" +$selected_bg_color};
@@ -86,7 +84,7 @@ filechooser,
     box-shadow: none;
     text-shadow: none;
     background: transparent;
-    color: if($variant=='light', darken($fg_color, 10%), $fg_color);
+    color: $panel_fg;
 
     $_highlight_bg_color: if($variant=='light', $bg_color, rgba(black, .2));
 
