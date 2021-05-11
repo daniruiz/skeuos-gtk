@@ -4,16 +4,6 @@ THEMES_DIR=../../
 
 .PHONY: build clean
 
-#build: $(patsubst %.scss,%.css,$(wildcard *.scss))
-
-#%.css: %.scss
-#	$(SCSS) $< > $@
-#	cat $(wildcard gtk-applications-css/**/*.css) >> $@
-#	mkdir -p $(THEMES_DIR)$(basename $@)/gtk-3.0
-#	cp $@ $(THEMES_DIR)$(basename $@)/gtk-3.0/gtk.css
-#	$(if $(findstring -Dark, $@), \
-#	  cp $@ $(THEMES_DIR)$(subst Dark,Light,$(basename $@))/gtk-3.0/gtk-dark.css,)
-
 build: clean
 	$(MAKE) $(TARGETS)
 	for COLOR in $(COLOR_VARIANTS); \
@@ -36,7 +26,8 @@ define scss_to_css
 	sed -e '/$$$$selected_bg_color/c $$$$selected_bg_color: $$(COLOR_$(1));' \
 	    -e '/$$$$selected_fg_color/c $$$$selected_fg_color: $$(TEXT_COLOR_$(1));' $$< \
 	  | $(SCSS) > $$@
-	cat $(wildcard gtk-applications-css/**/*.css) >> $$@
+	$$(if $$(findstring gtk, $$@), \
+	  cat $(wildcard gtk-applications-css/**/*.css) >> $$@)
 
 TARGETS += $$(patsubst %.scss,%-$(1).css,$$(wildcard *.scss))
 endef
