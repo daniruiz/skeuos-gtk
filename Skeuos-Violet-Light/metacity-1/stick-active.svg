@@ -10,12 +10,12 @@
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.1"
    viewBox="0 0 20 19.999999"
-   id="svg216"
+   id="svg209"
    sodipodi:docname="assets-Violet.svg"
    width="20"
    height="20">
   <metadata
-     id="metadata220">
+     id="metadata213">
     <rdf:RDF>
       <cc:Work
          rdf:about="">
@@ -36,21 +36,21 @@
      inkscape:pageshadow="2"
      inkscape:window-width="640"
      inkscape:window-height="480"
-     id="namedview218" />
+     id="namedview211" />
   <defs
-     id="defs32">
+     id="defs21">
     <linearGradient
        id="linearGradient1086">
       <stop
-         style="stop-color:#fff"
+         stop-color="#fff"
          offset="0"
          id="stop2" />
       <stop
-         style="stop-color:#fff"
+         stop-color="#fff"
          offset=".6"
          id="stop4" />
       <stop
-         style="stop-color:#bababa"
+         stop-color="#bababa"
          offset="1"
          id="stop6" />
     </linearGradient>
@@ -61,7 +61,7 @@
          y="196.63"
          width="16"
          height="16"
-         style="opacity:0.3;paint-order:normal"
+         opacity="0.3"
          id="rect9" />
     </clipPath>
     <clipPath
@@ -71,7 +71,8 @@
          y="178.85001"
          width="5"
          height="28"
-         style="opacity:0.539;fill:#ffffff;paint-order:normal"
+         fill="#ffffff"
+         opacity="0.539"
          id="rect12" />
     </clipPath>
     <radialGradient
@@ -79,7 +80,7 @@
        cx="19"
        cy="571.70001"
        r="7.5026002"
-       gradientTransform="matrix(1.2644,-4.7776e-7,4.7742e-7,1.2644,-5.0243,-117.62)"
+       gradientTransform="matrix(1.433,-5.4148e-7,5.4109e-7,1.433,-8.2283,-213.91)"
        gradientUnits="userSpaceOnUse"
        xlink:href="#linearGradient1086" />
     <radialGradient
@@ -87,59 +88,7 @@
        cx="19"
        cy="571.70001"
        r="7.5026002"
-       gradientTransform="matrix(1.2644,-4.7776e-7,4.7742e-7,1.2644,-5.0243,-84.617)"
-       gradientUnits="userSpaceOnUse"
-       xlink:href="#linearGradient1086" />
-    <filter
-       id="filter4189-0"
-       x="-0.048"
-       y="-0.048"
-       width="1.096"
-       height="1.096"
-       style="color-interpolation-filters:sRGB">
-      <feGaussianBlur
-         stdDeviation="0.32"
-         id="feGaussianBlur17" />
-    </filter>
-    <filter
-       id="filter4189-1"
-       x="-0.048"
-       y="-0.048"
-       width="1.096"
-       height="1.096"
-       style="color-interpolation-filters:sRGB">
-      <feGaussianBlur
-         stdDeviation="0.32"
-         id="feGaussianBlur20" />
-    </filter>
-    <filter
-       id="filter4189-1-5"
-       x="-0.048"
-       y="-0.048"
-       width="1.096"
-       height="1.096"
-       style="color-interpolation-filters:sRGB">
-      <feGaussianBlur
-         stdDeviation="0.32"
-         id="feGaussianBlur23" />
-    </filter>
-    <filter
-       id="filter4189-1-0"
-       x="-0.048"
-       y="-0.048"
-       width="1.096"
-       height="1.096"
-       style="color-interpolation-filters:sRGB">
-      <feGaussianBlur
-         stdDeviation="0.32"
-         id="feGaussianBlur26" />
-    </filter>
-    <radialGradient
-       id="radialGradient1090-4-2"
-       cx="19"
-       cy="571.70001"
-       r="7.5026002"
-       gradientTransform="matrix(1.2644,-4.7776e-7,4.7742e-7,1.2644,60.976,-117.62)"
+       gradientTransform="matrix(1.433,-5.4148e-7,5.4109e-7,1.433,-8.2283,-180.9)"
        gradientUnits="userSpaceOnUse"
        xlink:href="#linearGradient1086" />
     <radialGradient
@@ -147,15 +96,31 @@
        cx="19"
        cy="571.70001"
        r="7.5026002"
-       gradientTransform="matrix(1.2644,-4.7776e-7,4.7742e-7,1.2644,60.976,-84.618)"
+       gradientTransform="matrix(1.4224,-5.3748e-7,5.371e-7,1.4224,57.973,-174.87)"
        gradientUnits="userSpaceOnUse"
        xlink:href="#linearGradient1086" />
     <radialGradient
-       id="radialGradient1090-4-26"
+       id="radialGradient1090-4-5-7"
        cx="19"
        cy="571.70001"
        r="7.5026002"
-       gradientTransform="matrix(1.2644,-4.7776e-7,4.7742e-7,1.2644,60.976,-84.616)"
+       gradientTransform="matrix(1.4224,-5.3748e-7,5.371e-7,1.4224,57.973,-207.87)"
+       gradientUnits="userSpaceOnUse"
+       xlink:href="#linearGradient1086" />
+    <radialGradient
+       id="radialGradient1090-4-5-7-3"
+       cx="19"
+       cy="571.70001"
+       r="7.5026002"
+       gradientTransform="matrix(1.4224,-5.3748e-7,5.371e-7,1.4224,57.973,-174.87)"
+       gradientUnits="userSpaceOnUse"
+       xlink:href="#linearGradient1086" />
+    <radialGradient
+       id="radialGradient1090-4-5-7-5"
+       cx="19"
+       cy="571.70001"
+       r="7.5026002"
+       gradientTransform="matrix(1.4224,-5.3748e-7,5.371e-7,1.4224,57.973,-207.87)"
        gradientUnits="userSpaceOnUse"
        xlink:href="#linearGradient1086" />
   </defs>
@@ -167,13 +132,14 @@
        y="594.35999"
        width="20"
        height="20"
-       style="fill:#ffffff;stroke-width:0.71429"
-       id="rect134" />
+       fill="#ffffff"
+       stroke-width="0.71429"
+       id="rect127" />
     <circle
        cx="19"
        cy="604.35999"
        r="4"
-       style="fill:#5c616c;paint-order:fill markers stroke"
-       id="circle136" />
+       fill="#5c616c"
+       id="circle129" />
   </g>
 </svg>
