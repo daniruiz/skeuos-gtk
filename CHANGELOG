@@ -1,3 +1,13 @@
+[20210526]
+ * Change close button's icon color to white on highlight
+ * Update metacity titlebutton margins
+ * Update xfwm4 titlebutton margins
+ * Generate metacity and xfwm4 assets
+ * Update xfwm4 titlebuttons design matching GTK3
+ * Update css
+ * Improve titlebuttons for GTK3
+ * Fix title alignment in metacity theme
+
 [20210511]
  * Tweak cinnamon menu design
  * Fix text color for cinnamon's panel taskmanager
