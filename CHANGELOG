@@ -1,3 +1,10 @@
+[20210603]
+ * Update libhandy gtk theme base
+ * Remove border to title-buttons
+ * Regenerate metacity assets
+ * Improve script for metacity assets (fixes #7)
+ * Improve xfwm4 assets rendering script
+
 [20210526]
  * Change close button's icon color to white on highlight
  * Update metacity titlebutton margins
