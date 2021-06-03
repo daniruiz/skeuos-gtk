@@ -1,9 +1,5 @@
 include ../../Makefile.inc
 
-SRC_FILE=assets.svg
-
-SRC_FILE_DARK=assets-dark.svg
-
 ASSETS=$(shell xargs < assets.txt)
 THEMES_DIR=../../../
 
@@ -12,32 +8,20 @@ THEMES_DIR=../../../
 build: $(COLOR_VARIANTS)
 
 $(COLOR_VARIANTS):
-	$(eval CURRENT_ASSET=assets-$@.svg)
-	$(eval CURRENT_ASSET_DARK=assets-$@-dark.svg)
-	sed 's/$(DEFAULT_THEME_COLOR)/$(COLOR_$@)/gi' $(SRC_FILE) > $(CURRENT_ASSET)
-	sed 's/$(DEFAULT_THEME_COLOR)/$(COLOR_$@)/gi' $(SRC_FILE_DARK) > $(CURRENT_ASSET_DARK)
-	-for src_file in $(CURRENT_ASSET) $(CURRENT_ASSET_DARK); \
+	for variant in Light Dark ; \
 	do \
-		variant=$$(basename $${src_file%.svg}) ; \
-		mkdir -p $$variant ; \
-		for i in $(ASSETS) ; \
+		mkdir -p $(THEMES_DIR)Skeuos-$@-$$variant/metacity-1/ ; \
+		sed 's/$(DEFAULT_THEME_COLOR)/$(COLOR_$@)/gi' Assets-$$variant.svg > __Assets-$$variant-$@.svg ; \
+		for asset in $(ASSETS) ; \
 		do \
 			echo ; \
-			echo Rendering $$variant/$$i.svg ; \
-			$(INKSCAPE) --export-id=$$i \
-			            --export-id-only \
-			            --export-filename=$$variant/$$i.svg $$src_file > /dev/null 2>&1 \
-			&& $(OPTIPNG) $$variant/$$i.svg ; \
+			echo Rendering $$asset.svg $@ ; \
+			$(INKSCAPE) --export-id=$$asset \
+				        --export-id-only \
+				        --export-filename=$(THEMES_DIR)Skeuos-$@-$$variant/metacity-1/$$asset.svg \
+				        __Assets-$$variant-$@.svg > /dev/null 2>&1; \
 		done ; \
 	done
-	mkdir -p $(THEMES_DIR)Skeuos-$@-Light/metacity-1/
-	mkdir -p $(THEMES_DIR)Skeuos-$@-Dark/metacity-1/
-	cp assets-$@/* $(THEMES_DIR)Skeuos-$@-Light/metacity-1/
-	cp assets-$@-dark/* $(THEMES_DIR)Skeuos-$@-Dark/metacity-1/
 
 clean:
-	-rm -r $(foreach COLOR_VARIANT, $(COLOR_VARIANTS), \
-	  assets-$(COLOR_VARIANT)/ \
-	  assets-$(COLOR_VARIANT)-dark/ \
-	  assets-$(COLOR_VARIANT).svg \
-	  assets-$(COLOR_VARIANT)-dark.svg)
+	-rm __*
