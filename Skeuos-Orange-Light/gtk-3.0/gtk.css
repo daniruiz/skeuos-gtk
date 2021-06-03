@@ -4771,33 +4771,41 @@ row.expander {
   row.expander image.expander-row-arrow:disabled {
     color: #aeb0b6; }
 
+flap > dimming,
 deck > dimming,
 leaflet > dimming {
   background: rgba(0, 0, 0, 0.12); }
 
+flap > border,
 deck > border,
 leaflet > border {
   min-width: 1px;
   min-height: 1px;
   background: #d9d9d9; }
 
+flap > shadow,
 deck > shadow,
 leaflet > shadow {
   min-width: 56px;
   min-height: 56px; }
+  flap > shadow.left,
   deck > shadow.left,
   leaflet > shadow.left {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.01) 40px, rgba(0, 0, 0, 0) 56px), linear-gradient(to right, rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.01) 7px, rgba(0, 0, 0, 0) 24px); }
+  flap > shadow.right,
   deck > shadow.right,
   leaflet > shadow.right {
     background-image: linear-gradient(to left, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.01) 40px, rgba(0, 0, 0, 0) 56px), linear-gradient(to left, rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.01) 7px, rgba(0, 0, 0, 0) 24px); }
+  flap > shadow.up,
   deck > shadow.up,
   leaflet > shadow.up {
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.01) 40px, rgba(0, 0, 0, 0) 56px), linear-gradient(to bottom, rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.01) 7px, rgba(0, 0, 0, 0) 24px); }
+  flap > shadow.down,
   deck > shadow.down,
   leaflet > shadow.down {
     background-image: linear-gradient(to top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.01) 40px, rgba(0, 0, 0, 0) 56px), linear-gradient(to top, rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.01) 7px, rgba(0, 0, 0, 0) 24px); }
 
+flap > outline,
 deck > outline,
 leaflet > outline {
   min-width: 1px;
@@ -4858,6 +4866,60 @@ avatar {
 viewswitchertitle viewswitcher {
   margin-left: 12px;
   margin-right: 12px; }
+
+statuspage > scrolledwindow > viewport > box {
+  margin: 36px 12px; }
+  statuspage > scrolledwindow > viewport > box > clamp:not(:last-child) > box {
+    margin-bottom: 36px; }
+  statuspage > scrolledwindow > viewport > box > clamp > box > .icon:not(:last-child) {
+    margin-bottom: 36px; }
+  statuspage > scrolledwindow > viewport > box > clamp > box > .title:not(:last-child) {
+    margin-bottom: 12px; }
+
+window.preferences > deck > deck > box > stack > stack > scrolledwindow > viewport > clamp,
+preferencespage > scrolledwindow > viewport > clamp {
+  margin: 0 12px;
+  transition: margin-bottom 200ms ease; }
+  window.preferences > deck > deck > box > stack > stack > scrolledwindow > viewport > clamp > list,
+  window.preferences > deck > deck > box > stack > stack > scrolledwindow > viewport > clamp > box > preferencesgroup,
+  preferencespage > scrolledwindow > viewport > clamp > list,
+  preferencespage > scrolledwindow > viewport > clamp > box > preferencesgroup {
+    transition: margin-top 200ms ease; }
+  window.preferences > deck > deck > box > stack > stack > scrolledwindow > viewport > clamp.small,
+  preferencespage > scrolledwindow > viewport > clamp.small {
+    margin-bottom: 18px; }
+    window.preferences > deck > deck > box > stack > stack > scrolledwindow > viewport > clamp.small > list,
+    window.preferences > deck > deck > box > stack > stack > scrolledwindow > viewport > clamp.small > box > preferencesgroup,
+    preferencespage > scrolledwindow > viewport > clamp.small > list,
+    preferencespage > scrolledwindow > viewport > clamp.small > box > preferencesgroup {
+      margin-top: 18px; }
+  window.preferences > deck > deck > box > stack > stack > scrolledwindow > viewport > clamp.medium,
+  preferencespage > scrolledwindow > viewport > clamp.medium {
+    margin-bottom: 24px; }
+    window.preferences > deck > deck > box > stack > stack > scrolledwindow > viewport > clamp.medium > list,
+    window.preferences > deck > deck > box > stack > stack > scrolledwindow > viewport > clamp.medium > box > preferencesgroup,
+    preferencespage > scrolledwindow > viewport > clamp.medium > list,
+    preferencespage > scrolledwindow > viewport > clamp.medium > box > preferencesgroup {
+      margin-top: 24px; }
+  window.preferences > deck > deck > box > stack > stack > scrolledwindow > viewport > clamp.large,
+  preferencespage > scrolledwindow > viewport > clamp.large {
+    margin-bottom: 30px; }
+    window.preferences > deck > deck > box > stack > stack > scrolledwindow > viewport > clamp.large > list,
+    window.preferences > deck > deck > box > stack > stack > scrolledwindow > viewport > clamp.large > box > preferencesgroup,
+    preferencespage > scrolledwindow > viewport > clamp.large > list,
+    preferencespage > scrolledwindow > viewport > clamp.large > box > preferencesgroup {
+      margin-top: 30px; }
+
+preferencesgroup > box > label:not(:first-child) {
+  margin-top: 6px; }
+
+preferencesgroup > box > box:not(:first-child) {
+  margin-top: 12px; }
+
+tabbar .tab-indicator:not(.clickable) {
+  background: none;
+  box-shadow: none;
+  border-color: transparent; }
 
 /***************************
  * Check and Radio buttons *
@@ -5059,6 +5121,140 @@ window.csd.unified:not(.solid-csd):not(.fullscreen):not(.tiled):not(.tiled-top):
 window.csd.unified:not(.solid-csd):not(.fullscreen):not(.tiled):not(.tiled-top):not(.tiled-bottom):not(.tiled-left):not(.tiled-right):not(.maximized) > decoration,
 window.csd.unified:not(.solid-csd):not(.fullscreen):not(.tiled):not(.tiled-top):not(.tiled-bottom):not(.tiled-left):not(.tiled-right):not(.maximized) > decoration-overlay {
   border-radius: 8px; }
+
+statuspage > scrolledwindow > viewport > box > clamp > box > .icon {
+  color: rgba(92, 97, 108, 0.5); }
+  statuspage > scrolledwindow > viewport > box > clamp > box > .icon:backdrop {
+    color: rgba(174, 176, 182, 0.5); }
+
+tabbar .box {
+  min-height: 38px;
+  background: #d9d9d9;
+  border-bottom: 1px solid #c2c2c2; }
+  tabbar .box:backdrop {
+    background-color: #e8e8e8;
+    border-color: #d9d9d9; }
+
+tabbar scrolledwindow.pinned undershoot {
+  border: 0 solid #c2c2c2; }
+
+tabbar scrolledwindow.pinned:dir(rtl) undershoot.left {
+  border-left-width: 1px; }
+
+tabbar scrolledwindow.pinned:dir(ltr) undershoot.right {
+  border-right-width: 1px; }
+
+tabbar scrolledwindow.pinned:backdrop undershoot {
+  border-color: #d9d9d9; }
+
+tabbar scrolledwindow.pinned tabbox:dir(ltr) {
+  padding-right: 1px;
+  box-shadow: inset -1px 0 #c2c2c2; }
+  tabbar scrolledwindow.pinned tabbox:dir(ltr):backdrop {
+    box-shadow: inset -1px 0 #d9d9d9; }
+
+tabbar scrolledwindow.pinned tabbox:dir(rtl) {
+  padding-left: 1px;
+  box-shadow: inset 1px 0 #c2c2c2; }
+  tabbar scrolledwindow.pinned tabbox:dir(rtl):backdrop {
+    box-shadow: inset 1px 0 #d9d9d9; }
+
+tabbar undershoot {
+  transition: none; }
+  tabbar undershoot.left {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.07), rgba(0, 0, 0, 0) 20px); }
+  tabbar undershoot.right {
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.07), rgba(0, 0, 0, 0) 20px); }
+
+tabbar .needs-attention-left undershoot.left {
+  background: linear-gradient(to right, rgba(253, 125, 0, 0.7), rgba(253, 125, 0, 0.5) 1px, rgba(253, 125, 0, 0) 20px); }
+
+tabbar .needs-attention-right undershoot.right {
+  background: linear-gradient(to left, rgba(253, 125, 0, 0.7), rgba(253, 125, 0, 0.5) 1px, rgba(253, 125, 0, 0) 20px); }
+
+tabbar tab {
+  border-style: solid;
+  border-color: #c2c2c2;
+  border-width: 0 1px 0 1px;
+  transition: background 150ms ease-in-out;
+  background-color: #e0e0e0; }
+  tabbar tab:checked {
+    background-color: #f0f0f0; }
+    tabbar tab:checked:hover {
+      background-color: #f7f7f7; }
+  tabbar tab:hover {
+    background-color: #e8e8e8; }
+  tabbar tab:backdrop {
+    border-color: #d9d9d9;
+    background-color: #f0f0f0; }
+    tabbar tab:backdrop:checked {
+      background-color: #ffffff; }
+
+tabbar .start-action,
+tabbar .end-action {
+  background: #e0e0e0;
+  border-color: #c2c2c2;
+  border-style: solid;
+  transition: background 150ms ease-in-out; }
+  tabbar .start-action:backdrop,
+  tabbar .end-action:backdrop {
+    border-color: #d9d9d9;
+    background-color: #f0f0f0; }
+  tabbar .start-action button,
+  tabbar .end-action button {
+    border: none;
+    border-radius: 0; }
+
+tabbar .start-action:dir(ltr),
+tabbar .end-action:dir(rtl) {
+  border-right-width: 1px; }
+  tabbar .start-action:dir(ltr) > *,
+  tabbar .end-action:dir(rtl) > * {
+    margin-right: 1px; }
+
+tabbar .start-action:dir(rtl),
+tabbar .end-action:dir(ltr) {
+  border-left-width: 1px; }
+  tabbar .start-action:dir(rtl) > *,
+  tabbar .end-action:dir(ltr) > * {
+    margin-left: 1px; }
+
+.tab-drag-icon tab {
+  min-height: 26px;
+  background-color: #f7f7f7;
+  box-shadow: 0 3px 9px 1px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(0, 0, 0, 0.23), inset 0 1px rgba(255, 255, 255, 0.8);
+  margin: 25px; }
+
+tabbar tab,
+.tab-drag-icon tab {
+  padding: 6px; }
+  tabbar tab.needs-attention,
+  .tab-drag-icon tab.needs-attention {
+    background-image: radial-gradient(ellipse at bottom, rgba(255, 255, 255, 0.8), rgba(253, 125, 0, 0.2) 15%, rgba(253, 125, 0, 0) 15%); }
+  tabbar tab .tab-close-button,
+  tabbar tab .tab-indicator,
+  .tab-drag-icon tab .tab-close-button,
+  .tab-drag-icon tab .tab-indicator {
+    padding: 0;
+    margin: 0;
+    min-width: 24px;
+    min-height: 24px;
+    border-radius: 99px;
+    border: none;
+    box-shadow: none;
+    -gtk-icon-shadow: none;
+    text-shadow: none;
+    background: none; }
+  tabbar tab .tab-close-button:hover,
+  tabbar tab .tab-indicator.clickable:hover,
+  .tab-drag-icon tab .tab-close-button:hover,
+  .tab-drag-icon tab .tab-indicator.clickable:hover {
+    background: alpha(#5c616c, 0.15); }
+  tabbar tab .tab-close-button:active,
+  tabbar tab .tab-indicator.clickable:active,
+  .tab-drag-icon tab .tab-close-button:active,
+  .tab-drag-icon tab .tab-indicator.clickable:active {
+    background: alpha(black, 0.2); }
 
 * {
   outline-style: solid;
