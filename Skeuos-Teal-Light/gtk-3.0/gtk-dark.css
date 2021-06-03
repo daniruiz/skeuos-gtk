@@ -5681,12 +5681,12 @@ button.titlebutton:not(.appmenu) {
     -gtk-icon-shadow: 0 -1px 1px rgba(0, 0, 0, 0.2);
     background: #0099a1;
     box-shadow: none;
-    border-color: rgba(0, 0, 0, 0.5); }
+    border: 0;
+    padding: 1px; }
     button.titlebutton:not(.appmenu).close:hover {
       color: white;
       -gtk-icon-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
       background: #1aa3aa;
-      border-color: #0099a1;
       box-shadow: 0 1px 1px 1px #020202; }
   .maximized button.titlebutton:not(.appmenu):last-child, .fullscreen button.titlebutton:not(.appmenu):last-child, .tiled button.titlebutton:not(.appmenu):last-child, .tiled-top button.titlebutton:not(.appmenu):last-child, .tiled-right button.titlebutton:not(.appmenu):last-child, .tiled-bottom button.titlebutton:not(.appmenu):last-child, .tiled-left button.titlebutton:not(.appmenu):last-child {
     margin-right: 0; }

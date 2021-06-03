@@ -507,13 +507,13 @@ button.titlebutton:not(.appmenu) {
     -gtk-icon-shadow: 0 -1px 1px transparentize(black, .8);
     background: $selected_bg_color;
     box-shadow: none;
-    border-color: transparentize(black, if($variant=='light', .8, .5));
+    border: 0;
+    padding: 1px;
 
     &:hover {
       color: white;
       -gtk-icon-shadow: 0 1px 1px transparentize(black, .5);
       background: mix(white, $selected_bg_color, 10%);
-      border-color: $selected_bg_color;
       box-shadow: 0 1px 1px 1px darken($borders_color, 5%);
     }
 
