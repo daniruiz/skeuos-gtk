@@ -38,19 +38,9 @@ dnd {
   -gtk-icon-size: 32px;
 }
 
-/*
-   These wildcard seems unavoidable, need to investigate.
-   Wildcards are bad and troublesome, use them with care,
-   or better, just don't.
-   Every time a wildcard is used a kitten dies, painfully.
-*/
-
-spinner:disabled,
-arrow:disabled,
-scrollbar:disabled,
-check:disabled,
-radio:disabled,
-treeview.expander:disabled { -gtk-icon-filter: opacity(0.5); }
+image:disabled {
+  -gtk-icon-filter: opacity(0.5);
+}
 
 .view,
 %view {
@@ -492,6 +482,7 @@ button {
       -gtk-icon-filter: brightness(1.2);
     }
 
+    &.keyboard-activating,
     &:active,
     &:checked {
       @include button(active);
@@ -507,7 +498,8 @@ button {
         @include button(backdrop);
 
         transition: $backdrop_transition;
-        -gtk-icon-filter: none;
+
+        &:not(:disabled) { -gtk-icon-filter: none; }
 
         &:active,
         &:checked { @include button(backdrop-active); }
@@ -523,6 +515,7 @@ button {
 
     &:disabled {
       @include button(insensitive);
+      -gtk-icon-filter: opacity(0.5);
 
       &:active,
       &:checked { @include button(insensitive-active); }
@@ -542,6 +535,7 @@ button {
         transition: $button_transition;
         transition-duration: 500ms;
       }
+      &.keyboard-activating,
       &:active,
       &:checked {
         @include button(undecorated-active);
@@ -933,6 +927,14 @@ list > row button.image-button:not(.flat) {
   &:hover { @include button(hover); }
   &:active,
   &:checked { @include button(active); }
+
+  @each $b_type, $b_color in (suggested-action, $selected_bg_color),
+                         (destructive-action, $destructive_color) {
+    &.#{$b_type} { // allow colored buttons in lists #3643
+      @include button(normal, $b_color, white);
+      @include focus-ring($fc: $alt_focus_border_color);
+    }
+  }
 }
 
 /*********
@@ -1429,7 +1431,6 @@ headerbar {
     border-color: $backdrop_borders_color;
     background-color: $bg_color;
     background-image: none;
-    box-shadow: inset 0 1px $top_hilight;
 
     transition: $backdrop_transition;
   }
@@ -1537,16 +1538,6 @@ headerbar {
     margin-top: 10px;
     margin-bottom: 10px;
   }
-
-  &.titlebar headerbar:not(.titlebar) {
-    // Drop the background of non-titlebar nested headerbars. This is needed to
-    // work around headerbar sliding animation issues without refactoring
-    // Adwaita's support of titlebars and headerbars as it may break
-    // applications.
-    // See https://gitlab.gnome.org/GNOME/gtk/issues/1264 for more information.
-    background: none;
-    box-shadow: none;
-  }
 }
 
 
@@ -1558,7 +1549,6 @@ headerbar {
     background-image: none;
     border-style: none;
     border-color: transparent;
-    box-shadow: none;
   }
 
   separator { background-color: $borders_color; }  // FIXME: use darker border?
@@ -1825,7 +1815,7 @@ popover.background {
 
   > arrow,
   > contents {
-    $_popover_border: if($variant=='light', transparentize(black, 0.77), transparentize($borders_color, 0.1));
+    $_popover_border: if($variant=='light', transparentize(black, 0.77), transparentize(black, 0.25));
 
     background-color: $menu_color;
     background-clip: padding-box;
@@ -2270,11 +2260,15 @@ notebook {
 /**************
  * Scrollbars *
  **************/
+
 scrollbar {
   $_slider_min_length: 40px;
+  $_slider_width: 8px;
+  $_scrollbar_transition: all 300ms $ease-out-quad;
+  $_fine-tune_slider_border: $_slider_width - 3; //#3672
 
   background-color: $scrollbar_bg_color;
-  transition: 300ms $ease-out-quad;
+  transition: $_scrollbar_transition;
 
   // scrollbar border
   &.top { border-bottom: 1px solid $borders_color; }
@@ -2283,13 +2277,14 @@ scrollbar {
   &.right { border-left: 1px solid $borders_color; }
 
   > range > trough > slider {
-    min-width: 10px;
-    min-height: 10px;
+    min-width: $_slider_width;
+    min-height: $_slider_width;
     margin: -1px;
     border: 4px solid transparent;
     border-radius: 10px;
     background-clip: padding-box;
     background-color: $scrollbar_slider_color;
+    transition: $_scrollbar_transition;
 
     &:hover { background-color: $scrollbar_slider_hover_color; }
 
@@ -2300,12 +2295,13 @@ scrollbar {
 
   > range.fine-tune {
     > trough > slider {
-      min-width: 6px;
-      min-height: 6px;
+      transition: none;
+      min-width: $_fine-tune_slider_border+1;
+      min-height: $_fine-tune_slider_border+1;
     }
 
-    &.horizontal > trough > slider { border-width: 6px 4px; }
-    &.vertical > trough > slider { border-width: 4px 6px; }
+    &.horizontal > trough > slider { border-width: $_fine-tune_slider_border 4px; }
+    &.vertical > trough > slider { border-width: 4px $_fine-tune_slider_border; }
   }
 
   &.overlay-indicator {
@@ -3587,6 +3583,7 @@ stacksidebar {
   }
   row {
     padding: 10px 4px;
+    @include focus-ring();
 
     > label {
       padding-left: 6px;
@@ -3604,11 +3601,6 @@ stacksidebar {
     }
     &:selected:hover:dir(ltr), &:selected:hover:dir(rtl) {
       background-color: darken($menu_selected_color,5%);
-    }
-    &:focus:focus-visible {
-      outline-width: 0;
-      background-color: $selected_bg_color;
-      color: $selected_fg_color;
     }
     &.activatable:active, &.activatable:selected:active {
       box-shadow: none; // #3413
@@ -3637,9 +3629,8 @@ separator.sidebar {
     padding: 0 8px;
     border-radius: $menu-margin;
     margin: 0 $menu-margin 2px;
-
-    &:hover,
-    &:focus-visible:focus-within {
+    @include focus-ring($focus-state: 'focus-visible:focus-within');
+    &:hover {
       background-color: darken($menu_selected_color, 5%);
     }
 
@@ -3651,12 +3642,6 @@ separator.sidebar {
         background-color: darken($menu_selected_color,5%);
       }
 
-      &:focus-visible:focus-within {
-        outline-width: 0;
-        color: $selected_fg_color;
-        background-color: $selected_bg_color;
-        &:hover { background-color: darken($selected_bg_color,10%); }
-      }
     }
 
     &:disabled { color: $insensitive_fg_color; }
@@ -4052,8 +4037,8 @@ window {
 
   // this needs to be transparent
   // see bug #722563
-  $_wm_border: if($variant=='light', transparentize(black, 0.77), transparentize($borders_color, 0.1));
-  $_wm_border_backdrop: if($variant=='light', transparentize(black, 0.82), transparentize($borders_color, 0.1));
+  $_wm_border: if($variant=='light', transparentize(black, 0.77), transparentize(black, 0.25));
+  $_wm_border_backdrop: if($variant=='light', transparentize(black, 0.82), transparentize(black, 0.25));
 
   &.csd {
     box-shadow: 0 3px 9px 1px transparentize(black, 0.5),
@@ -4082,25 +4067,33 @@ window {
       box-shadow: 0 1px 2px transparentize(black, 0.8),
                   0 0 0 1px transparentize($_wm_border, 0.1);
     }
+  }
 
-    &.solid-csd {
-      margin: 0;
-      padding: 0;
-      border: solid 1px $borders_color;
-      border-radius: 0;
-      box-shadow: inset 0 0 0 3px $headerbar_bg_color, inset 0 1px $top_hilight;
+  &.solid-csd {
+    margin: 0;
+    padding: 4px;
+    border: solid 1px $borders_color;
+    border-radius: 0;
+    box-shadow: inset 0 0 0 4px $borders_color, inset 0 0 0 3px $headerbar_bg_color, inset 0 1px $top_hilight;
 
-      &:backdrop { box-shadow: inset 0 0 0 3px $backdrop_bg_color, inset 0 1px $top_hilight; }
-    }
+    &:backdrop { box-shadow: inset 0 0 0 4px $borders_color, inset 0 0 0 3px $backdrop_bg_color, inset 0 1px $top_hilight; }
   }
 
   &.maximized,
-  &.fullscreen,
+  &.fullscreen { border-radius: 0; box-shadow: none; }
+
   &.tiled,
   &.tiled-top,
   &.tiled-left,
   &.tiled-right,
-  &.tiled-bottom { border-radius: 0; }
+  &.tiled-bottom {
+   border-radius: 0;
+   box-shadow: 0 0 0 1px $_wm_border_backdrop,
+               0 0 0 20px transparent; //transparent control workaround -- #3670
+   }
+   &:backdrop { box-shadow: 0 0 0 1px $_wm_border_backdrop,
+                            0 0 0 20px transparent; // #3670
+  }
 
   &.popup { box-shadow: none; }
 
