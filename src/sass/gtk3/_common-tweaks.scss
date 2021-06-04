@@ -507,8 +507,7 @@ button.titlebutton:not(.appmenu) {
     -gtk-icon-shadow: 0 -1px 1px transparentize(black, .8);
     background: $selected_bg_color;
     box-shadow: none;
-    border: 0;
-    padding: 1px;
+    border-color: transparent;
 
     &:hover {
       color: white;
