@@ -4066,6 +4066,51 @@ scale slider {
     background-image: image(#23252e);
     box-shadow: none; }
 
+/*****************
+ * Title buttons *
+ *****************/
+windowcontrols {
+  margin: 0 5px; }
+  windowcontrols.end {
+    margin-left: 11px; }
+  windowcontrols.right {
+    margin-right: 11px; }
+  windowcontrols button {
+    color: transparent;
+    background: #383d4b;
+    margin: 0;
+    padding: 0;
+    min-width: 0;
+    min-height: 0;
+    border: 1px solid #020202;
+    box-shadow: inset 0 3px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+    -gtk-icon-shadow: none;
+    transition: all .2s; }
+    windowcontrols button:hover {
+      color: #eeeeec;
+      background: #383d4b;
+      border-color: transparent;
+      box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.3); }
+    windowcontrols button.close {
+      color: black;
+      -gtk-icon-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+      background: #ffd86e;
+      box-shadow: none;
+      border-color: transparent; }
+      windowcontrols button.close:hover {
+        color: white;
+        -gtk-icon-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+        background: #ffdc7d;
+        box-shadow: 0 1px 2px 1px #020202; }
+      windowcontrols button.close, windowcontrols button.close:hover {
+        color: #000000; }
+    windowcontrols button:backdrop, windowcontrols button:backdrop:hover {
+      color: transparent;
+      background: transparent;
+      box-shadow: none;
+      border-color: #0d0e11;
+      background: rgba(0, 0, 0, 0.3); }
+
 /***************
  * Header bars *
  ***************/
@@ -4222,9 +4267,6 @@ window.ssd {
 
 tooltip.csd {
   border: 0; }
-
-windowcontrols button {
-  padding: 5px; }
 
 /* GTK NAMED COLORS
    ----------------
