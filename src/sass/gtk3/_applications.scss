@@ -216,3 +216,8 @@ wnck-pager {
     }
   }
 }
+
+/* Thunar */
+// Reduce height of root user warning
+.thunar .warning { margin: -7px 0; }
+
