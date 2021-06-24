@@ -6071,6 +6071,10 @@ wnck-pager {
       background: #ffd86e;
       box-shadow: inset 0 -2px rgba(0, 0, 0, 0.2); }
 
+/* Thunar */
+.thunar .warning {
+  margin: -7px 0; }
+
 /* GTK NAMED COLORS
    ----------------
    use responsibly! */
