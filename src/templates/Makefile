@@ -26,11 +26,11 @@ $(GTK_THEMES):
 $(COLOR_VARIANTS):
 	# GTK2
 	sed -e 's/$(DEFAULT_THEME_COLOR)/$(COLOR_$@)/gi' \
-	  -e 's/selected_fg_color:/selected_fg_color: $(TEXT_COLOR_$@)/' \
-	  $(GTKRC_TEMPLATE) > $(THEMES_DIR)Skeuos-$@-Light/gtk-2.0/gtkrc
+	    -e 's/selected_fg_color:/selected_fg_color: $(TEXT_COLOR_$@)/' \
+	    $(GTKRC_TEMPLATE) > $(THEMES_DIR)Skeuos-$@-Light/gtk-2.0/gtkrc
 	sed -e 's/$(DEFAULT_THEME_COLOR)/$(COLOR_$@)/gi' \
-	  -e 's/selected_fg_color:/selected_fg_color: $(TEXT_COLOR_$@)/' \
-	  $(GTKRC_DARK_TEMPLATE) > $(THEMES_DIR)Skeuos-$@-Dark/gtk-2.0/gtkrc
+	    -e 's/selected_fg_color:/selected_fg_color: $(TEXT_COLOR_$@)/' \
+	    $(GTKRC_DARK_TEMPLATE) > $(THEMES_DIR)Skeuos-$@-Dark/gtk-2.0/gtkrc
 	# XFWM4
 	cp themerc-light $(THEMES_DIR)Skeuos-$@-Light-XFWM/xfwm4/themerc
 	cp themerc-light-HiDPI $(THEMES_DIR)Skeuos-$@-Light-XFWM-HiDPI/xfwm4/themerc
