@@ -1,3 +1,13 @@
+[20210624]
+ * Rebuild theme
+ * New GTK2 theme
+ * Create LICENSE
+ * Reduce thunar root warning
+ * Regenerate css
+ * Add custom title-buttons to gtk4 theme
+ * Fix gtk3 close button border on backdrop state
+ * Update gtk4 theme to upstream 4.2.1
+
 [20210603]
  * Update libhandy gtk theme base
  * Remove border to title-buttons
