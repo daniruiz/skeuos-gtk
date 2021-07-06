@@ -51,6 +51,7 @@ $panel_fg: if($variant=='light', darken($fg_color, 10%), $fg_color);
 
 $tooltip_borders_color: $osd_outer_borders_color;
 $shadow_color: transparentize(black, if($variant == 'light', 0.9, 0.7));
+$system_bg_color: $_dark_base_color;
 
 $drop_target_color: #19a187;
 
