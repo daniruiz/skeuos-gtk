@@ -1,3 +1,13 @@
+[20210706]
+ * Fix templates Makefile for new GNOME themes
+ * Generate css
+ * Generate gnome themes
+ * Add gnome theme assets
+ * Add GNOME 3.38 & 3.36 css theme files based on Flat-Remix-GNOME
+ * Add GNOME 40 css theme files based on Flat-Remix-GNOME
+ * Fix background of stackswitcher checked button
+ * Update libhandy to 1.2.3
+
 [20210624]
  * Rebuild theme
  * New GTK2 theme
