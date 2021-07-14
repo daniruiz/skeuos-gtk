@@ -241,6 +241,10 @@ paned, hdyleaflet, headerbar.titlebar {
 treeview.view {
   border-top-color: $borders-color;
 
+  &:selected {
+    &:focus, & { @extend %treeview_selected_items; }
+  }
+
   &:backdrop { border-top-color: $backdrop_borders_color; }
 
   header button {
@@ -413,6 +417,25 @@ infobar {
   }
 }
 
+/*********
+ * Lists *
+ *********/
+list row { padding: 0; }
+row {
+  &.activatable {
+    margin: 2px 4px;
+
+    &:selected {
+      &:active { box-shadow: inherit; }
+
+      &.has-open-popup,
+      &:hover { background-color: inherit; }
+
+      &:backdrop { @extend %selected_items_backdrop; }
+    }
+  }
+}
+
 /*********************
  * App Notifications *
  *********************/
@@ -435,8 +458,6 @@ calendar {
   border-radius: 6px;
   border:0;
   padding: 1px;
-
-  &:selected { border-radius: 999px; }
 }
 
 /***********
@@ -451,6 +472,8 @@ messagedialog .titlebar:backdrop { background-image: none; }
 .sidebar {
   background-color: $bg_color;
 }
+
+stacksidebar row { padding: 7px 3px; }
 
 /****************
  * File chooser *
@@ -572,4 +595,24 @@ button.titlebutton:not(.appmenu) {
     border-color: $backdrop_borders_color;
     background: $shadow_color;
   }
+}
+
+%selected_items {
+  box-shadow: inset 0 0 0 2px transparentize($selected_bg_color, .6);
+  border-radius: $menu_radius;
+  background-color: transparentize($selected_bg_color, .9);
+  color: if($variant=='light', $selected_borders_color, $selected_bg_color);
+
+  @at-root %selected_items_backdrop,
+  &:backdrop {
+    box-shadow: none;
+    color: mix($backdrop_selected_fg_color, $selected_bg_color, 30%);
+    background-color: transparentize($selected_bg_color, .9);
+  }
+}
+
+%treeview_selected_items {
+  @extend %selected_items;
+  border-radius: 0;
+  box-shadow: none;
 }
