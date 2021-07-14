@@ -193,11 +193,12 @@
   //
   // normal button
   //
+    $light_c: lighten($c, 7%);
     color: $tc;
     outline-color: transparentize($tc, 0.7);
-    border-color: if($c != $bg_color, _border_color($c), $borders_color);
-    border-bottom-color: if($c != $bg_color, _border_color($c, true), $alt_borders_color);
-    background-image: image(lighten($c, 7%)),
+    border-color: if($c != $bg_color, _border_color($light_c), $borders_color);
+    border-bottom-color: if($c != $bg_color, _border_color($light_c, true), $alt_borders_color);
+    background-image: image($light_c),
                       $backimage;
     //@include _button_text_shadow($tc, $c);
     @include _shadows(inset 0 1px $_hilight_color, $_button_edge, $_button_shadow);

@@ -42,6 +42,37 @@ button {
     &:link,
     &:backdrop { @include button(undecorated); }
   }
+
+  // Suggested and Destructive Action buttons
+  @each $b_type, $b_color, $t_color in (suggested-action, $suggested_bg_color, $selected_fg_color),
+                             (destructive-action, $destructive_color, white) {
+    &.#{$b_type} {
+      @include button(normal, $b_color, $t_color);
+
+      &:hover { @include button(hover, $b_color, $t_color); }
+
+      &:active,
+      &:checked { @include button(active, $b_color, $t_color); }
+
+      &:backdrop,
+      &.flat:backdrop {
+        @include button(backdrop, $b_color, $t_color);
+
+        &:active,
+        &:checked { @include button(backdrop-active, $b_color, $t_color); }
+
+        &:disabled {
+          &:active,
+          &:checked { @include button(backdrop-insensitive-active, $b_color, $t_color); }
+        }
+      }
+
+      &:disabled {
+        &:active,
+        &:checked { @include button(insensitive-active, $b_color, $t_color); }
+      }
+    }
+  }
 }
 
 /**********
