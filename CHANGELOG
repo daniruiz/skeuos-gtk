@@ -1,3 +1,10 @@
+[20210714]
+ * Regenerate GTK3 css
+ * GTK3: new design for selected items
+ * GTK3: fix border-color for colored buttons
+ * GTK3: Fix dialog titlebars
+ * Change GNOME theme names to match naming pattern of GTK and XFWM
+
 [20210706]
  * Fix templates Makefile for new GNOME themes
  * Generate css
