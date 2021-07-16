@@ -20,16 +20,12 @@ filechooser,
 
     row.sidebar-row {
       &:selected {
-        @extend %selected_items;
-
         margin-left: 6px;
         margin-right: 6px;
         border-radius: $button_radius;
         box-shadow: $_glow_shadow;
         transition: box-shadow $backdrop_transition;
         background-color: $selected_bg_color;
-
-        &:backdrop { box-shadow: none; }
 
         &:dir(ltr) {
           background-image: linear-gradient(to right, darken($selected_bg_color, 10%) 35px, transparent 0);
@@ -43,6 +39,16 @@ filechooser,
           padding-right: 8px;
 
           .sidebar-icon, .sidebar-label { color: $selected_fg_color; }
+        }
+
+        &:backdrop {
+          @extend %selected_items_backdrop;
+          box-shadow: none;
+          background-image: none;
+
+          &,
+          & .sidebar-icon,
+          & .sidebar-label { color: mix($backdrop_selected_fg_color, $selected_bg_color, 30%); }
         }
       }
 
