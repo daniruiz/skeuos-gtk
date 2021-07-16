@@ -4517,8 +4517,7 @@ headerbar.selection-mode button.titlebutton,
   .titlebar.selection-mode button.titlebutton:backdrop {
     -gtk-icon-shadow: none; }
 
-filechooser placessidebar.sidebar row.sidebar-row:selected,
-.nautilus-window placessidebar.sidebar row.sidebar-row:selected, treeview.view:selected:focus, treeview.view:selected, .view:selected:focus, .view:selected,
+.view:selected:focus, .view:selected,
 .view text:selected:focus,
 textview text:selected:focus,
 .view text:selected,
@@ -4526,10 +4525,9 @@ textview text:selected, .view text selection:focus, .view text selection,
 textview text selection:focus,
 textview text selection, iconview:selected:focus, iconview:selected, iconview text selection:focus, iconview text selection, flowbox flowboxchild:selected,
 entry selection, modelbutton.flat:selected,
-.menuitem.button.flat:selected, spinbutton:not(.vertical) selection, treeview.view:selected, row:selected, calendar:selected {
+.menuitem.button.flat:selected, spinbutton:not(.vertical) selection, treeview.view:selected:focus, treeview.view:selected, row:selected, calendar:selected {
   background-color: #737680; }
-  label:selected, .selection-mode button.titlebutton, filechooser placessidebar.sidebar row.sidebar-row:selected,
-  .nautilus-window placessidebar.sidebar row.sidebar-row:selected, treeview.view:selected:focus, treeview.view:selected, .view:selected:focus, .view:selected,
+  label:selected, .selection-mode button.titlebutton, .view:selected:focus, .view:selected,
   .view text:selected:focus,
   textview text:selected:focus,
   .view text:selected,
@@ -4537,30 +4535,29 @@ entry selection, modelbutton.flat:selected,
   textview text selection:focus,
   textview text selection, iconview:selected:focus, iconview:selected, iconview text selection:focus, iconview text selection, flowbox flowboxchild:selected,
   entry selection, modelbutton.flat:selected,
-  .menuitem.button.flat:selected, spinbutton:not(.vertical) selection, treeview.view:selected, row:selected, calendar:selected {
+  .menuitem.button.flat:selected, spinbutton:not(.vertical) selection, treeview.view:selected:focus, treeview.view:selected, row:selected, calendar:selected {
     color: #ffffff; }
-    label:disabled selection, label:disabled:selected, .selection-mode button.titlebutton:disabled, filechooser placessidebar.sidebar row.sidebar-row:disabled:selected,
-    .nautilus-window placessidebar.sidebar row.sidebar-row:disabled:selected, treeview.view:disabled:selected, .view:disabled:selected,
+    label:disabled selection, label:disabled:selected, .selection-mode button.titlebutton:disabled, .view:disabled:selected,
     textview text:disabled:selected:focus,
     .view text:disabled:selected,
     textview text:disabled:selected, .view text selection:disabled,
     textview text selection:disabled:focus,
     textview text selection:disabled, iconview:disabled:selected:focus, iconview:disabled:selected, iconview text selection:disabled:focus, iconview text selection:disabled, flowbox flowboxchild:disabled:selected,
     entry selection:disabled, modelbutton.flat:disabled:selected,
-    .menuitem.button.flat:disabled:selected, spinbutton:not(.vertical) selection:disabled, row:disabled:selected, calendar:disabled:selected {
+    .menuitem.button.flat:disabled:selected, spinbutton:not(.vertical) selection:disabled, treeview.view:disabled:selected, row:disabled:selected, calendar:disabled:selected {
       color: #b9bbc0; }
-    row.activatable:selected:backdrop, label:backdrop selection, label:backdrop:selected, .selection-mode button.titlebutton:backdrop, filechooser placessidebar.sidebar row.sidebar-row:backdrop:selected,
-    .nautilus-window placessidebar.sidebar row.sidebar-row:backdrop:selected, treeview.view:backdrop:selected, .view:backdrop:selected,
+    filechooser placessidebar.sidebar row.sidebar-row:selected:backdrop,
+    .nautilus-window placessidebar.sidebar row.sidebar-row:selected:backdrop, row.activatable:selected:backdrop, label:backdrop selection, label:backdrop:selected, .selection-mode button.titlebutton:backdrop, .view:backdrop:selected,
     textview text:backdrop:selected:focus,
     .view text:backdrop:selected,
     textview text:backdrop:selected, .view text selection:backdrop,
     textview text selection:backdrop:focus,
     textview text selection:backdrop, iconview:backdrop:selected:focus, iconview:backdrop:selected, iconview text selection:backdrop:focus, iconview text selection:backdrop, flowbox flowboxchild:backdrop:selected,
     entry selection:backdrop, modelbutton.flat:backdrop:selected,
-    .menuitem.button.flat:backdrop:selected, spinbutton:not(.vertical) selection:backdrop, row:backdrop:selected, calendar:backdrop:selected {
+    .menuitem.button.flat:backdrop:selected, spinbutton:not(.vertical) selection:backdrop, treeview.view:backdrop:selected, row:backdrop:selected, calendar:backdrop:selected {
       color: #d4d5d7; }
-      label:backdrop selection:disabled, label:backdrop:disabled:selected, .selection-mode button.titlebutton:backdrop:disabled, filechooser placessidebar.sidebar row.sidebar-row:backdrop:disabled:selected,
-      .nautilus-window placessidebar.sidebar row.sidebar-row:backdrop:disabled:selected, .view:backdrop:disabled:selected,
+      filechooser placessidebar.sidebar row.sidebar-row:disabled:selected:backdrop,
+      .nautilus-window placessidebar.sidebar row.sidebar-row:disabled:selected:backdrop, label:backdrop selection:disabled, label:backdrop:disabled:selected, .selection-mode button.titlebutton:backdrop:disabled, .view:backdrop:disabled:selected,
       .view text:backdrop:disabled:selected,
       textview text:backdrop:disabled:selected, .view text selection:backdrop:disabled,
       textview text selection:backdrop:disabled, iconview:backdrop:disabled:selected, iconview text selection:backdrop:disabled, flowbox flowboxchild:backdrop:disabled:selected,
@@ -5877,15 +5874,17 @@ infobar.error:backdrop > revealer > box, infobar.error > revealer > box, infobar
 /*********
  * Lists *
  *********/
-list row {
-  padding: 0; }
+row.activatable:selected:active {
+  box-shadow: inherit; }
 
-row.activatable {
-  margin: 2px 4px; }
-  row.activatable:selected:active {
-    box-shadow: inherit; }
-  row.activatable:selected.has-open-popup, row.activatable:selected:hover {
-    background-color: inherit; }
+row.activatable:selected.has-open-popup, row.activatable:selected:hover {
+  background-color: inherit; }
+
+row:selected {
+  outline-width: 2px;
+  outline-offset: -5px;
+  -gtk-outline-radius: 5px;
+  outline-color: rgba(115, 118, 128, 0.2); }
 
 /*********************
  * App Notifications *
@@ -5999,8 +5998,7 @@ button.titlebutton:not(.appmenu) {
     border-color: #0d0e11;
     background: rgba(0, 0, 0, 0.3); }
 
-filechooser placessidebar.sidebar row.sidebar-row:selected,
-.nautilus-window placessidebar.sidebar row.sidebar-row:selected, treeview.view:selected:focus, treeview.view:selected, .view:selected:focus, .view:selected,
+.view:selected:focus, .view:selected,
 .view text:selected:focus,
 textview text:selected:focus,
 .view text:selected,
@@ -6008,27 +6006,20 @@ textview text:selected, .view text selection:focus, .view text selection,
 textview text selection:focus,
 textview text selection, iconview:selected:focus, iconview:selected, iconview text selection:focus, iconview text selection, flowbox flowboxchild:selected,
 entry selection, modelbutton.flat:selected,
-.menuitem.button.flat:selected, spinbutton:not(.vertical) selection, treeview.view:selected, row:selected, calendar:selected {
-  box-shadow: inset 0 0 0 2px rgba(115, 118, 128, 0.4);
-  border-radius: 5px;
-  background-color: rgba(115, 118, 128, 0.1);
-  color: #737680; }
-  label:backdrop selection, row.activatable:selected:backdrop, filechooser placessidebar.sidebar row.sidebar-row:backdrop:selected,
-  .nautilus-window placessidebar.sidebar row.sidebar-row:backdrop:selected, treeview.view:backdrop:selected, .view:backdrop:selected,
+.menuitem.button.flat:selected, spinbutton:not(.vertical) selection, treeview.view:selected:focus, treeview.view:selected, row:selected, calendar:selected {
+  background-color: #2f323c;
+  color: #abadb3; }
+  filechooser placessidebar.sidebar row.sidebar-row:selected:backdrop,
+  .nautilus-window placessidebar.sidebar row.sidebar-row:selected:backdrop, label:backdrop selection, row.activatable:selected:backdrop, .view:backdrop:selected,
   textview text:backdrop:selected:focus,
   .view text:backdrop:selected,
   textview text:backdrop:selected, .view text selection:backdrop,
   textview text selection:backdrop:focus,
   textview text selection:backdrop, iconview:backdrop:selected:focus, iconview:backdrop:selected, iconview text selection:backdrop:focus, iconview text selection:backdrop, flowbox flowboxchild:backdrop:selected,
   entry selection:backdrop, modelbutton.flat:backdrop:selected,
-  .menuitem.button.flat:backdrop:selected, spinbutton:not(.vertical) selection:backdrop, row:backdrop:selected, calendar:backdrop:selected {
-    box-shadow: none;
+  .menuitem.button.flat:backdrop:selected, spinbutton:not(.vertical) selection:backdrop, treeview.view:backdrop:selected, row:backdrop:selected, calendar:backdrop:selected {
     color: #90939a;
-    background-color: rgba(115, 118, 128, 0.1); }
-
-treeview.view:selected:focus, treeview.view:selected {
-  border-radius: 0;
-  box-shadow: none; }
+    background-color: #2f323c; }
 
 /* Nautilus */
 @define-color disk_space_unknown #383c4a;
@@ -6052,16 +6043,14 @@ filechooser placessidebar.sidebar row.sidebar-row:selected,
   margin-right: 6px;
   border-radius: 4px;
   box-shadow: 0 1px 4px rgba(115, 118, 128, 0.5);
-  transition: box-shadow 200ms ease-out; }
-  filechooser placessidebar.sidebar row.sidebar-row:selected:backdrop,
-  .nautilus-window placessidebar.sidebar row.sidebar-row:selected:backdrop {
-    box-shadow: none; }
+  transition: box-shadow 200ms ease-out;
+  background-color: #737680; }
   filechooser placessidebar.sidebar row.sidebar-row:selected:dir(ltr),
   .nautilus-window placessidebar.sidebar row.sidebar-row:selected:dir(ltr) {
-    background-image: linear-gradient(to right, #5b5d65 35px, #737680 0); }
+    background-image: linear-gradient(to right, #5b5d65 35px, transparent 0); }
   filechooser placessidebar.sidebar row.sidebar-row:selected:dir(rtl),
   .nautilus-window placessidebar.sidebar row.sidebar-row:selected:dir(rtl) {
-    background-image: linear-gradient(to left, #5b5d65 35px, #737680 0); }
+    background-image: linear-gradient(to left, #5b5d65 35px, transparent 0); }
   filechooser placessidebar.sidebar row.sidebar-row:selected revealer,
   .nautilus-window placessidebar.sidebar row.sidebar-row:selected revealer {
     padding-left: 8px;
@@ -6070,6 +6059,15 @@ filechooser placessidebar.sidebar row.sidebar-row:selected,
     .nautilus-window placessidebar.sidebar row.sidebar-row:selected revealer .sidebar-icon,
     .nautilus-window placessidebar.sidebar row.sidebar-row:selected revealer .sidebar-label {
       color: #ffffff; }
+  filechooser placessidebar.sidebar row.sidebar-row:selected:backdrop,
+  .nautilus-window placessidebar.sidebar row.sidebar-row:selected:backdrop {
+    box-shadow: none;
+    background-image: none; }
+    filechooser placessidebar.sidebar row.sidebar-row:selected:backdrop, filechooser placessidebar.sidebar row.sidebar-row:selected:backdrop .sidebar-icon, filechooser placessidebar.sidebar row.sidebar-row:selected:backdrop .sidebar-label,
+    .nautilus-window placessidebar.sidebar row.sidebar-row:selected:backdrop,
+    .nautilus-window placessidebar.sidebar row.sidebar-row:selected:backdrop .sidebar-icon,
+    .nautilus-window placessidebar.sidebar row.sidebar-row:selected:backdrop .sidebar-label {
+      color: #90939a; }
 
 filechooser placessidebar.sidebar row.sidebar-row .sidebar-icon,
 .nautilus-window placessidebar.sidebar row.sidebar-row .sidebar-icon {
