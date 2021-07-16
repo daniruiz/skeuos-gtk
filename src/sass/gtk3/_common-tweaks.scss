@@ -431,6 +431,7 @@ row {
 
   &:selected {
     outline-width: 2px;
+    outline-offset: -5px;
     -gtk-outline-radius: $menu_radius;
     outline-color: transparentize($selected_bg_color, .8);
   }
