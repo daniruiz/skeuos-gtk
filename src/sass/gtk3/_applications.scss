@@ -27,14 +27,15 @@ filechooser,
         border-radius: $button_radius;
         box-shadow: $_glow_shadow;
         transition: box-shadow $backdrop_transition;
+        background-color: $selected_bg_color;
 
         &:backdrop { box-shadow: none; }
 
         &:dir(ltr) {
-          background-image: linear-gradient(to right, darken($selected_bg_color, 10%) 35px, $selected_bg_color 0);
+          background-image: linear-gradient(to right, darken($selected_bg_color, 10%) 35px, transparent 0);
         }
         &:dir(rtl) {
-          background-image: linear-gradient(to left, darken($selected_bg_color, 10%) 35px, $selected_bg_color 0);
+          background-image: linear-gradient(to left, darken($selected_bg_color, 10%) 35px, transparent 0);
         }
 
         revealer {
