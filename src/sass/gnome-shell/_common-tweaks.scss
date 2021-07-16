@@ -71,7 +71,7 @@ $_osd_color: if($variant=='light', black, $fg_color);
     -arrow-rise: 0;
     margin: if($full-panel == 'true', .2em, .45em);
     background-color: transparentize($bg_color, .6);
-    box-shadow: 0 2px 4px -6px black;
+    box-shadow: 0 2px 4px -6px transparentize(black, .8);
     border-radius: $base_border_radius + 8px;
 }
 
@@ -106,6 +106,7 @@ $_osd_color: if($variant=='light', black, $fg_color);
         &:selected {
             background-color: $selected_bg_color;
             color: $selected_fg_color;
+            text-shadow: 0 1px 4px transparentize(black, 0.6);
         }
     }
 }
@@ -120,7 +121,7 @@ $_osd_color: if($variant=='light', black, $fg_color);
 .ws-switcher-active-down,
 .ws-switcher-active-left,
 .ws-switcher-active-right {
-    box-shadow: 0 0px 6px transparentize(black, .5);
+    //box-shadow: 0 0px 6px transparentize(black, .5);
 }
 
 // Window titles
@@ -170,7 +171,7 @@ $_osd_color: if($variant=='light', black, $fg_color);
 #panel {
     $_panel_bg: transparentize(black, .8);
     $_panel_fg: white;
-    $_panel_text_shadow: 0 0 10px black;
+    $_panel_text_shadow: 0 1px 2px transparentize(black, 0.3);
     padding: if($full-panel == 'true', .1em 0, 0);
     font-size: .9em;
     height: 2em;
@@ -273,6 +274,7 @@ $_osd_color: if($variant=='light', black, $fg_color);
 // search entry
 .search-entry {
     color: black;
+    text-shadow: 0px 1px 2px rgba(black, 0.9);
     font-weight: bold;
     background-color: $overview_transparent_bg;
     border-radius: 999px;
@@ -291,22 +293,27 @@ $_osd_color: if($variant=='light', black, $fg_color);
         background-color: white;
         color: black;
         font-weight: normal;
+        box-shadow: none;
+        text-shadow: none;
 
         StLabel.hint-text { color: black; }
 
         .search-entry-icon {
             color: black;
+            icon-shadow: none;
         }
     }
 
     .search-entry-icon {
         color: white;
+        icon-shadow: 0px 1px 2px rgba(black, 0.9);
     }
 }
 
 // search results
 .search-section-content {
     background-color: $overview_transparent_bg;
+    box-shadow: none;
     border: none;
 }
 
@@ -327,13 +334,13 @@ $_osd_color: if($variant=='light', black, $fg_color);
 
     .overview-icon StIcon {
         color: white;
-        icon-shadow: 0 0 6px transparentize(black, .6);
+        icon-shadow: 0 2px 6px transparentize(black, .6);
     }
 }
 
 .dash-background {
   background: $overview_transparent_bg;
-  box-shadow: 0 2px 8px 0 transparentize(black, .2);
+  //box-shadow: 0 2px 8px 0 transparentize(black, .2);
 }
 
 .dash-separator { background: $overview_transparent_bg; }
@@ -350,8 +357,8 @@ $_osd_color: if($variant=='light', black, $fg_color);
 
 /* App Folders */
 .app-well-app.app-folder {
-    background-color: rgba(0, 0, 0, .1);
-    box-shadow: 0 2px 5px black;
+    background-color: $overview_transparent_bg;
+    //box-shadow: 0 2px 5px black;
 
     &:checked { background: black; }
 }
