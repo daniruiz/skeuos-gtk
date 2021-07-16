@@ -5243,18 +5243,18 @@ tabbar tab,
 /**********
  * Button *
  **********/
-.titlebar stackswitcher button:active, .titlebar stackswitcher button:checked,
-.titlebar button.toggle:active,
-.titlebar button.toggle:checked,
+.titlebar:not(headerbar) stackswitcher button:active, .titlebar:not(headerbar) stackswitcher button:checked,
+.titlebar:not(headerbar) button.toggle:active,
+.titlebar:not(headerbar) button.toggle:checked,
 headerbar stackswitcher button:active,
 headerbar stackswitcher button:checked,
 headerbar button.toggle:active,
 headerbar button.toggle:checked, button.flat:hover, button:active, button:checked {
   background: #1b1d24;
   box-shadow: inset 0 3px 5px -4px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.05); }
-  .titlebar stackswitcher button:backdrop:active, .titlebar stackswitcher button:backdrop:checked,
-  .titlebar button.toggle:backdrop:active,
-  .titlebar button.toggle:backdrop:checked,
+  .titlebar:not(headerbar) stackswitcher button:backdrop:active, .titlebar:not(headerbar) stackswitcher button:backdrop:checked,
+  .titlebar:not(headerbar) button.toggle:backdrop:active,
+  .titlebar:not(headerbar) button.toggle:backdrop:checked,
   headerbar stackswitcher button:backdrop:active,
   headerbar stackswitcher button:backdrop:checked,
   headerbar button.toggle:backdrop:active,
@@ -5451,7 +5451,7 @@ scale slider {
 /***************
  * Header bars *
  ***************/
-.titlebar,
+.titlebar:not(headerbar),
 headerbar {
   border-color: black;
   background: #0d0e11 linear-gradient(to top, #16171d, #1a1c23);
@@ -5459,31 +5459,31 @@ headerbar {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.75);
   background-repeat: no-repeat;
   background-position: left; }
-  .titlebar:backdrop,
+  .titlebar:not(headerbar):backdrop,
   headerbar:backdrop {
     background-repeat: no-repeat;
     background-position: left;
     box-shadow: none; }
-  .titlebar viewswitcher button > stack > box.narrow,
-  .titlebar hdyviewswitcher > button box.narrow,
+  .titlebar:not(headerbar) viewswitcher button > stack > box.narrow,
+  .titlebar:not(headerbar) hdyviewswitcher > button box.narrow,
   headerbar viewswitcher button > stack > box.narrow,
   headerbar hdyviewswitcher > button box.narrow {
     margin: -7px 0 -5px; }
-  .titlebar viewswitcher button > stack > box.wide,
-  .titlebar hdyviewswitcher > button box.wide,
+  .titlebar:not(headerbar) viewswitcher button > stack > box.wide,
+  .titlebar:not(headerbar) hdyviewswitcher > button box.wide,
   headerbar viewswitcher button > stack > box.wide,
   headerbar hdyviewswitcher > button box.wide {
     margin: -8px 0; }
-  .titlebar.default-decoration,
+  .titlebar:not(headerbar).default-decoration,
   headerbar.default-decoration {
     min-height: 0;
     padding: 6px; }
-    .titlebar.default-decoration button.titlebutton,
+    .titlebar:not(headerbar).default-decoration button.titlebutton,
     headerbar.default-decoration button.titlebutton {
       min-height: 0;
       min-width: 0;
       margin: 0; }
-  dialog .titlebar, dialog .titlebar:backdrop, dialog headerbar, dialog headerbar:backdrop {
+  dialog .titlebar:not(headerbar), dialog .titlebar:not(headerbar):backdrop, dialog headerbar, dialog headerbar:backdrop {
     background: #23252e;
     border: 0;
     box-shadow: none; }

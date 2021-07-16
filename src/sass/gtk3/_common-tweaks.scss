@@ -179,7 +179,7 @@ scale slider {
 /***************
  * Header bars *
  ***************/
-.titlebar,
+.titlebar:not(headerbar),
 headerbar {
   $_border_color: darken($bg_color, 20%);
   border-color: $_border_color;
