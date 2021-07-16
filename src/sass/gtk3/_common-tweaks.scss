@@ -599,7 +599,7 @@ button.titlebutton:not(.appmenu) {
 
 %selected_items {
   background-color: mix($base_color, $selected_bg_color, 90%);
-  color: if($variant=='light', $selected_borders_color, $selected_bg_color);
+  color: mix($selected_bg_color, if($variant=='light', black, white), 60%);
 
   @at-root %selected_items_backdrop,
   &:backdrop {
