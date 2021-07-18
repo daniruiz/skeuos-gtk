@@ -6056,7 +6056,7 @@ filechooser placessidebar.sidebar:dir(rtl),
 
 filechooser placessidebar.sidebar:backdrop,
 .nautilus-window placessidebar.sidebar:backdrop {
-  box-shadow: none; }
+  background-image: none; }
 
 filechooser placessidebar.sidebar row.sidebar-row:selected,
 .nautilus-window placessidebar.sidebar row.sidebar-row:selected {

@@ -16,7 +16,7 @@ filechooser,
       background-image: linear-gradient(to left, darken($bg_color, 4%) 41px, $bg_color 0);
     }
 
-    &:backdrop { box-shadow: none; }
+    &:backdrop { background-image: none; }
 
     row.sidebar-row {
       &:selected {
