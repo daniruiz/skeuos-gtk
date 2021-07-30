@@ -1,3 +1,11 @@
+[20210730]
+ * Regenerate css files
+ * GTK3: Join sidebars with left headerbars
+ * GTK3: Don't use headerbar styles for titlebars
+ * GTK4: Reduce volumen of close/minimize/maximize buttons
+ * GTK3: Add outline design to selected rows
+ * GTK3: Reduce volumen of close/minimize/maximize buttons
+
 [20210718]
  * GTK3: remove nautilus sidebar image on backdrop mode
  * Fix background of checked stackswitcher button
