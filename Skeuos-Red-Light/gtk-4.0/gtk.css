@@ -4100,26 +4100,22 @@ windowcontrols {
     padding: 0;
     min-width: 0;
     min-height: 0;
-    border: 1px solid #cccccc;
-    box-shadow: inset 0 3px 3px rgba(0, 0, 0, 0.1), 0 1px rgba(255, 255, 255, 0.1);
+    border: 1px solid #c2c2c2;
+    box-shadow: inset 0 3px 10px -4px rgba(0, 0, 0, 0.1), 0 1px rgba(255, 255, 255, 0.05);
     -gtk-icon-shadow: none;
     transition: all .2s; }
     windowcontrols button:hover {
       color: #5c616c;
       background: white;
       border-color: transparent;
-      box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.1); }
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1); }
     windowcontrols button.close {
       color: white;
-      -gtk-icon-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
       background: #ec0101;
-      box-shadow: none;
       border-color: transparent; }
       windowcontrols button.close:hover {
-        color: white;
-        -gtk-icon-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
-        background: #ee1a1a;
-        box-shadow: 0 1px 2px 1px #cccccc; }
+        color: black;
+        background: #ee1a1a; }
     windowcontrols button:backdrop, windowcontrols button:backdrop:hover {
       color: transparent;
       background: transparent;

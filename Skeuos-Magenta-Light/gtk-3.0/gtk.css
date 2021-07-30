@@ -5472,7 +5472,6 @@ scale slider {
 /***************
  * Header bars *
  ***************/
-.titlebar:not(headerbar),
 headerbar {
   border-color: #cccccc;
   background: #ededed linear-gradient(to top, #e8e8e8, #f0f0f0);
@@ -5480,40 +5479,51 @@ headerbar {
   box-shadow: 0 1px 4px rgba(204, 204, 204, 0.75);
   background-repeat: no-repeat;
   background-position: left; }
-  .titlebar:not(headerbar):backdrop,
   headerbar:backdrop {
     background-repeat: no-repeat;
     background-position: left;
     box-shadow: none; }
-  .titlebar:not(headerbar) viewswitcher button > stack > box.narrow,
-  .titlebar:not(headerbar) hdyviewswitcher > button box.narrow,
-  headerbar viewswitcher button > stack > box.narrow,
-  headerbar hdyviewswitcher > button box.narrow {
-    margin: -7px 0 -5px; }
-  .titlebar:not(headerbar) viewswitcher button > stack > box.wide,
-  .titlebar:not(headerbar) hdyviewswitcher > button box.wide,
-  headerbar viewswitcher button > stack > box.wide,
-  headerbar hdyviewswitcher > button box.wide {
-    margin: -8px 0; }
-  .titlebar:not(headerbar).default-decoration,
-  headerbar.default-decoration {
-    min-height: 0;
-    padding: 6px; }
-    .titlebar:not(headerbar).default-decoration button.titlebutton,
-    headerbar.default-decoration button.titlebutton {
-      min-height: 0;
-      min-width: 0;
-      margin: 0; }
-  dialog .titlebar:not(headerbar), dialog .titlebar:not(headerbar):backdrop, dialog headerbar, dialog headerbar:backdrop {
-    background: #ffffff;
-    border: 0;
-    box-shadow: none; }
 
-paned headerbar:first-child, hdyleaflet headerbar:first-child, headerbar.titlebar headerbar:first-child {
+.titlebar:not(headerbar) viewswitcher button > stack > box.narrow,
+.titlebar:not(headerbar) hdyviewswitcher > button box.narrow,
+headerbar viewswitcher button > stack > box.narrow,
+headerbar hdyviewswitcher > button box.narrow {
+  margin: -7px 0 -5px; }
+
+.titlebar:not(headerbar) viewswitcher button > stack > box.wide,
+.titlebar:not(headerbar) hdyviewswitcher > button box.wide,
+headerbar viewswitcher button > stack > box.wide,
+headerbar hdyviewswitcher > button box.wide {
+  margin: -8px 0; }
+
+.default-decoration.titlebar:not(headerbar),
+headerbar.default-decoration {
+  min-height: 0;
+  padding: 6px; }
+  .default-decoration.titlebar:not(headerbar) button.titlebutton,
+  headerbar.default-decoration button.titlebutton {
+    min-height: 0;
+    min-width: 0;
+    margin: 0; }
+
+dialog .titlebar:not(headerbar), dialog headerbar, dialog headerbar:backdrop {
+  background: #ffffff;
+  border: 0;
+  box-shadow: none; }
+
+paned headerbar:first-child,
+hdyleaflet headerbar:first-child,
+headerbar.titlebar headerbar:first-child,
+deck leaflet box:first-child headerbar:first-child,
+leaflet > headerbar:first-child {
   border-color: #d9d9d9;
   background: #fafafa;
   box-shadow: none; }
-  paned headerbar:first-child:backdrop, hdyleaflet headerbar:first-child:backdrop, headerbar.titlebar headerbar:first-child:backdrop {
+  paned headerbar:first-child:backdrop,
+  hdyleaflet headerbar:first-child:backdrop,
+  headerbar.titlebar headerbar:first-child:backdrop,
+  deck leaflet box:first-child headerbar:first-child:backdrop,
+  leaflet > headerbar:first-child:backdrop {
     background: #f7f7f7; }
 
 /**************
@@ -5903,9 +5913,11 @@ row.activatable:selected.has-open-popup, row.activatable:selected:hover {
 
 row:selected {
   outline-width: 2px;
-  outline-offset: -5px;
-  -gtk-outline-radius: 5px;
-  outline-color: rgba(205, 2, 69, 0.2); }
+  outline-offset: -4px;
+  -gtk-outline-radius: 4px;
+  outline-color: rgba(205, 2, 69, 0.2);
+  border-radius: 8px;
+  box-shadow: inset 0 0 0 4px rgba(205, 2, 69, 0.2), inset 0 0 0 2px #f5e1e8; }
 
 /*********************
  * App Notifications *
@@ -5984,8 +5996,8 @@ button.titlebutton:not(.appmenu) {
   padding: 0;
   min-width: 0;
   min-height: 0;
-  border: 1px solid #cccccc;
-  box-shadow: inset 0 3px 2px rgba(0, 0, 0, 0.1), 0 1px rgba(255, 255, 255, 0.1);
+  border: 1px solid #c2c2c2;
+  box-shadow: inset 0 3px 5px -4px rgba(0, 0, 0, 0.1), 0 1px rgba(255, 255, 255, 0.05);
   -gtk-icon-shadow: none;
   transition: all .2s; }
   button.titlebutton:not(.appmenu) + button.titlebutton:not(.appmenu) {
@@ -5996,18 +6008,14 @@ button.titlebutton:not(.appmenu) {
     color: #5c616c;
     background: white;
     border-color: transparent;
-    box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.1); }
+    box-shadow: 0 0 0 1px #d9d9d9; }
   button.titlebutton:not(.appmenu).close {
     color: white;
-    -gtk-icon-shadow: 0 -1px 1px rgba(0, 0, 0, 0.2);
     background: #cd0245;
-    box-shadow: none;
     border-color: transparent; }
     button.titlebutton:not(.appmenu).close:hover {
-      color: white;
-      -gtk-icon-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
-      background: #d21b58;
-      box-shadow: 0 1px 1px 1px #cccccc; }
+      color: black;
+      background: #d21b58; }
   .maximized button.titlebutton:not(.appmenu):last-child, .fullscreen button.titlebutton:not(.appmenu):last-child, .tiled button.titlebutton:not(.appmenu):last-child, .tiled-top button.titlebutton:not(.appmenu):last-child, .tiled-right button.titlebutton:not(.appmenu):last-child, .tiled-bottom button.titlebutton:not(.appmenu):last-child, .tiled-left button.titlebutton:not(.appmenu):last-child {
     margin-right: 0; }
   .maximized button.titlebutton:not(.appmenu):first-child, .fullscreen button.titlebutton:not(.appmenu):first-child, .tiled button.titlebutton:not(.appmenu):first-child, .tiled-top button.titlebutton:not(.appmenu):first-child, .tiled-right button.titlebutton:not(.appmenu):first-child, .tiled-bottom button.titlebutton:not(.appmenu):first-child, .tiled-left button.titlebutton:not(.appmenu):first-child {
