@@ -179,7 +179,6 @@ scale slider {
 /***************
  * Header bars *
  ***************/
-.titlebar:not(headerbar),
 headerbar {
   $_border_color: darken($bg_color, 20%);
   border-color: $_border_color;
@@ -194,7 +193,10 @@ headerbar {
     background-position: left;
     box-shadow: none;
   }
+}
 
+%titlebar,
+headerbar {
   stackswitcher button,
   button.toggle {
     &:active, &:checked { @extend %button_active; }
