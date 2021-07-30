@@ -2,7 +2,8 @@ PKGNAME = skeuos-gtk
 MAINTAINER = Daniel Ruiz de Alegría <daniel@drasite.com>
 PREFIX ?= /usr
 THEMES ?= $(patsubst %/index.theme,%,$(wildcard */index.theme))
-COLOR_VARIANTS ?= Blue Green Red Yellow Black Brown Cyan Grey Magenta Orange Teal Violet
+
+include src/Makefile.inc
 
 all:
 
