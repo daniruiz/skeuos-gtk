@@ -431,9 +431,11 @@ row {
 
   &:selected {
     outline-width: 2px;
-    outline-offset: -5px;
-    -gtk-outline-radius: $menu_radius;
+    outline-offset: -4px;
+    -gtk-outline-radius: $button_radius;
     outline-color: transparentize($selected_bg_color, .8);
+    border-radius: $button_radius + 4px;
+    box-shadow: inset 0 0 0 4px transparentize($selected_bg_color, .8), inset 0 0 0 2px mix($base_color, $selected_bg_color, 90%);
   }
 }
 
