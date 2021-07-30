@@ -227,15 +227,18 @@ headerbar {
   }
 }
 
-paned, hdyleaflet, headerbar.titlebar {
-  & headerbar:first-child {
-    border-color: $backdrop_borders_color;
-    background: $base_color;
-    box-shadow: none;
+paned headerbar:first-child,
+hdyleaflet headerbar:first-child,
+headerbar.titlebar headerbar:first-child,
+deck leaflet box:first-child headerbar:first-child,
+leaflet > headerbar:first-child {
+  border-color: $backdrop_borders_color;
+  background: $base_color;
+  box-shadow: none;
 
-    &:backdrop { background: $backdrop_base_color; }
-  }
+  &:backdrop { background: $backdrop_base_color; }
 }
+
 
 /**************
  * Tree Views *
