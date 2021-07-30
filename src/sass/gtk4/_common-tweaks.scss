@@ -196,9 +196,8 @@ windowcontrols {
     padding: 0;
     min-width: 0;
     min-height: 0;
-    border: 1px solid darken($borders_color, 5%);
-    box-shadow: inset 0 3px 3px $shadow_color,
-                      0 1px transparentize(white, .9);
+    border: 1px solid $alt_borders_color;
+    box-shadow: $_widget_inset_shadow;
     -gtk-icon-shadow: none;
     transition: all .2s;
 
@@ -207,21 +206,17 @@ windowcontrols {
       color: $fg_color;
       background: $_titlebutton_bg;
       border-color: transparent;
-      box-shadow: 0 1px 2px 1px $shadow_color;
+      box-shadow: 0 0 0 1px $shadow_color;
     }
 
     &.close {
       color: if($variant=='light', white, black);
-      -gtk-icon-shadow: 0 -1px 0 transparentize(black, .8);
       background: $selected_bg_color;
-      box-shadow: none;
       border-color: transparent;
 
       &:hover {
-        color: white;
-        -gtk-icon-shadow: 0 1px 0 transparentize(black, .5);
+        color: if($variant=='light', black, white);
         background: mix(white, $selected_bg_color, 10%);
-        box-shadow: 0 1px 2px 1px darken($borders_color, 5%);
       }
 
       @if lightness($selected_bg_color) > 60%
