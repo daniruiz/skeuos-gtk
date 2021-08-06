@@ -1,3 +1,9 @@
+[20210806]
+ * Regenerate assets for xfwm4 and metacity
+ * Update xfwm4 assets to match gtk titlebuttons
+ * Replace obsolete inkscape option --export-png with --export-filename
+ * Add include src/Makefile.inc to main Makefile
+
 [20210730]
  * Regenerate css files
  * GTK3: Join sidebars with left headerbars
