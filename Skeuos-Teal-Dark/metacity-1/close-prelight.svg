@@ -1,40 +1,69 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.1"
-   viewBox="0 0 20.000944 20.000944"
+   viewBox="0 0 20.031719 20.025186"
    id="svg213"
    sodipodi:docname="__Assets-Dark-Teal.svg"
-   width="20.000944"
-   height="20.000944"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg">
+   width="20.031719"
+   height="20.025187">
+  <metadata
+     id="metadata217">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
   <sodipodi:namedview
-     id="namedview215"
-     pagecolor="#505050"
-     bordercolor="#ffffff"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
      borderopacity="1"
-     inkscape:pageshadow="0"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
      inkscape:pageopacity="0"
-     inkscape:pagecheckerboard="1" />
+     inkscape:pageshadow="2"
+     inkscape:window-width="640"
+     inkscape:window-height="480"
+     id="namedview215" />
   <defs
-     id="defs21">
+     id="defs27">
+    <linearGradient
+       id="linearGradient1078">
+      <stop
+         style="stop-opacity:.149"
+         offset="0"
+         id="stop2" />
+      <stop
+         style="stop-opacity:0"
+         offset="1"
+         id="stop4" />
+    </linearGradient>
     <linearGradient
        id="linearGradient1387">
       <stop
          stop-color="#383d4b"
          offset="0"
-         id="stop2" />
+         id="stop7" />
       <stop
          stop-color="#383d4b"
          offset=".6"
-         id="stop4" />
+         id="stop9" />
       <stop
          stop-color="#13151a"
          offset="1"
-         id="stop6" />
+         id="stop11" />
     </linearGradient>
     <clipPath
        id="b">
@@ -44,7 +73,7 @@
          width="16"
          height="16"
          opacity="0.3"
-         id="rect9" />
+         id="rect14" />
     </clipPath>
     <clipPath
        id="a">
@@ -55,7 +84,7 @@
          height="28"
          fill="#ffffff"
          opacity="0.539"
-         id="rect12" />
+         id="rect17" />
     </clipPath>
     <radialGradient
        id="radialGradient1090-4-5"
@@ -89,26 +118,36 @@
        gradientTransform="matrix(1.4225,-5.3748e-7,5.371e-7,1.4225,57.973,-207.87)"
        gradientUnits="userSpaceOnUse"
        xlink:href="#linearGradient1387" />
-    <radialGradient
-       id="radialGradient1090-4-5-7"
-       cx="19"
-       cy="571.70001"
-       r="7.5026002"
-       gradientTransform="matrix(1.4225,-5.3748e-7,5.371e-7,1.4225,57.973,-207.87)"
+    <linearGradient
+       id="linearGradient1080"
+       x1="19"
+       x2="19"
+       y1="562.35999"
+       y2="581.25"
        gradientUnits="userSpaceOnUse"
-       xlink:href="#linearGradient1387" />
-    <radialGradient
-       id="radialGradient1090-4-5-73"
-       cx="19"
-       cy="571.70001"
-       r="7.5026002"
-       gradientTransform="matrix(1.4225,-5.3748e-7,5.371e-7,1.4225,57.973,-174.87)"
+       xlink:href="#linearGradient1078" />
+    <linearGradient
+       id="linearGradient1080-6"
+       x1="19"
+       x2="19"
+       y1="562.35999"
+       y2="581.25"
+       gradientTransform="translate(3e-7,33)"
        gradientUnits="userSpaceOnUse"
-       xlink:href="#linearGradient1387" />
+       xlink:href="#linearGradient1078" />
+    <linearGradient
+       id="linearGradient1080-62"
+       x1="19"
+       x2="19"
+       y1="562.35999"
+       y2="581.25"
+       gradientTransform="translate(-2e-7,66)"
+       gradientUnits="userSpaceOnUse"
+       xlink:href="#linearGradient1078" />
   </defs>
   <g
      id="close-prelight"
-     transform="matrix(1.0573,0,0,1.0573,-44.945821,-594.0969)">
+     transform="matrix(1.0573,0,0,1.0573,-44.945821,-594.07265)">
     <rect
        x="42.509998"
        y="561.90002"
@@ -116,20 +155,9 @@
        height="18.917"
        fill="#23252e"
        stroke-width="0.67561"
-       id="rect80" />
+       id="rect88" />
     <path
-       d="m 51.999,562.81 c -4.9464,0 -8.9685,4.0222 -8.9685,8.9685 0,4.9465 4.0222,8.9685 8.9685,8.9685 4.9464,0 8.9685,-4.0222 8.9685,-8.9685 0,-4.9464 -4.0222,-8.9685 -8.9685,-8.9685 z"
-       color="#000000"
-       color-rendering="auto"
-       dominant-baseline="auto"
-       image-rendering="auto"
-       shape-rendering="auto"
-       solid-color="#000000"
-       stop-color="#000000"
-       stroke-width="0.9458"
-       id="path82" />
-    <path
-       d="m 51.998,562.82 c -4.698,0 -8.5122,3.8145 -8.5122,8.5122 0,4.6977 3.8142,8.5122 8.5122,8.5122 4.698,0 8.5122,-3.8145 8.5122,-8.5122 0,-4.6977 -3.8142,-8.5122 -8.5122,-8.5122 z"
+       d="m 51.998,562.35 c -4.959,0 -8.9852,4.0264 -8.9852,8.9852 0,4.9588 4.0261,8.9851 8.9852,8.9851 4.959,0 8.9852,-4.0264 8.9852,-8.9851 0,-4.9587 -4.0261,-8.9852 -8.9852,-8.9852 z"
        color="#000000"
        color-rendering="auto"
        dominant-baseline="auto"
@@ -138,32 +166,27 @@
        shape-rendering="auto"
        solid-color="#000000"
        stop-color="#000000"
-       id="path84" />
+       style="stroke:#0d0e11;stroke-width:0.94581"
+       id="path90" />
     <path
-       d="m 51.998,562.82 c -4.698,0 -8.5122,3.8145 -8.5122,8.5122 0,4.6977 3.8142,8.5122 8.5122,8.5122 4.698,0 8.5122,-3.8145 8.5122,-8.5122 0,-4.6977 -3.8142,-8.5122 -8.5122,-8.5122 z"
+       d="m 51.998,562.88 c -4.6673,0 -8.4566,3.7896 -8.4566,8.4566 0,4.667 3.7893,8.4566 8.4566,8.4566 4.6673,0 8.4566,-3.7896 8.4566,-8.4566 0,-4.667 -3.7893,-8.4566 -8.4566,-8.4566 z"
        color="#000000"
        color-rendering="auto"
        dominant-baseline="auto"
-       fill="#ffffff"
+       fill="#fff"
        image-rendering="auto"
-       opacity="0.1"
+       opacity=".1"
        shape-rendering="auto"
        solid-color="#000000"
        stop-color="#000000"
-       id="path86" />
-    <path
-       d="m 48.217,568.5 h 0.9455 c 0.01008,-1.3e-4 0.01966,-4.5e-4 0.02951,0 0.24106,0.0101 0.48208,0.12156 0.65003,0.29555 l 2.1568,2.1577 2.1865,-2.1577 c 0.25114,-0.21801 0.42232,-0.28894 0.65002,-0.29555 h 0.9455 v 0.94581 c 0,0.27095 -0.0324,0.52081 -0.23637,0.70937 l -2.1568,2.1577 2.1273,2.1281 c 0.17793,0.17798 0.26591,0.42888 0.26591,0.67982 v 0.94583 h -0.9455 c -0.25083,-1e-5 -0.50165,-0.088 -0.67957,-0.26603 l -2.1568,-2.1576 -2.1568,2.1576 c -0.17791,0.17801 -0.42875,0.26603 -0.67959,0.26603 h -0.9455 v -0.94583 c 0,-0.25092 0.08799,-0.50184 0.26593,-0.67982 l 2.1568,-2.1281 -2.1568,-2.1577 c -0.19924,-0.18409 -0.28663,-0.44383 -0.26593,-0.70937 V 568.5 Z"
-       color="#bebebe"
-       enable-background="new"
-       opacity="0.5"
-       stroke-width="1.2609"
-       id="path88" />
+       style="opacity:0.10345;fill:#ffffff"
+       id="path92" />
     <path
        d="m 48.217,567.55 h 0.9455 c 0.01008,-1.3e-4 0.01966,-4.5e-4 0.02951,0 0.24106,0.0101 0.48208,0.12156 0.65003,0.29555 l 2.1568,2.1577 2.1865,-2.1577 c 0.25114,-0.21801 0.42232,-0.28894 0.65002,-0.29555 h 0.9455 v 0.94581 c 0,0.27095 -0.0324,0.52081 -0.23637,0.70937 l -2.1568,2.1577 2.1273,2.1281 c 0.17793,0.17798 0.26591,0.42888 0.26591,0.67982 v 0.94583 h -0.9455 c -0.25083,-10e-6 -0.50165,-0.088 -0.67957,-0.26603 l -2.1568,-2.1576 -2.1568,2.1576 c -0.17791,0.17801 -0.42875,0.26603 -0.67959,0.26603 h -0.9455 v -0.94583 c 0,-0.25092 0.08799,-0.50184 0.26593,-0.67982 l 2.1568,-2.1281 -2.1568,-2.1577 c -0.19924,-0.18409 -0.28663,-0.44383 -0.26593,-0.70937 V 567.55 Z"
        color="#bebebe"
        enable-background="new"
        fill="#ffffff"
        stroke-width="1.2609"
-       id="path90" />
+       id="path94" />
   </g>
 </svg>
