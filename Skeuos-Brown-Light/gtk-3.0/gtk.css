@@ -4545,7 +4545,7 @@ textview text:selected:focus,
 .view text:selected,
 textview text:selected, .view text selection:focus, .view text selection,
 textview text selection:focus,
-textview text selection, iconview:selected:focus, iconview:selected, iconview text selection:focus, iconview text selection, flowbox flowboxchild:selected,
+textview text selection, iconview:selected:focus, iconview:selected, iconview text selection:focus, .view text selection, iconview text selection, flowbox flowboxchild:selected,
 entry selection, modelbutton.flat:selected,
 .menuitem.button.flat:selected, spinbutton:not(.vertical) selection, treeview.view:selected:focus, treeview.view:selected, row:selected, calendar:selected {
   background-color: #c37837; }
@@ -4555,7 +4555,7 @@ entry selection, modelbutton.flat:selected,
   .view text:selected,
   textview text:selected, .view text selection:focus, .view text selection,
   textview text selection:focus,
-  textview text selection, iconview:selected:focus, iconview:selected, iconview text selection:focus, iconview text selection, flowbox flowboxchild:selected,
+  textview text selection, iconview:selected:focus, iconview:selected, iconview text selection:focus, .view text selection, iconview text selection, flowbox flowboxchild:selected,
   entry selection, modelbutton.flat:selected,
   .menuitem.button.flat:selected, spinbutton:not(.vertical) selection, treeview.view:selected:focus, treeview.view:selected, row:selected, calendar:selected {
     color: #ffffff; }
@@ -6033,7 +6033,7 @@ textview text:selected:focus,
 .view text:selected,
 textview text:selected, .view text selection:focus, .view text selection,
 textview text selection:focus,
-textview text selection, iconview:selected:focus, iconview:selected, iconview text selection:focus, iconview text selection, flowbox flowboxchild:selected,
+textview text selection, iconview:selected:focus, iconview:selected, iconview text selection:focus, .view text selection, iconview text selection, flowbox flowboxchild:selected,
 entry selection, modelbutton.flat:selected,
 .menuitem.button.flat:selected, spinbutton:not(.vertical) selection, treeview.view:selected:focus, treeview.view:selected, row:selected, calendar:selected {
   background-color: #f4ede6;
@@ -6142,7 +6142,9 @@ filechooser placessidebar.sidebar row.sidebar-row .sidebar-icon,
 
 /* XFCE4 NOTIFICATIONS */
 #XfceNotifyWindow {
-  background-color: #272a34; }
+  border: 1px solid #d9d9d9;
+  border-bottom-width: 2px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1); }
 
 /* Whisker menu */
 #whiskermenu-window entry {
