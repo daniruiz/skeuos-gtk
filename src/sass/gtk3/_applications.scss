@@ -113,10 +113,15 @@ filechooser,
 }
 
 /* XFCE4 NOTIFICATIONS */
-#XfceNotifyWindow {
+#XfceNotifyWindow, .xfsm-logout-dialog, .xfsm-logout-dialog button {
   border: 1px solid $borders_color;
   border-bottom-width: 2px;
   box-shadow: inset 0 0 0 1px transparentize(white, .9);
+  -gtk-icon-style: symbolic;
+}
+
+.xfsm-logout-dialog > .vertical > .horizontal button {
+  margin: 8px;
 }
 
 /* Whisker menu */
