@@ -422,8 +422,9 @@ infobar {
  * Lists *
  *********/
 row {
+
   &:selected, &.activatable:selected {
-    &, &:backdrop {
+    &, &:backdrop, &:active {
     border-radius: $button_radius + 2px;
     background-color: $bg_color;
     color: $text_color;
