@@ -1293,7 +1293,7 @@ modelbutton.flat,
   outline-offset: -2px; }
   modelbutton.flat:hover,
   .menuitem.button.flat:hover {
-    background-color: white; }
+    background-color: #eaebec; }
 
 modelbutton.flat arrow {
   background: none; }
@@ -4569,7 +4569,7 @@ entry selection, modelbutton.flat:selected,
     .menuitem.button.flat:disabled:selected, spinbutton:not(.vertical) selection:disabled, treeview.view:disabled:selected, row:disabled:selected, calendar:disabled:selected {
       color: #93bbff; }
     filechooser placessidebar.sidebar row.sidebar-row:selected:backdrop,
-    .nautilus-window placessidebar.sidebar row.sidebar-row:selected:backdrop, row.activatable:selected:backdrop, label:backdrop selection, label:backdrop:selected, .selection-mode button.titlebutton:backdrop, .view:backdrop:selected,
+    .nautilus-window placessidebar.sidebar row.sidebar-row:selected:backdrop, label:backdrop selection, label:backdrop:selected, .selection-mode button.titlebutton:backdrop, .view:backdrop:selected,
     textview text:backdrop:selected:focus,
     .view text:backdrop:selected,
     textview text:backdrop:selected, .view text selection:backdrop,
@@ -4727,7 +4727,7 @@ popover.emoji-completion contents row box {
   padding: 2px 10px; }
 
 popover.emoji-completion .emoji:hover {
-  background: white; }
+  background: #eaebec; }
 
 /***************************
  * Check and Radio buttons *
@@ -5905,19 +5905,11 @@ infobar.error:backdrop > revealer > box, infobar.error > revealer > box, infobar
 /*********
  * Lists *
  *********/
-row.activatable:selected:active {
-  box-shadow: inherit; }
-
-row.activatable:selected.has-open-popup, row.activatable:selected:hover {
-  background-color: inherit; }
-
-row:selected {
-  outline-width: 2px;
-  outline-offset: -4px;
-  -gtk-outline-radius: 4px;
-  outline-color: rgba(39, 119, 255, 0.2);
-  border-radius: 8px;
-  box-shadow: inset 0 0 0 4px rgba(39, 119, 255, 0.2), inset 0 0 0 2px #e5edfa; }
+row:selected, row:selected:backdrop, row:selected:active, row.activatable:selected, row.activatable:selected:backdrop, row.activatable:selected:active {
+  border-radius: 6px;
+  background-color: #ffffff;
+  color: black;
+  box-shadow: inset 0 0 0 9999px #eaebec, inset 0 0 0 2px #ffffff; }
 
 /*********************
  * App Notifications *
@@ -6027,29 +6019,6 @@ button.titlebutton:not(.appmenu) {
     border-color: #d9d9d9;
     background: rgba(0, 0, 0, 0.1); }
 
-.view:selected:focus, .view:selected,
-.view text:selected:focus,
-textview text:selected:focus,
-.view text:selected,
-textview text:selected, .view text selection:focus, .view text selection,
-textview text selection:focus,
-textview text selection, iconview:selected:focus, iconview:selected, iconview text selection:focus, .view text selection, iconview text selection, flowbox flowboxchild:selected,
-entry selection, modelbutton.flat:selected,
-.menuitem.button.flat:selected, spinbutton:not(.vertical) selection, treeview.view:selected:focus, treeview.view:selected, row:selected, calendar:selected {
-  background-color: #e5edfa;
-  color: #174799; }
-  filechooser placessidebar.sidebar row.sidebar-row:selected:backdrop,
-  .nautilus-window placessidebar.sidebar row.sidebar-row:selected:backdrop, label:backdrop selection, row.activatable:selected:backdrop, .view:backdrop:selected,
-  textview text:backdrop:selected:focus,
-  .view text:backdrop:selected,
-  textview text:backdrop:selected, .view text selection:backdrop,
-  textview text selection:backdrop:focus,
-  textview text selection:backdrop, iconview:backdrop:selected:focus, iconview:backdrop:selected, iconview text selection:backdrop:focus, iconview text selection:backdrop, flowbox flowboxchild:backdrop:selected,
-  entry selection:backdrop, modelbutton.flat:backdrop:selected,
-  .menuitem.button.flat:backdrop:selected, spinbutton:not(.vertical) selection:backdrop, treeview.view:backdrop:selected, row:backdrop:selected, calendar:backdrop:selected {
-    color: #669efd;
-    background-color: #e5edfa; }
-
 /* Nautilus */
 @define-color disk_space_unknown #383c4a;
 @define-color disk_space_used #2777ff;
@@ -6141,10 +6110,14 @@ filechooser placessidebar.sidebar row.sidebar-row .sidebar-icon,
   box-shadow: inset 4px 0 0 #2777ff; }
 
 /* XFCE4 NOTIFICATIONS */
-#XfceNotifyWindow {
+#XfceNotifyWindow, .xfsm-logout-dialog, .xfsm-logout-dialog button {
   border: 1px solid #d9d9d9;
   border-bottom-width: 2px;
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1); }
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  -gtk-icon-style: symbolic; }
+
+.xfsm-logout-dialog > .vertical > .horizontal button {
+  margin: 8px; }
 
 /* Whisker menu */
 #whiskermenu-window entry {
