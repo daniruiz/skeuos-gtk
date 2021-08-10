@@ -422,25 +422,14 @@ infobar {
  * Lists *
  *********/
 row {
-  &.activatable {
-    &:selected {
-      &:active { box-shadow: inherit; }
-
-      &.has-open-popup,
-      &:hover { background-color: inherit; }
-
-      &:backdrop { @extend %selected_items_backdrop; }
+  &:selected, &.activatable:selected {
+    &, &:backdrop {
+    border-radius: $button_radius + 2px;
+    background-color: $bg_color;
+    color: $text_color;
+    box-shadow: inset 0 0 0 9999px $menu_selected_color,
+                inset 0 0 0 2px $bg_color;
     }
-  }
-
-
-  &:selected {
-    outline-width: 2px;
-    outline-offset: -4px;
-    -gtk-outline-radius: $button_radius;
-    outline-color: transparentize($selected_bg_color, .8);
-    border-radius: $button_radius + 4px;
-    box-shadow: inset 0 0 0 4px transparentize($selected_bg_color, .8), inset 0 0 0 2px mix($base_color, $selected_bg_color, 90%);
   }
 }
 
@@ -597,16 +586,5 @@ button.titlebutton:not(.appmenu) {
     box-shadow: none;
     border-color: $backdrop_borders_color;
     background: $shadow_color;
-  }
-}
-
-%selected_items {
-  background-color: mix($base_color, $selected_bg_color, 90%);
-  color: mix($selected_bg_color, if($variant=='light', black, white), 60%);
-
-  @at-root %selected_items_backdrop,
-  &:backdrop {
-    color: mix($backdrop_selected_fg_color, $selected_bg_color, 30%);
-    background-color: mix($base_color, $selected_bg_color, 90%);
   }
 }
