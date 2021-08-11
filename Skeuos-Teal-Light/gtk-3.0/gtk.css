@@ -5909,7 +5909,7 @@ row:selected, row:selected:backdrop, row:selected:active, row.activatable:select
   border-radius: 6px;
   background-color: #ffffff;
   color: black;
-  box-shadow: inset 0 0 0 9999px #eaebec, inset 0 0 0 2px #ffffff; }
+  box-shadow: inset 0 0 0 9999px #eaebec, inset 0 0 0 2px #fafafa; }
 
 /*********************
  * App Notifications *

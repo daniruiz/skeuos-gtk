@@ -429,7 +429,7 @@ row {
     background-color: $bg_color;
     color: $text_color;
     box-shadow: inset 0 0 0 9999px $menu_selected_color,
-                inset 0 0 0 2px $bg_color;
+                inset 0 0 0 2px $base_color;
     }
   }
 }
