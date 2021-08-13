@@ -5885,10 +5885,10 @@ infobar.error:backdrop > revealer > box, infobar.error > revealer > box, infobar
  * Lists *
  *********/
 row:selected, row:selected:backdrop, row:selected:active, row.activatable:selected, row.activatable:selected:backdrop, row.activatable:selected:active {
-  border-radius: 6px;
+  border-radius: 8px;
   background-color: #23252e;
   color: white;
-  box-shadow: inset 0 0 0 9999px #3b3e46, inset 0 0 0 2px #272a34; }
+  box-shadow: inset 0 0 0 9999px #3b3e46, inset 0 0 0 3px #272a34; }
 
 /*********************
  * App Notifications *
@@ -6046,7 +6046,7 @@ filechooser placessidebar.sidebar row.sidebar-row:selected,
     .nautilus-window placessidebar.sidebar row.sidebar-row:selected:backdrop,
     .nautilus-window placessidebar.sidebar row.sidebar-row:selected:backdrop .sidebar-icon,
     .nautilus-window placessidebar.sidebar row.sidebar-row:selected:backdrop .sidebar-label {
-      color: #f2d78e; }
+      color: #ddd6c2; }
 
 filechooser placessidebar.sidebar row.sidebar-row .sidebar-icon,
 .nautilus-window placessidebar.sidebar row.sidebar-row .sidebar-icon {
@@ -6070,6 +6070,10 @@ filechooser placessidebar.sidebar row.sidebar-row .sidebar-icon,
 .path-bar-box:backdrop {
   border-color: #0d0e11; }
 
+/* GNOME TWEAKS */
+list.tweak-categories separator {
+  background: transparent; }
+
 /* XFCE4 PANEL */
 .xfce4-panel.background {
   background: rgba(35, 37, 46, 0.8); }
@@ -6090,7 +6094,7 @@ filechooser placessidebar.sidebar row.sidebar-row .sidebar-icon,
 .xfce4-panel.vertical button:not(#whiskermenu-button):checked, .xfce4-panel.vertical button:not(#whiskermenu-button):active {
   box-shadow: inset 4px 0 0 #ffd86e; }
 
-/* XFCE4 NOTIFICATIONS */
+/* XFCE4 NOTIFICATIONS & LOGOUT DIALOG */
 #XfceNotifyWindow, .xfsm-logout-dialog, .xfsm-logout-dialog button {
   border: 1px solid #0d0e11;
   border-bottom-width: 2px;
