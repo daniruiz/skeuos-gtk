@@ -1,10 +1,12 @@
-[20210811]
- * Change color of selected row
- * Regenerate css files
- * Fix background color of hovered popover elements
- * Revert modified selected design and add new one only for sidebar rows (fixes #18)
- * Improve design of xfce's logout-dialog
- * Improve design of xfce notifications (fixes #17)
+[20210813]
+ * GTK3: Regenerate theme css files
+ * GTK3: change nautilus selected sidebar row backdrop color
+ * GTK3: Improve gnome-tweaks sidebar
+ * GTK3: Change color of selected row
+ * GTK3: Fix background color of hovered popover elements
+ * GTK3: Revert modified selected design and add new one only for sidebar rows (fixes #18)
+ * GTK3: Improve design of xfce's logout-dialog
+ * GTK3: Improve design of xfce notifications (fixes #17)
 
 [20210806]
  * Regenerate assets for xfwm4 and metacity
