@@ -37,5 +37,3 @@ gtk-primary-button-warps-slider = 1
 
 # And hand over the control to the theme files
 include "main.rc"
-include "apps.rc"
-include "hacks.rc"
