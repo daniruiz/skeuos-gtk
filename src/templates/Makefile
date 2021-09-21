@@ -1,6 +1,6 @@
 include ../Makefile.inc
 
-THEMES_DIR=../../
+THEMES_DIR=../../themes/
 GTK_THEMES=$(patsubst $(THEMES_DIR)%,%,$(wildcard $(THEMES_DIR)Skeuos*))
 IGNORE=$(patsubst $(THEMES_DIR)%,%,$(wildcard $(THEMES_DIR)Skeuos-*XFWM*) $(wildcard $(THEMES_DIR)Skeuos-*GNOME*))
 GTK_THEMES:=$(filter-out $(IGNORE),$(GTK_THEMES))

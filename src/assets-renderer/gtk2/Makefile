@@ -1,7 +1,7 @@
 include ../../Makefile.inc
 
 ASSETS=$(shell xargs < assets.txt)
-THEMES_DIR=../../../
+THEMES_DIR=../../../themes/
 
 TEMPLATE_SELECTED_COLOR=\#c21953
 

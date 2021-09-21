@@ -1,7 +1,7 @@
 PKGNAME = skeuos-gtk
 MAINTAINER = Daniel Ruiz de Alegría <daniel@drasite.com>
 PREFIX ?= /usr
-THEMES ?= $(patsubst %/index.theme,%,$(wildcard */index.theme))
+THEMES ?= $(patsubst themes/%/index.theme,%,$(wildcard themes/*/index.theme))
 
 include src/Makefile.inc
 
@@ -12,7 +12,7 @@ build:
 
 install:
 	mkdir -p $(DESTDIR)$(PREFIX)/share/themes
-	cp -a $(THEMES) $(DESTDIR)$(PREFIX)/share/themes
+	cp -a $(foreach theme,$(THEMES),themes/$(theme)) $(DESTDIR)$(PREFIX)/share/themes
 
 uninstall:
 	-rm -rf $(foreach theme,$(THEMES),$(DESTDIR)$(PREFIX)/share/themes/$(theme))

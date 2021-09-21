@@ -4,7 +4,7 @@ SRC_FILE=assets.svg
 ASSETS_DIR=assets
 SYMBOLIC_ASSETS_DIR=symbolic
 INDEX=assets.txt
-THEMES_DIR=../../../
+THEMES_DIR=../../../themes/
 
 .PHONY: build $(COLOR_VARIANTS) clean
 

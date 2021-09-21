@@ -1,7 +1,7 @@
 include ../../Makefile.inc
 
 ASSETS=$(shell xargs < assets.txt)
-THEMES_DIR=../../../
+THEMES_DIR=../../../themes/
 
 .PHONY: build $(COLOR_VARIANTS) clean
 

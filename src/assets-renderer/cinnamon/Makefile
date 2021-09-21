@@ -1,6 +1,6 @@
 include ../../Makefile.inc
 
-THEMES_DIR=../../../
+THEMES_DIR=../../../themes/
 
 .PHONY: build clean
 
