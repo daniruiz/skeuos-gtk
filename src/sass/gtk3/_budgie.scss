@@ -16,7 +16,7 @@ $z-depth-4: rgba(0, 0, 0, 0.34);
 .budgie-panel {
   // solid-mode
   // always use dark-color of dark variant
-  background-color: opacify($panel_bg, 1);
+  background-color: $_dark_base_color;
   color: white;
   font-weight: normal;
 
@@ -29,12 +29,12 @@ $z-depth-4: rgba(0, 0, 0, 0.34);
   
   &:backdrop {
       color: white;
-      background-color: $panel_bg;
+      background-color: transparentize($_dark_base_color, 0.2);
   }
 
   // transparent-mode
   &.transparent {
-    background-color: $panel_bg;
+    background-color: transparentize($_dark_base_color, 0.2);
     color: white;
 
   }

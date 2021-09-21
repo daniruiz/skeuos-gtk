@@ -6210,7 +6210,7 @@ wnck-pager {
   box-shadow: inset 0 0 0 1px #0099a1; }
 
 .budgie-panel {
-  background-color: white;
+  background-color: #272a34;
   color: white;
   font-weight: normal; }
   .budgie-panel image {
@@ -6221,9 +6221,9 @@ wnck-pager {
     color: #0099a1; }
   .budgie-panel:backdrop {
     color: white;
-    background-color: rgba(255, 255, 255, 0.9); }
+    background-color: rgba(39, 42, 52, 0.8); }
   .budgie-panel.transparent {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(39, 42, 52, 0.8);
     color: white; }
   .budgie-panel button {
     min-height: 16px;
