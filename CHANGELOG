@@ -1,3 +1,11 @@
+[20210921]
+ * Budgie: Use dark panel for light variant
+ * Update gtk3 css
+ * Add styles for budgie desktop
+ * Move all themes to a separate folder
+ * GTK2: Fix missing hacks and apps rc files
+ * GTK3: Remove icon scale to xfce power widget
+
 [20210813]
  * GTK3: Regenerate theme css files
  * GTK3: change nautilus selected sidebar row backdrop color
