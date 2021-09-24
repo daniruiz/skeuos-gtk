@@ -208,6 +208,76 @@ headerbar {
     &.wide { margin: -8px 0; }
   }
 
+  dialog &,
+  dialog &:backdrop {
+    background: $bg_color;
+    border: 0;
+    box-shadow: none;
+  }
+
+  // Window Close button
+  button.titlebutton:not(.appmenu) {
+    $_titlebutton_bg: lighten($bg_color, 10%);
+    color: transparent;
+    background: $_titlebutton_bg;
+    margin: 0;
+    margin-left: 5px;
+    padding: 0;
+    min-width: 0;
+    min-height: 0;
+    border: 1px solid $alt_borders_color;
+    box-shadow: $_widget_inset_shadow;
+    -gtk-icon-shadow: none;
+    transition: all .2s;
+
+    & + button.titlebutton { margin-left: 0; }
+    &:last-child { margin-right: 5px; }
+
+    @at-root %titlebutton_hover,
+    &:hover {
+      color: $fg_color;
+      background: $_titlebutton_bg;
+      border-color: transparent;
+      box-shadow: 0 0 0 1px $borders_color;
+    }
+
+    &.close {
+      color: if($variant=='light', white, black);
+      background: $selected_bg_color;
+      border-color: transparent;
+
+      &:hover {
+        color: if($variant=='light', black, white);
+        background: mix(white, $selected_bg_color, 10%);
+      }
+
+      @if lightness($selected_bg_color) > 60%
+       or lightness($selected_bg_color) < 20% {
+        &, &:hover { color: $selected_fg_color; }
+      }
+    }
+
+    .maximized &,
+    .fullscreen &,
+    .tiled &,
+    .tiled-top &,
+    .tiled-right &,
+    .tiled-bottom &,
+    .tiled-left & {
+        &:last-child { margin-right: 0; }
+        &:first-child { margin-left: 0; }
+    }
+
+    &:backdrop,
+    &:backdrop:hover {
+      color: transparent;
+      background: transparent;
+      box-shadow: none;
+      border-color: $backdrop_borders_color;
+      background: $shadow_color;
+    }
+  }
+
   &.default-decoration {
     min-height: 0;
     padding: 6px;
@@ -217,13 +287,6 @@ headerbar {
       min-width: 0;
       margin: 0;
     }
-  }
-
-  dialog &,
-  dialog &:backdrop {
-    background: $bg_color;
-    border: 0;
-    box-shadow: none;
   }
 }
 
@@ -523,68 +586,5 @@ decoration {
   messagedialog.csd & {
     border-width: 0;
     box-shadow: 0 1px 4px transparentize(black, 0.8);
-  }
-}
-
-// Window Close button
-button.titlebutton:not(.appmenu) {
-  $_titlebutton_bg: lighten($bg_color, 10%);
-  color: transparent;
-  background: $_titlebutton_bg;
-  margin: 0;
-  margin-left: 5px;
-  padding: 0;
-  min-width: 0;
-  min-height: 0;
-  border: 1px solid $alt_borders_color;
-  box-shadow: $_widget_inset_shadow;
-  -gtk-icon-shadow: none;
-  transition: all .2s;
-
-  & + & { margin-left: 0; }
-  &:last-child { margin-right: 5px; }
-
-  @at-root %titlebutton_hover,
-  &:hover {
-    color: $fg_color;
-    background: $_titlebutton_bg;
-    border-color: transparent;
-    box-shadow: 0 0 0 1px $borders_color;
-  }
-
-  &.close {
-    color: if($variant=='light', white, black);
-    background: $selected_bg_color;
-    border-color: transparent;
-
-    &:hover {
-      color: if($variant=='light', black, white);
-      background: mix(white, $selected_bg_color, 10%);
-    }
-
-    @if lightness($selected_bg_color) > 60%
-     or lightness($selected_bg_color) < 20% {
-      &, &:hover { color: $selected_fg_color; }
-    }
-  }
-
-  .maximized &,
-  .fullscreen &,
-  .tiled &,
-  .tiled-top &,
-  .tiled-right &,
-  .tiled-bottom &,
-  .tiled-left & {
-      &:last-child { margin-right: 0; }
-      &:first-child { margin-left: 0; }
-  }
-
-  &:backdrop,
-  &:backdrop:hover {
-    color: transparent;
-    background: transparent;
-    box-shadow: none;
-    border-color: $backdrop_borders_color;
-    background: $shadow_color;
   }
 }
