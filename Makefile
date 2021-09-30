@@ -1,7 +1,7 @@
 PKGNAME = skeuos-gtk
 MAINTAINER = Daniel Ruiz de Alegría <daniel@drasite.com>
 PREFIX ?= /usr
-THEMES ?= $(patsubst themes/%/index.theme,%,$(wildcard themes/*/index.theme))
+THEMES ?= $(patsubst themes/%/,%,$(wildcard themes/*/))
 
 include src/Makefile.inc
 
