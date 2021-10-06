@@ -1,4 +1,6 @@
 [20211006]
+ * Rename folders for Gnome-Shell 41 themes
+ * Gnome-Shell: Update for GNOME 41
  * Update xfwm and metacity assets
  * XFWM4: improve theme and round corners
  * Fix 'make install'
