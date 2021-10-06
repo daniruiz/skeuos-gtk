@@ -1,3 +1,9 @@
+[20211006]
+ * Update xfwm and metacity assets
+ * XFWM4: improve theme and round corners
+ * Fix 'make install'
+ * GTK3: theme titlebuttons only inside headerbars
+
 [20210921]
  * Budgie: Use dark panel for light variant
  * Update gtk3 css
