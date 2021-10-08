@@ -136,9 +136,7 @@ radio {
   $_shadow: 0 1px 2px transparentize($shadow_color, 0.03);
 
   &, menu menuitem &, menu menuitem:hover & {
-    background-image: linear-gradient(to bottom, $_c 20%, darken($_c, 2%) 90%);
-    border-color: $alt_borders_color;
-    box-shadow: $_widget_inset_shadow;
+    @include button(normal, $edge: $shadow_color);
 
     &:disabled, &:disabled:backdrop {
       &, &:checked, &:indeterminate {

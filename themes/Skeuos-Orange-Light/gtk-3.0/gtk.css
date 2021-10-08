@@ -5422,9 +5422,12 @@ switch {
  *************************/
 check, menu menuitem check, menu menuitem:hover check,
 radio, menu menuitem radio, menu menuitem:hover radio {
-  background-image: linear-gradient(to bottom, #ffffff 20%, #fafafa 90%);
-  border-color: #c2c2c2;
-  box-shadow: inset 0 3px 5px -4px rgba(0, 0, 0, 0.1), 0 1px rgba(255, 255, 255, 0.05); }
+  color: #5c616c;
+  outline-color: rgba(92, 97, 108, 0.3);
+  border-color: #d9d9d9;
+  border-bottom-color: #c2c2c2;
+  background-image: image(white);
+  box-shadow: inset 0 1px white, 0 1px rgba(0, 0, 0, 0.1), inset 0 -1px 0px rgba(217, 217, 217, 0.75), 0 1px 2px rgba(0, 0, 0, 0.07); }
   check:disabled, check:disabled:checked, check:disabled:indeterminate, check:disabled:backdrop, check:disabled:backdrop:checked, check:disabled:backdrop:indeterminate, menu menuitem check:disabled, menu menuitem check:disabled:checked, menu menuitem check:disabled:indeterminate, menu menuitem check:disabled:backdrop, menu menuitem check:disabled:backdrop:checked, menu menuitem check:disabled:backdrop:indeterminate, menu menuitem:hover check:disabled, menu menuitem:hover check:disabled:checked, menu menuitem:hover check:disabled:indeterminate, menu menuitem:hover check:disabled:backdrop, menu menuitem:hover check:disabled:backdrop:checked, menu menuitem:hover check:disabled:backdrop:indeterminate,
   radio:disabled,
   radio:disabled:checked,
