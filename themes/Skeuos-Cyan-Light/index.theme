@@ -8,6 +8,6 @@ Encoding=UTF-8
 [X-GNOME-Metatheme]
 GtkTheme=Skeuos-Cyan-Light
 MetacityTheme=Skeuos-Cyan-Light
-IconTheme=Flat-Remix-Blue-Dark
+IconTheme=Flat-Remix-Cyan-Light
 CursorTheme=Adwaita
 ButtonLayout=:minimize,maximize,close

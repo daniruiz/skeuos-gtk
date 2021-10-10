@@ -20,6 +20,7 @@ $(GTK_THEMES):
 	    -e 's/Comment=/Comment=$@ theme"/' \
 	    -e 's/GtkTheme=/GtkTheme=$@/' \
 	    -e 's/MetacityTheme=/MetacityTheme=$@/' \
+	    -e 's/IconTheme=/IconTheme='$$(echo $@ | sed 's/Skeuos/Flat-Remix/')/ \
 	    $(THEME_INDEX_TEMPLATE) > $(THEMES_DIR)$@/index.theme
 	cp -r $(STATIC_TEMPLATE_DIR)* $(THEMES_DIR)$@
 
