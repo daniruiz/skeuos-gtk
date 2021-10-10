@@ -5,8 +5,9 @@
 	<author>daniruiz</author>
 	<copyright>daniruiz</copyright>
 	<date>2021</date>
-	<description>Skeuos Light Metacity Theme</description>
+	<description>Skeuos Dark Metacity Theme</description>
 </info>
+
 <!-- meaningfull constants -->
 
 <constant name="C_title_focused" value="white" />
