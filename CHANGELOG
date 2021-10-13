@@ -1,4 +1,5 @@
 [20211013]
+ * GTK3: Fix non-csd titlebar padding
  * GTK3: remove side padding of default-decoration headerbar
  * GTK3: Improve decoration round corners
  * Configure the correct icon theme for each variant
