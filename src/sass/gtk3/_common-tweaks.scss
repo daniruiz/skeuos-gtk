@@ -278,12 +278,15 @@ headerbar {
 
   &.default-decoration {
     min-height: 0;
-    padding: 6px 0;
+    padding: 6px;
 
     button.titlebutton {
       min-height: 0;
       min-width: 0;
-      margin: 0;
+
+      &, &:last-child {
+        margin: 0;
+      }
     }
   }
 }
