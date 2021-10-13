@@ -1,3 +1,10 @@
+[20211013]
+ * GTK3: remove side padding of default-decoration headerbar
+ * GTK3: Improve decoration round corners
+ * Configure the correct icon theme for each variant
+ * Fix metacity theme names
+ * GTK3: give volume to check and radio widgets
+
 [20211006]
  * Rename folders for Gnome-Shell 41 themes
  * Gnome-Shell: Update for GNOME 41
