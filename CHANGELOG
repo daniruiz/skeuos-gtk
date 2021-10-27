@@ -1,3 +1,9 @@
+[20211027]
+ * Remove unwanted variants Black-Dark & White-Light
+ * Package themes by color only
+ * Gnome-Shell: Make folder shadow a bit lighter to improve contrast (fixes #20)
+ * Add aur packaging
+
 [20211013]
  * GTK3: Fix non-csd titlebar padding
  * GTK3: remove side padding of default-decoration headerbar
