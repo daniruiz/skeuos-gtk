@@ -41,9 +41,19 @@ dist: _get_version
 
 release: _get_version
 	$(MAKE) generate_changelog VERSION=$(VERSION)
+	$(MAKE) aur_release VERSION=$(VERSION)
 	git tag -f $(VERSION)
 	git push origin --tags
 	$(MAKE) dist
+
+aur_release: _get_version _get_tag
+	cd aur; \
+	sed "s/$(TAG)/$(VERSION)/g" -i PKGBUILD .SRCINFO; \
+	git commit -a -m "$(VERSION)"; \
+	git push origin master;
+
+	git commit aur -m "Update aur version $(VERSION)"
+	git push origin master
 
 generate_changelog: _get_version _get_tag
 	git checkout $(TAG) CHANGELOG
