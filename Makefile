@@ -26,17 +26,13 @@ _get_tag:
 	@echo $(TAG)
 
 dist: _get_version
-	variants="Light Dark"; \
 	count=1; \
 	for color_variant in $(COLOR_VARIANTS); \
 	do \
-		for variant in $$variants; \
-		do \
-			count_pretty=$$(echo "0$${count}" | tail -c 3); \
-			(cd themes && tar -c "Skeuos-$${color_variant}-$${variant}"*) | \
-				xz -z - > "$${count_pretty}-Skeuos-$${color_variant}-$${variant}_$(VERSION).tar.xz"; \
-			count=$$((count+1)); \
-		done; \
+		count_pretty=$$(echo "0$${count}" | tail -c 3); \
+		(cd themes && tar -c "Skeuos-$${color_variant}"*) | \
+			xz -z - > "$${count_pretty}-Skeuos-$${color_variant}_$(VERSION).tar.xz"; \
+		count=$$((count+1)); \
 	done; \
 
 release: _get_version
