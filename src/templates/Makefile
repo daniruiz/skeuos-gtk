@@ -26,23 +26,23 @@ $(GTK_THEMES):
 
 $(COLOR_VARIANTS):
 	# GTK2
-	sed -e 's/$(DEFAULT_THEME_COLOR)/$(COLOR_$@)/gi' \
+	-sed -e 's/$(DEFAULT_THEME_COLOR)/$(COLOR_$@)/gi' \
 	    -e 's/selected_fg_color:/selected_fg_color: $(TEXT_COLOR_$@)/' \
 	    $(GTKRC_TEMPLATE) > $(THEMES_DIR)Skeuos-$@-Light/gtk-2.0/gtkrc
-	sed -e 's/$(DEFAULT_THEME_COLOR)/$(COLOR_$@)/gi' \
+	-sed -e 's/$(DEFAULT_THEME_COLOR)/$(COLOR_$@)/gi' \
 	    -e 's/selected_fg_color:/selected_fg_color: $(TEXT_COLOR_$@)/' \
 	    $(GTKRC_DARK_TEMPLATE) > $(THEMES_DIR)Skeuos-$@-Dark/gtk-2.0/gtkrc
 	# XFWM4
-	cp themerc-light $(THEMES_DIR)Skeuos-$@-Light-XFWM/xfwm4/themerc
-	cp themerc-light-HiDPI $(THEMES_DIR)Skeuos-$@-Light-XFWM-HiDPI/xfwm4/themerc
-	cp themerc-light-xHiDPI $(THEMES_DIR)Skeuos-$@-Light-XFWM-xHiDPI/xfwm4/themerc
-	cp themerc-dark $(THEMES_DIR)Skeuos-$@-Dark-XFWM/xfwm4/themerc
-	cp themerc-dark-HiDPI $(THEMES_DIR)Skeuos-$@-Dark-XFWM-HiDPI/xfwm4/themerc
-	cp themerc-dark-xHiDPI $(THEMES_DIR)Skeuos-$@-Dark-XFWM-xHiDPI/xfwm4/themerc
+	-cp themerc-light $(THEMES_DIR)Skeuos-$@-Light-XFWM/xfwm4/themerc
+	-cp themerc-light-HiDPI $(THEMES_DIR)Skeuos-$@-Light-XFWM-HiDPI/xfwm4/themerc
+	-cp themerc-light-xHiDPI $(THEMES_DIR)Skeuos-$@-Light-XFWM-xHiDPI/xfwm4/themerc
+	-cp themerc-dark $(THEMES_DIR)Skeuos-$@-Dark-XFWM/xfwm4/themerc
+	-cp themerc-dark-HiDPI $(THEMES_DIR)Skeuos-$@-Dark-XFWM-HiDPI/xfwm4/themerc
+	-cp themerc-dark-xHiDPI $(THEMES_DIR)Skeuos-$@-Dark-XFWM-xHiDPI/xfwm4/themerc
 	# Metacity
-	cp metacity-theme-1-light.xml $(THEMES_DIR)Skeuos-$@-Light/metacity-1/metacity-theme-1.xml
-	cp metacity-theme-1-dark.xml $(THEMES_DIR)Skeuos-$@-Dark/metacity-1/metacity-theme-1.xml
-	ln -rsvf $(THEMES_DIR)Skeuos-$@-Light/metacity-1/metacity-theme-1.xml $(THEMES_DIR)Skeuos-$@-Light/metacity-1/metacity-theme-2.xml
-	ln -rsvf $(THEMES_DIR)Skeuos-$@-Light/metacity-1/metacity-theme-1.xml $(THEMES_DIR)Skeuos-$@-Light/metacity-1/metacity-theme-3.xml
-	ln -rsvf $(THEMES_DIR)Skeuos-$@-Dark/metacity-1/metacity-theme-1.xml $(THEMES_DIR)Skeuos-$@-Dark/metacity-1/metacity-theme-2.xml
-	ln -rsvf $(THEMES_DIR)Skeuos-$@-Dark/metacity-1/metacity-theme-1.xml $(THEMES_DIR)Skeuos-$@-Dark/metacity-1/metacity-theme-3.xml
+	-cp metacity-theme-1-light.xml $(THEMES_DIR)Skeuos-$@-Light/metacity-1/metacity-theme-1.xml
+	-cp metacity-theme-1-dark.xml $(THEMES_DIR)Skeuos-$@-Dark/metacity-1/metacity-theme-1.xml
+	-ln -rsvf $(THEMES_DIR)Skeuos-$@-Light/metacity-1/metacity-theme-1.xml $(THEMES_DIR)Skeuos-$@-Light/metacity-1/metacity-theme-2.xml
+	-ln -rsvf $(THEMES_DIR)Skeuos-$@-Light/metacity-1/metacity-theme-1.xml $(THEMES_DIR)Skeuos-$@-Light/metacity-1/metacity-theme-3.xml
+	-ln -rsvf $(THEMES_DIR)Skeuos-$@-Dark/metacity-1/metacity-theme-1.xml $(THEMES_DIR)Skeuos-$@-Dark/metacity-1/metacity-theme-2.xml
+	-ln -rsvf $(THEMES_DIR)Skeuos-$@-Dark/metacity-1/metacity-theme-1.xml $(THEMES_DIR)Skeuos-$@-Dark/metacity-1/metacity-theme-3.xml
