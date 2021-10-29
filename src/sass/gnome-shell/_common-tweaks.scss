@@ -238,8 +238,6 @@ $_osd_color: if($variant=='light', black, $fg_color);
 }
 
 .calendar {
-  @include notification_bubble($flat: true);
-
   .calendar-day-base {
     &:active,&:selected {
       color: $fg_color;
@@ -253,19 +251,6 @@ $_osd_color: if($variant=='light', black, $fg_color);
       color: $selected_fg_color;
     }
   }
-}
-
-/* Events */
-.events-button { @include notification_bubble($flat: true); }
-
-/* World clocks */
-
-.world-clocks-button {
-    @include notification_bubble($flat: true);
-}
-
-.weather-button {
-    @include notification_bubble($flat: true);
 }
 
 
