@@ -5535,7 +5535,8 @@ headerbar button.titlebutton:not(.appmenu) {
 .default-decoration.titlebar:not(headerbar),
 headerbar.default-decoration {
   min-height: 0;
-  padding: 6px; }
+  padding: 6px;
+  box-shadow: none; }
   .default-decoration.titlebar:not(headerbar) button.titlebutton,
   headerbar.default-decoration button.titlebutton {
     min-height: 0;
@@ -6097,6 +6098,7 @@ list.tweak-categories separator {
 .xfce4-panel button {
   border: 0;
   border-radius: 0;
+  min-width: 30px;
   box-shadow: none;
   text-shadow: none;
   background: transparent;
@@ -6104,11 +6106,11 @@ list.tweak-categories separator {
   .xfce4-panel button:hover {
     background: rgba(0, 0, 0, 0.2); }
   .xfce4-panel button:not(#whiskermenu-button):checked, .xfce4-panel button:not(#whiskermenu-button):active {
-    box-shadow: inset 0 4px 0 #ffd86e;
+    box-shadow: inset 0 -2px 0 #ffd86e;
     background: rgba(0, 0, 0, 0.2); }
 
 .xfce4-panel.vertical button:not(#whiskermenu-button):checked, .xfce4-panel.vertical button:not(#whiskermenu-button):active {
-  box-shadow: inset 4px 0 0 #ffd86e; }
+  box-shadow: inset 2px 0 0 #ffd86e; }
 
 /* XFCE4 NOTIFICATIONS & LOGOUT DIALOG */
 #XfceNotifyWindow, .xfsm-logout-dialog, .xfsm-logout-dialog button {
@@ -6121,6 +6123,9 @@ list.tweak-categories separator {
   margin: 8px; }
 
 /* Whisker menu */
+#whiskermenu-button image {
+  -gtk-icon-shadow: 0 0 3px #ffd86e, 0 0 3px #ffd86e; }
+
 #whiskermenu-window entry {
   border-radius: 100px;
   border: 2px solid #ffd86e;
@@ -6157,7 +6162,7 @@ list.tweak-categories separator {
       background-color: rgba(0, 0, 0, 0.27);
       color: inherit; }
 
-/* XFCE4 panel action & battery buttons */
+/* XFCE4 panel action */
 #XfcePanelWindowWrapper > widget > box > #xfce-panel-button > image {
   -gtk-icon-style: symbolic;
   -gtk-icon-transform: scale(0.7); }
