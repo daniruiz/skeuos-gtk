@@ -1,3 +1,10 @@
+[20211103]
+ * Regenerate all themes
+ * Set selected text color to black for Cyan variant
+ * GTK3: remove shadow to default-decoration titlebar
+ * Gnome-Shell: add volume to calendar-panel buttons
+ * GTK3: Improve theme for Xfce panel
+
 [20211027]
  * Remove unwanted variants Black-Dark & White-Light
  * Package themes by color only
