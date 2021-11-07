@@ -6018,7 +6018,7 @@ decoration {
   background: #ffffff;
   box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(0, 0, 0, 0.1); }
   decoration:backdrop {
-    box-shadow: 0 2px 8px 0 transparent, 0 0 0 3px rgba(0, 0, 0, 0.15); }
+    box-shadow: 0 2px 8px 0 transparent, 0 0 5px 3px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.03); }
   .maximized decoration, .fullscreen decoration, .tiled decoration, .tiled-top decoration, .tiled-right decoration, .tiled-bottom decoration, .tiled-left decoration {
     border-width: 0; }
   .popup decoration {
@@ -6139,10 +6139,6 @@ list.tweak-categories separator {
 
 .xfsm-logout-dialog > .vertical > .horizontal button {
   margin: 8px; }
-
-/* Whisker menu */
-#whiskermenu-button image {
-  -gtk-icon-shadow: 0 0 3px #06a284, 0 0 3px #06a284; }
 
 #whiskermenu-window entry {
   border-radius: 100px;

@@ -19,7 +19,7 @@
     <linearGradient id="linearGradient1080-2" x1="19" x2="19" y1="562.36" y2="581.25" gradientTransform="translate(2.7e-7 33)" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient1168"/>
     <linearGradient id="linearGradient1080-7" x1="19" x2="19" y1="562.36" y2="581.25" gradientTransform="translate(-2.9e-7 66)" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient1168"/>
     <clipPath id="a-9">
-      <rect x="9.5" y="178.85" width="6" height="28" fill="#fff" opacity=".539"/>
+      <rect x="9.5" y="178.85" width="6" height="31" fill="#fff" opacity=".539"/>
     </clipPath>
     <clipPath id="b-8">
       <rect x="109.41" y="196.63" width="16" height="16" opacity=".3"/>
@@ -92,7 +92,7 @@
   <use id="menu-inactive" transform="translate(62 -2.0352e-5)" width="100%" height="100%" fill="#ffffff" xlink:href="#menu-active"/>
   <g id="title-1-active">
     <g id="" transform="matrix(.17857 0 0 1 9.1072 -415.01)">
-      <rect x="5" y="557.36" width="28" height="28" fill="#fff"/>
+      <rect x="5" y="557.36" width="28" height="31" fill="#fff"/>
     </g>
     <rect x="10" y="142.35" width="5" height="1" opacity=".4" style="opacity:.2"/>
   </g>
@@ -158,8 +158,8 @@
   <use id="bottom-right-inactive" transform="rotate(-90 89 177)" width="100%" height="100%" xlink:href="#bottom-left-active"/>
   <use id="bottom-left-inactive" transform="translate(3e-7,20)" width="100%" height="100%" xlink:href="#bottom-left-active"/>
   <g id="top-left-active" clip-path="url(#a-9)">
-    <path d="m14 178.85h19.5c3.324 0 6 2.676 6 6v23c0 3.324-2.676 6-6 6h-18c-3.324 0-6-2.676-6-6l-1.41e-5 -24.5c-9e-7 -1.5574 2.5337-4.4999 4.5-4.4999z" style="fill:#fff;stroke-width:1.01"/>
-    <path d="m15.5 179.35c3.047 0 5.5 2.453 5.5 5.5v23c0 3.047-2.453 5.5-5.5 5.5s-5.5-2.453-5.5-5.5v-23c0-3.047 2.453-5.5 5.5-5.5z" style="fill:none;opacity:.2;stroke-linecap:square;stroke-width:1.01;stroke:#000"/>
+    <path d="m14 178.85h19.5c3.324 0 6 2.676 6 6v27c0 3.324-2.676 6-6 6h-18c-3.324 0-6-2.676-6-6l-1.41e-5 -28.5c-8e-7 -1.5574 2.5337-4.4999 4.5-4.4999z" style="fill:#fff;stroke-width:1.01"/>
+    <path d="m15.5 179.35c3.047 0 5.5 2.453 5.5 5.5v27c0 3.047-2.453 5.5-5.5 5.5s-5.5-2.453-5.5-5.5v-27c0-3.047 2.453-5.5 5.5-5.5z" style="fill:none;opacity:.2;stroke-linecap:square;stroke-width:1.01;stroke:#000"/>
   </g>
   <g id="bottom-left-active" transform="translate(-55.41 -20.63)" clip-path="url(#b-8)">
     <path d="m113.86 213.63h13.555l-2e-3 -5.9988-13.553-1e-3z" fill="#23252e" style="fill:#fff;stroke-width:1.01"/>

@@ -13,7 +13,7 @@
       <rect x="109.41" y="196.63" width="16" height="16" opacity=".3"/>
     </clipPath>
     <clipPath id="a">
-      <rect x="9.5" y="178.85" width="6" height="28" fill="#fff" opacity=".539"/>
+      <rect x="9.5" y="178.85" width="6" height="31" fill="#fff" opacity=".539"/>
     </clipPath>
     <radialGradient id="radialGradient1090-4-5" cx="19" cy="571.7" r="7.5026" gradientTransform="matrix(1.4225 -5.3748e-7 5.371e-7 1.4225 57.973 -174.87)" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient1387"/>
     <radialGradient id="radialGradient1090-7" cx="19" cy="571.7" r="7.5026" gradientTransform="matrix(1.433 -5.4148e-7 5.4109e-7 1.433 -8.2283 -213.91)" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient1387"/>
@@ -31,7 +31,7 @@
   <use id="menu-inactive" transform="translate(62 -2.0352e-5)" width="100%" height="100%" fill="#ffffff" xlink:href="#menu-active"/>
   <g id="title-1-active" transform="translate(1.4109e-5 5.2093e-5)">
     <g id="" transform="matrix(.17857 0 0 1 9.1072 -415.01)">
-      <rect x="5" y="557.36" width="28" height="28" fill="#23252e" style="stroke-width:1.01"/>
+      <rect x="5" y="557.36" width="28" height="31" fill="#23252e" style="stroke-width:1.01"/>
     </g>
     <rect x="10" y="142.35" width="5" height="1" opacity=".5"/>
   </g>
@@ -45,8 +45,8 @@
   <use id="title-4-inactive" transform="translate(56)" width="100%" height="100%" xlink:href="#title-1-active"/>
   <use id="title-5-inactive" transform="translate(63)" width="100%" height="100%" xlink:href="#title-1-active"/>
   <g id="top-left-active" transform="translate(1.4109e-5 5.2093e-5)" clip-path="url(#a)">
-    <path d="m14 178.85h19.5c3.324 0 6 2.676 6 6v23c0 3.324-2.676 6-6 6h-18c-3.324 0-6-2.676-6-6l-1.41e-5 -24.5c-9e-7 -1.5574 2.5337-4.4999 4.5-4.4999z" style="fill:#23252e;stroke-width:1.01"/>
-    <path d="m15.5 179.35c3.047 0 5.5 2.453 5.5 5.5v23c0 3.047-2.453 5.5-5.5 5.5s-5.5-2.453-5.5-5.5v-23c0-3.047 2.453-5.5 5.5-5.5z" style="fill:none;opacity:.5;stroke-linecap:square;stroke-width:1.01;stroke:#000"/>
+    <path d="m14 178.85h19.5c3.324 0 6 2.676 6 6v27c0 3.324-2.676 6-6 6h-18c-3.324 0-6-2.676-6-6l-1.41e-5 -28.5c-8e-7 -1.5574 2.5337-4.4999 4.5-4.4999z" style="fill:#23252e;stroke-width:1.01"/>
+    <path d="m15.5 179.35c3.047 0 5.5 2.453 5.5 5.5v27c0 3.047-2.453 5.5-5.5 5.5s-5.5-2.453-5.5-5.5v-27c0-3.047 2.453-5.5 5.5-5.5z" style="fill:none;opacity:.5;stroke-linecap:square;stroke-width:1.01;stroke:#000"/>
   </g>
   <rect x="9.5" y="178.85" width="7" height="28" fill="none"/>
   <use id="top-left-inactive" transform="translate(8)" width="100%" height="100%" fill="#ffffff" xlink:href="#top-left-active"/>
