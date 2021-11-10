@@ -1,3 +1,11 @@
+[20211110]
+ * Order theme variants by most downloaded
+ * Gnome-Shell: improve popup item hovered color
+ * Xfce: fix bug in xfwm theme with titlbuttons and cursor
+ * Xfce: remove whiskermenu-button shadow
+ * generate-color-theme.sh remove previous themes first
+ * GTK3: improve backdrop window shadow
+
 [20211103]
  * Regenerate all themes
  * Set selected text color to black for Cyan variant
