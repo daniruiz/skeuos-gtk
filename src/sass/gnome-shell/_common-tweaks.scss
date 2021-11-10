@@ -82,7 +82,7 @@ $_osd_color: if($variant=='light', black, $fg_color);
     &:checked { background-color: transparent; }
 
     &.selected, &:active {
-        background-color: transparentize($borders_color, .1);
+        background-color: rgba(127, 127, 127, .2);
         color: $fg_color;
     }
 }
