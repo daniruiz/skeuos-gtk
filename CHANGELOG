@@ -1,3 +1,8 @@
+[20211201]
+ * GTK3: Improve scrollbar visibility
+ * GTK3: fix lightdm button color
+ * Improve aur release script
+
 [20211110]
  * Order theme variants by most downloaded
  * Gnome-Shell: improve popup item hovered color
