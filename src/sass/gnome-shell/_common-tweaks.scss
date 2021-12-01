@@ -82,7 +82,7 @@ $_osd_color: if($variant=='light', black, $fg_color);
     &:checked { background-color: transparent; }
 
     &.selected, &:active {
-        background-color: rgba(127, 127, 127, .2);
+        background-color: $popover_hover_color;
         color: $fg_color;
     }
 }
@@ -238,17 +238,30 @@ $_osd_color: if($variant=='light', black, $fg_color);
 }
 
 .calendar {
+  .pager-button {
+    &:hover, &:focus { background-color: $popover_hover_color }
+  }
+
   .calendar-day-base {
+    &:hover, &:focus,
     &:active,&:selected {
       color: $fg_color;
-      background-color: if($variant=='light', darken($bg_color, 10%), lighten($bg_color, 10%));
+      background-color: $popover_hover_color;
     }
   }
 
   .calendar-today {
+    &:hover,&:focus {
+      background-color: $popover_hover_color;
+      color: $fg_color;
+    }
     &:active,&:selected {
       background: $selected_bg_color;
       color: $selected_fg_color;
+      &:hover,&:focus {
+        background-color: $popover_hover_color;
+        color: $fg_color;
+      }
     }
   }
 }
