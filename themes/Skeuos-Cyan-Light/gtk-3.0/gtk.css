@@ -2523,7 +2523,7 @@ scrollbar {
   scrollbar.right {
     border-left: 1px solid #d9d9d9; }
   scrollbar:backdrop {
-    background-color: #fafafa;
+    background-color: #f7f7f7;
     border-color: #d9d9d9;
     transition: 200ms ease-out; }
   scrollbar slider {
@@ -2533,10 +2533,10 @@ scrollbar {
     border: 4px solid transparent;
     border-radius: 10px;
     background-clip: padding-box;
-    background-color: #ced0d3;
+    background-color: #9da0a7;
     transition: all 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94); }
     scrollbar slider:hover {
-      background-color: #c6c8cc; }
+      background-color: #7d8189; }
     scrollbar slider:hover:active {
       background-color: #0ccfd9; }
     scrollbar slider:backdrop {
@@ -2600,7 +2600,7 @@ scrollbar {
     box-shadow: inset 0 1px rgba(255, 255, 255, 0);
     text-shadow: none;
     -gtk-icon-shadow: none;
-    color: #ced0d3; }
+    color: #9da0a7; }
     scrollbar button:hover {
       border-color: transparent;
       background-color: transparent;
@@ -2608,7 +2608,7 @@ scrollbar {
       box-shadow: inset 0 1px rgba(255, 255, 255, 0);
       text-shadow: none;
       -gtk-icon-shadow: none;
-      color: #c6c8cc; }
+      color: #7d8189; }
     scrollbar button:active, scrollbar button:checked {
       border-color: transparent;
       background-color: transparent;
@@ -2624,7 +2624,7 @@ scrollbar {
       box-shadow: inset 0 1px rgba(255, 255, 255, 0);
       text-shadow: none;
       -gtk-icon-shadow: none;
-      color: rgba(206, 208, 211, 0.2); }
+      color: rgba(157, 160, 167, 0.2); }
     scrollbar button:backdrop {
       border-color: transparent;
       background-color: transparent;
@@ -3943,7 +3943,7 @@ scrolledwindow junction {
     border-image-slice: 0 1 0 0; }
   scrolledwindow junction:backdrop {
     border-image-source: linear-gradient(to bottom, #d9d9d9 1px, transparent 1px);
-    background-color: #fafafa;
+    background-color: #f7f7f7;
     transition: 200ms ease-out; }
 
 separator {
@@ -6105,6 +6105,11 @@ filechooser placessidebar.sidebar row.sidebar-row .sidebar-icon,
 .path-bar-box:backdrop {
   border-color: #d9d9d9; }
 
+/* GNOME TERMINAL */
+terminal-window notebook scrollbar,
+.mate-terminal notebook scrollbar {
+  background: none; }
+
 /* GNOME TWEAKS */
 list.tweak-categories separator {
   background: transparent; }
@@ -6204,7 +6209,7 @@ wnck-pager {
     box-shadow: inset 0 -4px rgba(0, 0, 0, 0.2), inset 0 1px 2px rgba(0, 0, 0, 0.07); }
     .lightdm-gtk-greeter #login_window #buttonbox_frame button {
       border: 0;
-      color: white;
+      color: #000000;
       text-shadow: none; }
     .lightdm-gtk-greeter #login_window #buttonbox_frame #cancel_button {
       background: rgba(0, 0, 0, 0.07);

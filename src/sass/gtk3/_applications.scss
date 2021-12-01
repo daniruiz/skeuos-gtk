@@ -81,6 +81,16 @@ filechooser,
 
 .path-bar-box:backdrop { border-color: $backdrop_borders_color}
 
+/* GNOME TERMINAL */
+terminal-window,
+.mate-terminal {
+  notebook {
+    scrollbar {
+      background: none;
+    }
+  }
+}
+
 /* GNOME TWEAKS */
 list.tweak-categories separator {
   background: transparent;
