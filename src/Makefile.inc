@@ -3,7 +3,7 @@ OPTIPNG?=optipng -o7 --strip all --quiet
 SCSS?=sassc
 
 DEFAULT_THEME_COLOR?=\#2777ff
-COLOR_VARIANTS ?= Blue Black Grey Green Teal Red White Cyan Orange Violet Yellow Magenta Brown
+COLOR_VARIANTS ?= Blue Black Grey Green White Teal Violet Cyan Red Orange Yellow Magenta Brown
 
 UNWANTED_VARIANTS ?= White-Light Black-Dark
 
