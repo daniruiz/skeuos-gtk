@@ -1,3 +1,6 @@
+[20211208]
+ * Gnome-Shell: Improve background of hovered itens in calendar popover
+
 [20211201]
  * GTK3: Improve scrollbar visibility
  * GTK3: fix lightdm button color
