@@ -217,7 +217,10 @@ headerbar {
   button.titlebutton:not(.appmenu) {
     $_titlebutton_bg: lighten($bg_color, 10%);
     color: transparent;
-    background: $_titlebutton_bg;
+    background-image: -gtk-scaled(url('assets/titlebutton.png'), url('assets/titlebutton@2.png'));
+    background-color: $_titlebutton_bg;
+    background-repeat: no-repeat;
+    background-position: center;
     margin: 0;
     margin-left: 5px;
     padding: 0;
@@ -233,25 +236,34 @@ headerbar {
 
     @at-root %titlebutton_hover,
     &:hover {
-      color: $fg_color;
-      background: $_titlebutton_bg;
+      background-color: $_titlebutton_bg;
       border-color: transparent;
       box-shadow: 0 0 0 1px $borders_color;
+
+      &.minimize {
+        background-image: -gtk-scaled(url('assets/minimize#{$asset_suffix}.png'), url('assets/minimize#{$asset_suffix}@2.png'));
+      }
+      &.maximize {
+        background-image: -gtk-scaled(url('assets/maximize#{$asset_suffix}.png'), url('assets/maximize#{$asset_suffix}@2.png'));
+      }
     }
 
     &.close {
-      color: if($variant=='light', white, black);
-      background: $selected_bg_color;
+      background-color: $selected_bg_color;
+      @if $variant == 'light' and lightness($selected_bg_color) < 60% {
+        background-image: -gtk-scaled(url('assets/close-white.png'), url('assets/close-white@2.png'));
+      } @else {
+        background-image: -gtk-scaled(url('assets/close-black.png'), url('assets/close-black@2.png'));
+      }
       border-color: transparent;
 
       &:hover {
-        color: if($variant=='light', black, white);
-        background: mix(white, $selected_bg_color, 10%);
-      }
-
-      @if lightness($selected_bg_color) > 60%
-       or lightness($selected_bg_color) < 20% {
-        &, &:hover { color: $selected_fg_color; }
+        background-color: mix(white, $selected_bg_color, 10%);
+        @if $variant == 'light' {
+          background-image: -gtk-scaled(url('assets/close-black.png'), url('assets/close-black@2.png'));
+        } @else {
+          background-image: -gtk-scaled(url('assets/close-white.png'), url('assets/close-white@2.png'));
+        }
       }
     }
 
@@ -268,11 +280,12 @@ headerbar {
 
     &:backdrop,
     &:backdrop:hover {
-      color: transparent;
-      background: transparent;
-      box-shadow: none;
-      border-color: $backdrop_borders_color;
-      background: $shadow_color;
+      &.maximize, &.minimize, &.close {
+        box-shadow: none;
+        border-color: $backdrop_borders_color;
+        background-image: -gtk-scaled(url('assets/titlebutton.png'), url('assets/titlebutton@2.png'));
+        background-color: $shadow_color;
+      }
     }
   }
 
@@ -280,6 +293,9 @@ headerbar {
     min-height: 0;
     padding: 6px;
     box-shadow: none;
+    background: image(darken($bg_color, if($variant == 'light', 7%, 5%)));
+
+    &:backdrop { background: image($bg_color); }
 
     button.titlebutton {
       min-height: 0;

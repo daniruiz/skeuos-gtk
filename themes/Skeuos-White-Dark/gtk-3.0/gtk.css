@@ -5486,7 +5486,10 @@ dialog .titlebar:not(headerbar), dialog headerbar, dialog headerbar:backdrop {
 .titlebar:not(headerbar) button.titlebutton:not(.appmenu),
 headerbar button.titlebutton:not(.appmenu) {
   color: transparent;
-  background: #383d4b;
+  background-image: -gtk-scaled(url("assets/titlebutton.png"), url("assets/titlebutton@2.png"));
+  background-color: #383d4b;
+  background-repeat: no-repeat;
+  background-position: center;
   margin: 0;
   margin-left: 5px;
   padding: 0;
@@ -5504,39 +5507,46 @@ headerbar button.titlebutton:not(.appmenu) {
     margin-right: 5px; }
   .titlebar:not(headerbar) button.titlebutton:not(.appmenu):hover,
   headerbar button.titlebutton:not(.appmenu):hover {
-    color: #eeeeec;
-    background: #383d4b;
+    background-color: #383d4b;
     border-color: transparent;
     box-shadow: 0 0 0 1px #0d0e11; }
+    .titlebar:not(headerbar) button.titlebutton:not(.appmenu):hover.minimize,
+    headerbar button.titlebutton:not(.appmenu):hover.minimize {
+      background-image: -gtk-scaled(url("assets/minimize-dark.png"), url("assets/minimize-dark@2.png")); }
+    .titlebar:not(headerbar) button.titlebutton:not(.appmenu):hover.maximize,
+    headerbar button.titlebutton:not(.appmenu):hover.maximize {
+      background-image: -gtk-scaled(url("assets/maximize-dark.png"), url("assets/maximize-dark@2.png")); }
   .titlebar:not(headerbar) button.titlebutton:not(.appmenu).close,
   headerbar button.titlebutton:not(.appmenu).close {
-    color: black;
-    background: #ffffff;
+    background-color: #ffffff;
+    background-image: -gtk-scaled(url("assets/close-black.png"), url("assets/close-black@2.png"));
     border-color: transparent; }
     .titlebar:not(headerbar) button.titlebutton:not(.appmenu).close:hover,
     headerbar button.titlebutton:not(.appmenu).close:hover {
-      color: white;
-      background: white; }
-    .titlebar:not(headerbar) button.titlebutton:not(.appmenu).close,
-    headerbar button.titlebutton:not(.appmenu).close {
-      color: #000000; }
+      background-color: white;
+      background-image: -gtk-scaled(url("assets/close-white.png"), url("assets/close-white@2.png")); }
   .maximized .titlebar:not(headerbar) button.titlebutton:not(.appmenu):last-child, .fullscreen .titlebar:not(headerbar) button.titlebutton:not(.appmenu):last-child, .tiled .titlebar:not(headerbar) button.titlebutton:not(.appmenu):last-child, .tiled-top .titlebar:not(headerbar) button.titlebutton:not(.appmenu):last-child, .tiled-right .titlebar:not(headerbar) button.titlebutton:not(.appmenu):last-child, .tiled-bottom .titlebar:not(headerbar) button.titlebutton:not(.appmenu):last-child, .tiled-left .titlebar:not(headerbar) button.titlebutton:not(.appmenu):last-child, .maximized headerbar button.titlebutton:not(.appmenu):last-child, .fullscreen headerbar button.titlebutton:not(.appmenu):last-child, .tiled headerbar button.titlebutton:not(.appmenu):last-child, .tiled-top headerbar button.titlebutton:not(.appmenu):last-child, .tiled-right headerbar button.titlebutton:not(.appmenu):last-child, .tiled-bottom headerbar button.titlebutton:not(.appmenu):last-child, .tiled-left headerbar button.titlebutton:not(.appmenu):last-child {
     margin-right: 0; }
   .maximized .titlebar:not(headerbar) button.titlebutton:not(.appmenu):first-child, .fullscreen .titlebar:not(headerbar) button.titlebutton:not(.appmenu):first-child, .tiled .titlebar:not(headerbar) button.titlebutton:not(.appmenu):first-child, .tiled-top .titlebar:not(headerbar) button.titlebutton:not(.appmenu):first-child, .tiled-right .titlebar:not(headerbar) button.titlebutton:not(.appmenu):first-child, .tiled-bottom .titlebar:not(headerbar) button.titlebutton:not(.appmenu):first-child, .tiled-left .titlebar:not(headerbar) button.titlebutton:not(.appmenu):first-child, .maximized headerbar button.titlebutton:not(.appmenu):first-child, .fullscreen headerbar button.titlebutton:not(.appmenu):first-child, .tiled headerbar button.titlebutton:not(.appmenu):first-child, .tiled-top headerbar button.titlebutton:not(.appmenu):first-child, .tiled-right headerbar button.titlebutton:not(.appmenu):first-child, .tiled-bottom headerbar button.titlebutton:not(.appmenu):first-child, .tiled-left headerbar button.titlebutton:not(.appmenu):first-child {
     margin-left: 0; }
-  .titlebar:not(headerbar) button.titlebutton:not(.appmenu):backdrop,
-  headerbar button.titlebutton:not(.appmenu):backdrop {
-    color: transparent;
-    background: transparent;
+  .titlebar:not(headerbar) button.titlebutton:not(.appmenu):backdrop.maximize, .titlebar:not(headerbar) button.titlebutton:not(.appmenu):backdrop.minimize, .titlebar:not(headerbar) button.titlebutton:not(.appmenu):backdrop.close,
+  headerbar button.titlebutton:not(.appmenu):backdrop.maximize,
+  headerbar button.titlebutton:not(.appmenu):backdrop.minimize,
+  headerbar button.titlebutton:not(.appmenu):backdrop.close {
     box-shadow: none;
     border-color: #0d0e11;
-    background: rgba(0, 0, 0, 0.3); }
+    background-image: -gtk-scaled(url("assets/titlebutton.png"), url("assets/titlebutton@2.png"));
+    background-color: rgba(0, 0, 0, 0.3); }
 
 .default-decoration.titlebar:not(headerbar),
 headerbar.default-decoration {
   min-height: 0;
   padding: 6px;
-  box-shadow: none; }
+  box-shadow: none;
+  background: image(#181a20); }
+  .default-decoration.titlebar:backdrop:not(headerbar),
+  headerbar.default-decoration:backdrop {
+    background: image(#23252e); }
   .default-decoration.titlebar:not(headerbar) button.titlebutton,
   headerbar.default-decoration button.titlebutton {
     min-height: 0;
