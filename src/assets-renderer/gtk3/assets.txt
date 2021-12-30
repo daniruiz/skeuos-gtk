@@ -1,3 +1,10 @@
+minimize
+minimize-dark
+maximize
+maximize-dark
+close-white
+close-black
+titlebutton
 text-select-end
 text-select-end-hover
 text-select-end-active
