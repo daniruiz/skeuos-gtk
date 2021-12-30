@@ -1,3 +1,11 @@
+[20211230]
+ * Fix close titlebutton icon color for xfwm and cinnamon
+ * Improve close titlebutton style
+ * GTK3: fix hovered titlebuttons in firefox
+ * Add xfce screenshot
+ * Update screenshots
+ * Remove unused darkest gnome-shell assets
+
 [20211208]
  * Gnome-Shell: Improve background of hovered itens in calendar popover
 
