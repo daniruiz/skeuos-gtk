@@ -218,6 +218,7 @@ headerbar {
     $_titlebutton_bg: lighten($bg_color, 10%);
     color: transparent;
     background-image: -gtk-scaled(url('assets/titlebutton.png'), url('assets/titlebutton@2.png'));
+    background-size: 8px;
     background-color: $_titlebutton_bg;
     background-repeat: no-repeat;
     background-position: center;
@@ -258,12 +259,8 @@ headerbar {
       border-color: transparent;
 
       &:hover {
-        background-color: mix(white, $selected_bg_color, 10%);
-        @if $variant == 'light' {
-          background-image: -gtk-scaled(url('assets/close-black.png'), url('assets/close-black@2.png'));
-        } @else {
-          background-image: -gtk-scaled(url('assets/close-white.png'), url('assets/close-white@2.png'));
-        }
+        background-color: mix(white, $selected_bg_color, 20%);
+        background-size: 6px;
       }
     }
 
