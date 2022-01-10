@@ -1,3 +1,9 @@
+[20220110]
+ * Metacity: fix wrong color in titlebutton icons
+ * Add thumbnails for metacity themes
+ * Add thumbnails for GTK themes
+ * XFWM4: remove 1.5x scale HiDPI themes
+
 [20211230]
  * Fix close titlebutton icon color for xfwm and cinnamon
  * Improve close titlebutton style
