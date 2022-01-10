@@ -12,8 +12,12 @@ $(COLOR_VARIANTS):
 	for variant in Light Dark ; \
 	do \
 		mkdir -p $(THEMES_DIR)Skeuos-$@-$$variant/gtk-3.0/ ; \
+		mkdir -p $(THEMES_DIR)Skeuos-$@-$$variant/metacity-1/ ; \
 		sed -e 's/$(DEFAULT_THEME_COLOR)/$(COLOR_$@)/gi' \
 		    -e 's/$(TEMPLATE_SELECTED_COLOR)/$(TEXT_COLOR_$@)/gi' \
 		    gtk3-$$variant.svg > $(THEMES_DIR)Skeuos-$@-$$variant/gtk-3.0/thumbnail.png ; \
+		sed -e 's/$(DEFAULT_THEME_COLOR)/$(COLOR_$@)/gi' \
+		    -e 's/$(TEMPLATE_SELECTED_COLOR)/$(TEXT_COLOR_$@)/gi' \
+		    metacity-$$variant.svg > $(THEMES_DIR)Skeuos-$@-$$variant/metacity-1/thumbnail.png ; \
 	done
 
