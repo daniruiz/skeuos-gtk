@@ -35,10 +35,8 @@ $(COLOR_VARIANTS):
 	# XFWM4
 	-cp themerc-light $(THEMES_DIR)Skeuos-$@-Light-XFWM/xfwm4/themerc
 	-cp themerc-light-HiDPI $(THEMES_DIR)Skeuos-$@-Light-XFWM-HiDPI/xfwm4/themerc
-	-cp themerc-light-xHiDPI $(THEMES_DIR)Skeuos-$@-Light-XFWM-xHiDPI/xfwm4/themerc
 	-cp themerc-dark $(THEMES_DIR)Skeuos-$@-Dark-XFWM/xfwm4/themerc
 	-cp themerc-dark-HiDPI $(THEMES_DIR)Skeuos-$@-Dark-XFWM-HiDPI/xfwm4/themerc
-	-cp themerc-dark-xHiDPI $(THEMES_DIR)Skeuos-$@-Dark-XFWM-xHiDPI/xfwm4/themerc
 	# Metacity
 	-cp metacity-theme-1-light.xml $(THEMES_DIR)Skeuos-$@-Light/metacity-1/metacity-theme-1.xml
 	-cp metacity-theme-1-dark.xml $(THEMES_DIR)Skeuos-$@-Dark/metacity-1/metacity-theme-1.xml

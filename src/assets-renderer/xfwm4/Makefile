@@ -12,7 +12,6 @@ $(COLOR_VARIANTS):
 	do \
 		mkdir -p $(THEMES_DIR)Skeuos-$@-$$variant-XFWM/xfwm4/ ; \
 		mkdir -p $(THEMES_DIR)Skeuos-$@-$$variant-XFWM-HiDPI/xfwm4/ ; \
-		mkdir -p $(THEMES_DIR)Skeuos-$@-$$variant-XFWM-xHiDPI/xfwm4/ ; \
 		sed 's/$(DEFAULT_THEME_COLOR)/$(COLOR_$@)/gi' Assets-$$variant.svg > __Assets-$$variant-$@.svg ; \
 		for asset in $(ASSETS) ; \
 		do \
@@ -24,21 +23,13 @@ $(COLOR_VARIANTS):
 			            __Assets-$$variant-$@.svg > /dev/null 2>&1 \
 			&& $(OPTIPNG) $(THEMES_DIR)Skeuos-$@-$$variant-XFWM/xfwm4/$$asset.png ; \
 			echo ; \
-			echo Rendering $$asset.png $@ @1.5; \
-			$(INKSCAPE) --export-id=$$asset \
-			            --export-dpi=138 \
-			            --export-id-only \
-			            --export-filename=$(THEMES_DIR)Skeuos-$@-$$variant-XFWM-HiDPI/xfwm4/$$asset.png \
-			            __Assets-$$variant-$@.svg > /dev/null 2>&1 \
-			&& $(OPTIPNG) $(THEMES_DIR)Skeuos-$@-$$variant-XFWM-HiDPI/xfwm4/$$asset.png ; \
-			echo ; \
 			echo Rendering $$asset.png $@ @2 ; \
 			$(INKSCAPE) --export-id=$$asset \
 			            --export-dpi=192 \
 			            --export-id-only \
-			            --export-filename=$(THEMES_DIR)Skeuos-$@-$$variant-XFWM-xHiDPI/xfwm4/$$asset.png \
+			            --export-filename=$(THEMES_DIR)Skeuos-$@-$$variant-XFWM-HiDPI/xfwm4/$$asset.png \
 			            __Assets-$$variant-$@.svg > /dev/null 2>&1 \
-			&& $(OPTIPNG) $(THEMES_DIR)Skeuos-$@-$$variant-XFWM-xHiDPI/xfwm4/$$asset.png ; \
+			&& $(OPTIPNG) $(THEMES_DIR)Skeuos-$@-$$variant-XFWM-HiDPI/xfwm4/$$asset.png ; \
 		done ; \
 	done
 
