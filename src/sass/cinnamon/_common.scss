@@ -717,6 +717,7 @@ StScrollBar {
 .calendar-events-main-box {
   height: 300px;
   margin-right: .5em;
+  border-radius: 6px;
   padding: .5em;
   min-width: 350px;
   border: 1px solid $borders_color;
@@ -729,6 +730,7 @@ StScrollBar {
 .calendar-events-no-events-button {
   margin: 6px 0 6px 0;
   padding: 6px;
+  border-radius: 6px;
 
   &:hover {
     background-color: $selected_bg_color;
@@ -988,17 +990,18 @@ StScrollBar {
 .calendar-today:focus,
 .calendar-today:hover {
   font-weight: bold;
-  color: $fg_color;
   color: $selected_fg_color;
-  background-color: $selected_bg_color;
+  background-color: if($variant == 'light', transparentize($fg_color, 0.7), transparentize($fg_color, 0.6));
+  border-radius: 99px;
   border-width: 0;
   &:selected {
-    background-color: if($variant == 'light', transparentize($fg_color, 0.7), transparentize($fg_color, 0.6));
+    background-color: $selected_bg_color;
   }
 }
 
 .calendar-not-today {
   color: $fg_color;
+  border-radius: 99px;
 
   &:selected {
     font-weight: bold;
@@ -1013,6 +1016,7 @@ StScrollBar {
 
 .calendar-other-month-day {
   color: transparentize($fg_color, 0.7);
+  border-radius: 99px;
   opacity: 1;
   &:hover {
     color: $selected_fg_color;

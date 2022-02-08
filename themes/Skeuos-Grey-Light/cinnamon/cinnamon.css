@@ -596,6 +596,7 @@ StScrollBar {
 .calendar-events-main-box {
   height: 300px;
   margin-right: .5em;
+  border-radius: 6px;
   padding: .5em;
   min-width: 350px;
   border: 1px solid #d9d9d9;
@@ -603,7 +604,8 @@ StScrollBar {
 
 .calendar-events-no-events-button {
   margin: 6px 0 6px 0;
-  padding: 6px; }
+  padding: 6px;
+  border-radius: 6px; }
   .calendar-events-no-events-button:hover {
     background-color: #737680; }
     .calendar-events-no-events-button:hover .calendar-events-no-events-icon,
@@ -797,18 +799,19 @@ StScrollBar {
 .calendar-today:focus,
 .calendar-today:hover {
   font-weight: bold;
-  color: #5c616c;
   color: #ffffff;
-  background-color: #737680;
+  background-color: rgba(92, 97, 108, 0.3);
+  border-radius: 99px;
   border-width: 0; }
   .calendar-today:selected,
   .calendar-today:active:selected,
   .calendar-today:focus:selected,
   .calendar-today:hover:selected {
-    background-color: rgba(92, 97, 108, 0.3); }
+    background-color: #737680; }
 
 .calendar-not-today {
-  color: #5c616c; }
+  color: #5c616c;
+  border-radius: 99px; }
   .calendar-not-today:selected {
     font-weight: bold;
     background-color: rgba(92, 97, 108, 0.3); }
@@ -818,6 +821,7 @@ StScrollBar {
 
 .calendar-other-month-day {
   color: rgba(92, 97, 108, 0.3);
+  border-radius: 99px;
   opacity: 1; }
   .calendar-other-month-day:hover {
     color: #ffffff;
