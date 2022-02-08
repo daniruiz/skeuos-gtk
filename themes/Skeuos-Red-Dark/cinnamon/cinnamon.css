@@ -197,11 +197,11 @@ StScrollBar {
     color: #fe8888; }
 
 #Tooltip {
-  border: 1px solid #d0d0d0;
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 6px;
-  padding: 5px 12px;
-  background-color: #fbeaa0;
-  color: #4a4a4a;
+  padding: 8px 12px;
+  color: white;
   font-size: 1em;
   font-weight: normal;
   text-align: center; }
@@ -1361,7 +1361,7 @@ StScrollBar {
 
 .grouped-window-list-number-label {
   z-index: 99;
-  color: #d0d0d0; }
+  color: rgba(255, 255, 255, 0.1); }
 
 .grouped-window-list-badge {
   border-radius: 256px;
