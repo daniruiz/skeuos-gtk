@@ -388,6 +388,36 @@ notebook {
   }
 }
 
+/**************
+ * Scrollbars *
+ **************/
+scrollbar > range {
+  > trough > slider {
+    min-width: 6px;
+    min-height: 6px;
+  }
+
+  &.fine-tune > trough > slider {
+    min-width: 3px;
+    min-height: 3px;
+  }
+}
+
+/*********************
+ * App Notifications *
+ *********************/
+.app-notification,
+.app-notification.frame {
+  padding: 0 10px;
+  margin: 5px;
+  border-radius: $button_radius+3;
+  border: 1px solid transparentize($_wm_border, 0.1);
+  box-shadow: $_menu_shadow;
+  background-image: none;
+
+  &:backdrop { box-shadow: none; }
+}
+
 /**********************
  * Window Decorations *
  *********************/
@@ -402,8 +432,8 @@ window {
 
     &:backdrop {
       box-shadow: 0 2px 8px 0 transparent,
-                  0 0 0 1px transparent,
-                  0 0 0 3px transparentize(black, if($variant == 'light', .85, .75));
+                  0 0 5px 3px transparentize(black, if($variant == 'light', .85, .75)),
+                  0 0 0 1px if($variant=='light', transparentize(black, 0.97), transparentize(black, 0.25));
     }
 
     &.dialog.message,
