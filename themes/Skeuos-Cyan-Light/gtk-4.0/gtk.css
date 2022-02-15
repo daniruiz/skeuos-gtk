@@ -36,6 +36,11 @@ textview > text {
   textview > text:selected {
     border-radius: 3px; }
 
+textview > text > selection {
+  background-color: rgba(115, 115, 115, 0.5); }
+  textview > text > selection:focus-within {
+    background-color: #0ccfd9; }
+
 textview:drop(active) {
   caret-color: #19a187; }
 
@@ -117,8 +122,10 @@ label {
     outline-width: 2px;
     outline-offset: -2px; }
   label > selection {
-    background-color: #0ccfd9;
+    background-color: rgba(115, 115, 115, 0.5);
     color: #000000; }
+    label > selection:focus-within {
+      background-color: #0ccfd9; }
   label:disabled {
     color: #aeb0b6; }
     button label:disabled {
@@ -274,6 +281,14 @@ entry {
     color: #aeb0b6;
     border-color: #d9d9d9;
     background-color: #fdfdfd; }
+  spinbutton.vertical > text > text > selection, spinbutton:not(.vertical) > text > selection,
+  entry > text > selection {
+    background-color: rgba(115, 115, 115, 0.5);
+    color: transparent; }
+    spinbutton.vertical > text > text > selection:focus-within, spinbutton:not(.vertical) > text > selection:focus-within,
+    entry > text > selection:focus-within {
+      background-color: #0ccfd9;
+      color: #000000; }
   spinbutton.vertical > text.error, spinbutton.error:not(.vertical),
   entry.error {
     color: #bf1717;
@@ -536,14 +551,30 @@ button {
       border-color: #d9d9d9;
       background-image: image(#eaeaea);
       box-shadow: none; }
-  button.sidebar-button, notebook > header > tabs > arrow, windowcontrols button, notebook > header > tabs > arrow.flat,
+  button.sidebar-button, notebook > header > tabs > arrow, windowcontrols button, .toolbar > button,
+  .toolbar > :not(.linked) > button,
+  .toolbar :not(.linked) > menubutton > button,
+  .toolbar :not(.linked) > scalebutton > button,
+  .toolbar :not(.linked) > dropdown > button,
+  .toolbar :not(.linked) > colorbutton > button,
+  .toolbar :not(.linked) > fontbutton > button,
+  .toolbar :not(.linked) > appchooserbutton > button,
+  .toolbar :not(.linked) > combobox > box > button, notebook > header > tabs > arrow.flat,
   button.flat {
     border-color: transparent;
     background-color: transparent;
     background-image: none;
     box-shadow: none;
     transition: none; }
-    button.sidebar-button:hover, notebook > header > tabs > arrow:hover, windowcontrols button:hover,
+    button.sidebar-button:hover, notebook > header > tabs > arrow:hover, windowcontrols button:hover, .toolbar > button:hover,
+    .toolbar > :not(.linked) > button:hover,
+    .toolbar :not(.linked) > menubutton > button:hover,
+    .toolbar :not(.linked) > scalebutton > button:hover,
+    .toolbar :not(.linked) > dropdown > button:hover,
+    .toolbar :not(.linked) > colorbutton > button:hover,
+    .toolbar :not(.linked) > fontbutton > button:hover,
+    .toolbar :not(.linked) > appchooserbutton > button:hover,
+    .toolbar :not(.linked) > combobox > box > button:hover,
     button.flat:hover {
       border-color: transparent;
       background-image: none;
@@ -551,7 +582,31 @@ button {
       background-color: #dbdbdb;
       transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
       transition-duration: 500ms; }
-    button.keyboard-activating.sidebar-button, notebook > header > tabs > arrow.keyboard-activating, windowcontrols button.keyboard-activating, button.sidebar-button:active, notebook > header > tabs > arrow:active, windowcontrols button:active, button.sidebar-button:checked, notebook > header > tabs > arrow:checked, windowcontrols button:checked,
+    button.keyboard-activating.sidebar-button, notebook > header > tabs > arrow.keyboard-activating, windowcontrols button.keyboard-activating, .toolbar > button.keyboard-activating,
+    .toolbar > :not(.linked) > button.keyboard-activating,
+    .toolbar :not(.linked) > menubutton > button.keyboard-activating,
+    .toolbar :not(.linked) > scalebutton > button.keyboard-activating,
+    .toolbar :not(.linked) > dropdown > button.keyboard-activating,
+    .toolbar :not(.linked) > colorbutton > button.keyboard-activating,
+    .toolbar :not(.linked) > fontbutton > button.keyboard-activating,
+    .toolbar :not(.linked) > appchooserbutton > button.keyboard-activating,
+    .toolbar :not(.linked) > combobox > box > button.keyboard-activating, button.sidebar-button:active, notebook > header > tabs > arrow:active, windowcontrols button:active, .toolbar > button:active,
+    .toolbar > :not(.linked) > button:active,
+    .toolbar :not(.linked) > menubutton > button:active,
+    .toolbar :not(.linked) > scalebutton > button:active,
+    .toolbar :not(.linked) > dropdown > button:active,
+    .toolbar :not(.linked) > colorbutton > button:active,
+    .toolbar :not(.linked) > fontbutton > button:active,
+    .toolbar :not(.linked) > appchooserbutton > button:active,
+    .toolbar :not(.linked) > combobox > box > button:active, button.sidebar-button:checked, notebook > header > tabs > arrow:checked, windowcontrols button:checked, .toolbar > button:checked,
+    .toolbar > :not(.linked) > button:checked,
+    .toolbar :not(.linked) > menubutton > button:checked,
+    .toolbar :not(.linked) > scalebutton > button:checked,
+    .toolbar :not(.linked) > dropdown > button:checked,
+    .toolbar :not(.linked) > colorbutton > button:checked,
+    .toolbar :not(.linked) > fontbutton > button:checked,
+    .toolbar :not(.linked) > appchooserbutton > button:checked,
+    .toolbar :not(.linked) > combobox > box > button:checked,
     button.flat.keyboard-activating,
     button.flat:active,
     button.flat:checked {
@@ -560,7 +615,23 @@ button {
       box-shadow: none;
       background-color: #cccccc;
       transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94); }
-    button.sidebar-button:backdrop, notebook > header > tabs > arrow:backdrop, windowcontrols button:backdrop, button.sidebar-button:disabled, notebook > header > tabs > arrow:disabled, windowcontrols button:disabled,
+    button.sidebar-button:backdrop, notebook > header > tabs > arrow:backdrop, windowcontrols button:backdrop, .toolbar > button:backdrop,
+    .toolbar > :not(.linked) > button:backdrop,
+    .toolbar :not(.linked) > menubutton > button:backdrop,
+    .toolbar :not(.linked) > scalebutton > button:backdrop,
+    .toolbar :not(.linked) > dropdown > button:backdrop,
+    .toolbar :not(.linked) > colorbutton > button:backdrop,
+    .toolbar :not(.linked) > fontbutton > button:backdrop,
+    .toolbar :not(.linked) > appchooserbutton > button:backdrop,
+    .toolbar :not(.linked) > combobox > box > button:backdrop, button.sidebar-button:disabled, notebook > header > tabs > arrow:disabled, windowcontrols button:disabled, .toolbar > button:disabled,
+    .toolbar > :not(.linked) > button:disabled,
+    .toolbar :not(.linked) > menubutton > button:disabled,
+    .toolbar :not(.linked) > scalebutton > button:disabled,
+    .toolbar :not(.linked) > dropdown > button:disabled,
+    .toolbar :not(.linked) > colorbutton > button:disabled,
+    .toolbar :not(.linked) > fontbutton > button:disabled,
+    .toolbar :not(.linked) > appchooserbutton > button:disabled,
+    .toolbar :not(.linked) > combobox > box > button:disabled,
     button.flat:backdrop,
     button.flat:disabled,
     button.flat:backdrop:disabled {
@@ -585,6 +656,13 @@ button {
     button.text-button.image-button label {
       padding-left: 8px;
       padding-right: 8px; }
+  notebook > header > tabs > arrow.arrow-button,
+  button.arrow-button {
+    padding-left: 10px;
+    padding-right: 10px; }
+    notebook > header > tabs > arrow.arrow-button > box, windowcontrols button.arrow-button > box,
+    button.arrow-button > box {
+      border-spacing: 4px; }
   dropdown:drop(active) button.combo,
   combobox:drop(active) button.combo, notebook > header > tabs > arrow:drop(active),
   button:drop(active) {
@@ -971,7 +1049,7 @@ combobox.linked button:nth-child(2):dir(rtl), .linked:not(.vertical) > menubutto
   border-bottom-right-radius: 0; }
 
 .scale-popup button:hover, button.link, button.link:hover, button.link:active, button.link:checked, popover.menu box.circular-buttons button.circular.image-button.model,
-list > row button.image-button:not(.flat), .toolbar button, modelbutton.flat {
+list > row button.image-button:not(.flat), modelbutton.flat {
   background-color: transparent;
   background-image: none;
   border-color: transparent;
@@ -1003,32 +1081,16 @@ modelbutton.flat arrow {
     -gtk-icon-source: -gtk-icontheme("go-next-symbolic"); }
 
 /* oldstyle toolbar buttons */
-.toolbar button {
+.toolbar > button,
+.toolbar > :not(.linked) > button,
+.toolbar :not(.linked) > menubutton > button,
+.toolbar :not(.linked) > scalebutton > button,
+.toolbar :not(.linked) > dropdown > button,
+.toolbar :not(.linked) > colorbutton > button,
+.toolbar :not(.linked) > fontbutton > button,
+.toolbar :not(.linked) > appchooserbutton > button,
+.toolbar :not(.linked) > combobox > box > button {
   margin: 1px; }
-  .toolbar button:hover {
-    color: #5c616c;
-    border-color: #d9d9d9;
-    background-image: linear-gradient(to top, #d6d6d6, #ebebeb 1px);
-    box-shadow: inset 0 1px rgba(255, 255, 255, 0.05), inset 0 -1px 0px rgba(217, 217, 217, 0.75), 0 1px 2px rgba(0, 0, 0, 0.07); }
-  .toolbar button:active {
-    color: #5c616c;
-    border-color: #d9d9d9;
-    background-image: image(#dbdbdb);
-    box-shadow: none; }
-  .toolbar button:disabled {
-    color: #aeb0b6;
-    border-color: #d9d9d9;
-    background-image: image(#fdfdfd); }
-  .toolbar button:backdrop {
-    color: #aeb0b6;
-    border-color: #d9d9d9;
-    background-image: image(#ffffff);
-    box-shadow: none; }
-  .toolbar button:backdrop:disabled {
-    color: #d9d9d9;
-    border-color: #d9d9d9;
-    background-image: image(#fdfdfd);
-    box-shadow: none; }
 
 button.color {
   padding: 4px; }
@@ -1250,6 +1312,12 @@ spinbutton {
     min-width: 32px;
     padding: 0;
     border-radius: 0; }
+    spinbutton.vertical > text > selection {
+      background-color: rgba(115, 115, 115, 0.5);
+      color: transparent; }
+      spinbutton.vertical > text > selection:focus-within {
+        background-color: #0ccfd9;
+        color: #000000; }
     spinbutton.vertical > text > block-cursor {
       color: #fafafa;
       background-color: black; }
@@ -1307,6 +1375,9 @@ dropdown > popover.menu.background > contents {
 
 dropdown > button > box {
   border-spacing: 6px; }
+  dropdown > button > box > stack > row.activatable:hover {
+    background: none;
+    box-shadow: none; }
 
 dropdown arrow,
 combobox arrow {
@@ -1330,14 +1401,16 @@ combobox popover {
   dropdown popover listview,
   combobox popover listview {
     margin: 8px 0; }
-    dropdown popover listview > row,
-    combobox popover listview > row {
+    dropdown popover listview > row.activatable,
+    combobox popover listview > row.activatable {
       padding: 8px; }
-      dropdown popover listview > row:selected,
-      combobox popover listview > row:selected {
+      dropdown popover listview > row.activatable:selected, dropdown popover listview > row.activatable:selected:hover,
+      combobox popover listview > row.activatable:selected,
+      combobox popover listview > row.activatable:selected:hover {
         outline-color: rgba(255, 255, 255, 0.8);
         color: black;
-        background-color: #eaebec; }
+        background-color: #eaebec;
+        box-shadow: none; }
   dropdown popover .dropdown-searchbar,
   combobox popover .dropdown-searchbar {
     padding: 6px;
@@ -1346,34 +1419,26 @@ combobox popover {
 /************
  * Toolbars *
  ************/
-searchbar > revealer > box, .toolbar,
-toolbar {
+searchbar > revealer > box, .toolbar {
   padding: 4px;
   border-spacing: 4px;
   background-color: #ffffff; }
 
-.osd .toolbar, .osd toolbar {
+.osd .toolbar {
   background-color: transparent; }
 
-.toolbar.osd,
-toolbar.osd {
+.toolbar.osd {
   padding: 13px;
   border: none;
   border-radius: 5px;
   background-color: #303340; }
-  .toolbar.osd.left, .toolbar.osd.right, .toolbar.osd.top, .toolbar.osd.bottom,
-  toolbar.osd.left,
-  toolbar.osd.right,
-  toolbar.osd.top,
-  toolbar.osd.bottom {
+  .toolbar.osd.left, .toolbar.osd.right, .toolbar.osd.top, .toolbar.osd.bottom {
     border-radius: 0; }
 
-.toolbar.horizontal > separator,
-toolbar.horizontal > separator {
+.toolbar.horizontal > separator {
   margin: 4px 0; }
 
-.toolbar.vertical > separator,
-toolbar.vertical > separator {
+.toolbar.vertical > separator {
   margin: 0 4px; }
 
 searchbar > revealer > box {
@@ -1770,7 +1835,7 @@ popover.background {
     popover.background > contents > list,
     popover.background > contents > .view,
     popover.background > contents > iconview,
-    popover.background > contents > toolbar {
+    popover.background > contents > .toolbar {
       border-style: none;
       background-color: transparent; }
     popover.background > contents separator {
@@ -3068,8 +3133,9 @@ frame {
 
 actionbar > revealer > box {
   padding: 6px;
-  border-spacing: 6px;
   border-top: 1px solid #d9d9d9; }
+  actionbar > revealer > box, actionbar > revealer > box > box.start, actionbar > revealer > box > box.end {
+    border-spacing: 6px; }
 
 scrolledwindow > overshoot.top {
   background-image: radial-gradient(farthest-side at top, #bfbfbf 85%, rgba(191, 191, 191, 0)), radial-gradient(farthest-side at top, rgba(92, 97, 108, 0.07), rgba(92, 97, 108, 0));
@@ -3199,8 +3265,11 @@ columnview row:not(:selected) cell editablelabel.editing:focus-within {
   outline: 2px solid #0ccfd9; }
 
 columnview row:not(:selected) cell editablelabel.editing text selection {
-  color: #000000;
-  background-color: #0ccfd9; }
+  background-color: rgba(115, 115, 115, 0.5);
+  color: transparent; }
+  columnview row:not(:selected) cell editablelabel.editing text selection:focus-within {
+    background-color: #0ccfd9;
+    color: #000000; }
 
 /*******************************************************
  * Rich Lists                                          *
@@ -3274,7 +3343,8 @@ expander-widget:not(decoration):not(window):drop(active) {
  ***********/
 calendar {
   color: black;
-  border: 1px solid #d9d9d9; }
+  border: 1px solid #d9d9d9;
+  font-feature-settings: "tnum"; }
   calendar > header {
     border-bottom: 1px solid #d9d9d9; }
     calendar > header > button {
@@ -3729,22 +3799,19 @@ tooltip.csd {
 
 .view:selected:focus, .view:selected,
 textview > text:selected:focus,
-textview > text:selected, textview > text > selection:focus, textview > text > selection, iconview:selected:focus, iconview:selected, flowbox > flowboxchild:selected, gridview > child:selected,
-entry > text > selection, modelbutton.flat:selected, spinbutton:not(.vertical) > text > selection, spinbutton.vertical > text > text > selection, spinbutton.vertical > text > selection, columnview.view:selected:focus, columnview.view:selected,
+textview > text:selected, iconview:selected:focus, iconview:selected, flowbox > flowboxchild:selected, gridview > child:selected, modelbutton.flat:selected, columnview.view:selected:focus, columnview.view:selected,
 treeview.view:selected:focus,
 treeview.view:selected, row:selected, calendar > grid > label.day-number:selected {
   background-color: #0ccfd9; }
   label:selected, .view:selected:focus, .view:selected,
   textview > text:selected:focus,
-  textview > text:selected, textview > text > selection:focus, textview > text > selection, iconview:selected:focus, iconview:selected, flowbox > flowboxchild:selected, gridview > child:selected,
-  entry > text > selection, modelbutton.flat:selected, spinbutton:not(.vertical) > text > selection, spinbutton.vertical > text > text > selection, spinbutton.vertical > text > selection, columnview.view:selected:focus, columnview.view:selected,
+  textview > text:selected, iconview:selected:focus, iconview:selected, flowbox > flowboxchild:selected, gridview > child:selected, modelbutton.flat:selected, columnview.view:selected:focus, columnview.view:selected,
   treeview.view:selected:focus,
   treeview.view:selected, row:selected, calendar > grid > label.day-number:selected {
     color: #000000; }
     label:disabled > selection, label:disabled:selected, .view:disabled:selected,
     textview > text:disabled:selected:focus,
-    textview > text:disabled:selected, textview > text > selection:disabled, iconview:disabled:selected:focus, iconview:disabled:selected, flowbox > flowboxchild:disabled:selected, gridview > child:disabled:selected,
-    entry > text > selection:disabled, modelbutton.flat:disabled:selected, spinbutton:not(.vertical) > text > selection:disabled, spinbutton.vertical > text > text > selection:disabled, spinbutton.vertical > text > selection:disabled, columnview.view:disabled:selected,
+    textview > text:disabled:selected, iconview:disabled:selected:focus, iconview:disabled:selected, flowbox > flowboxchild:disabled:selected, gridview > child:disabled:selected, modelbutton.flat:disabled:selected, columnview.view:disabled:selected,
     treeview.view:disabled:selected, row:disabled:selected, calendar > grid > label.day-number:disabled:selected {
       color: #06686d; }
 
@@ -3895,6 +3962,9 @@ popover.entry-completion > contents {
 
 statusbar {
   padding: 6px 10px 6px 10px; }
+
+menubutton > button > box {
+  border-spacing: 6px; }
 
 menubutton arrow {
   min-height: 16px;
@@ -4254,6 +4324,32 @@ notebook > header {
       margin-top: 1px;
       margin-bottom: 1px; }
 
+/**************
+ * Scrollbars *
+ **************/
+scrollbar > range > trough > slider {
+  min-width: 6px;
+  min-height: 6px; }
+
+scrollbar > range.fine-tune > trough > slider {
+  min-width: 3px;
+  min-height: 3px; }
+
+/*********************
+ * App Notifications *
+ *********************/
+.app-notification,
+.app-notification.frame {
+  padding: 0 10px;
+  margin: 5px;
+  border-radius: 7px;
+  border: 1px solid rgba(0, 0, 0, 0);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.15);
+  background-image: none; }
+  .app-notification:backdrop,
+  .app-notification.frame:backdrop {
+    box-shadow: none; }
+
 /**********************
  * Window Decorations *
  *********************/
@@ -4262,7 +4358,7 @@ window.csd {
   border: 1px solid #fafafa;
   box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(0, 0, 0, 0.1); }
   window.csd:backdrop {
-    box-shadow: 0 2px 8px 0 transparent, 0 0 0 1px transparent, 0 0 0 3px rgba(0, 0, 0, 0.15); }
+    box-shadow: 0 2px 8px 0 transparent, 0 0 5px 3px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.03); }
   window.csd.dialog.message, window.csd.popup {
     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0);
     border-width: 0; }
