@@ -18,9 +18,11 @@ build: clean
 	  cp gtk3-$$COLOR.css $(THEMES_DIR)Skeuos-$$COLOR-Light/gtk-3.0/gtk.css ; \
 	  cp gtk3-dark-$$COLOR.css $(THEMES_DIR)Skeuos-$$COLOR-Light/gtk-3.0/gtk-dark.css ; \
 	  cp gtk3-dark-$$COLOR.css $(THEMES_DIR)Skeuos-$$COLOR-Dark/gtk-3.0/gtk.css ; \
+	  ln -sf gtk.css $(THEMES_DIR)Skeuos-$$COLOR-Dark/gtk-3.0/gtk-dark.css ; \
 	  cp gtk4-$$COLOR.css $(THEMES_DIR)Skeuos-$$COLOR-Light/gtk-4.0/gtk.css ; \
 	  cp gtk4-dark-$$COLOR.css $(THEMES_DIR)Skeuos-$$COLOR-Light/gtk-4.0/gtk-dark.css ; \
 	  cp gtk4-dark-$$COLOR.css $(THEMES_DIR)Skeuos-$$COLOR-Dark/gtk-4.0/gtk.css ; \
+	  ln -sf gtk.css $(THEMES_DIR)Skeuos-$$COLOR-Dark/gtk-4.0/gtk-dark.css ; \
 	  cp cinnamon-$$COLOR.css $(THEMES_DIR)Skeuos-$$COLOR-Light/cinnamon/cinnamon.css ; \
 	  cp cinnamon-dark-$$COLOR.css $(THEMES_DIR)Skeuos-$$COLOR-Dark/cinnamon/cinnamon.css ; \
 	  cp gnome-shell-$$COLOR.css $(THEMES_DIR)Skeuos-$$COLOR-Light-GNOME_40+41/gnome-shell/gnome-shell.css ; \
