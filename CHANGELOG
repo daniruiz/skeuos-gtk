@@ -1,3 +1,7 @@
+[20220315]
+ * GTK3: add symlinks for dark mode in dark themes
+ * GTK3: update to gtk 3.24.33
+
 [20220215]
  * Regenerate css for gtk themes
  * GTK4: update themes for gtk 4.6 and style scrollbar and app-notifications
