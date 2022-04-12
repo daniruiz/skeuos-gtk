@@ -1,3 +1,13 @@
+[20220412]
+ * GTK4: Add libhandy css for GTK4
+ * Regenerate all themes
+ * GTK4: update window shadows
+ * GTK4: update for GTK 4.2.1
+ * GTK3: update to GTK 3.24.30
+ * GTK3: update nautilus path-bar style
+ * GTK3: update custom styles for nautilus and gedit
+ * GTK3: fix gnome-terminal transparent scrollbar
+
 [20220315]
  * GTK3: add symlinks for dark mode in dark themes
  * GTK3: update to gtk 3.24.33
