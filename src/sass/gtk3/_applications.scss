@@ -81,6 +81,11 @@ filechooser,
 
 .path-bar-box:backdrop { border-color: $backdrop_borders_color}
 
+box.nautilus-path-bar {
+  > scrolledwindow { background-color: $base_color; }
+  > button { box-shadow:none; }
+}
+
 /* GNOME TERMINAL */
 terminal-window,
 .mate-terminal {
