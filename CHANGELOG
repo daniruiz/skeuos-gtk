@@ -1,3 +1,8 @@
+[20220426]
+ * Regenerate all themes
+ * Gnome-Shell: add themes for GNOME 42
+ * Xfce: fix desktop color in themes with black selected_fg_color
+
 [20220412]
  * GTK4: Add libhandy css for GTK4
  * Regenerate all themes
