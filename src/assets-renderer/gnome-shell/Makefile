@@ -1,24 +1,21 @@
 include ../../Makefile.inc
 
 THEMES_DIR=../../../themes/
+THEME_VERSIONS=42 40+41 38+36
+BASE_THEME_VERSION=$(word 1,$(THEME_VERSIONS))
 
 .PHONY: build clean
 
 build: $(COLOR_VARIANTS)
 
 $(COLOR_VARIANTS):
-	mkdir -p $(foreach VARIANT,Light Dark,$(THEMES_DIR)Skeuos-$@-$(VARIANT)-GNOME_40+41/gnome-shell/assets/); \
-	mkdir -p $(foreach VARIANT,Light Dark,$(THEMES_DIR)Skeuos-$@-$(VARIANT)-GNOME_38+36/gnome-shell/assets/); \
-	mkdir -p $(foreach VARIANT,Light Dark,$(THEMES_DIR)Skeuos-$@-$(VARIANT)-FullPanel-GNOME_40+41/gnome-shell/assets/); \
-	mkdir -p $(foreach VARIANT,Light Dark,$(THEMES_DIR)Skeuos-$@-$(VARIANT)-FullPanel-GNOME_38+36/gnome-shell/assets/); \
-	cp assets/* $(THEMES_DIR)Skeuos-$@-Light-GNOME_40+41/gnome-shell/assets/
-	sed 's/$(DEFAULT_THEME_COLOR)/$(COLOR_$@)/gi' -i $(THEMES_DIR)Skeuos-$@-Light-GNOME_40+41/gnome-shell/assets/*
-	cp $(THEMES_DIR)Skeuos-$@-Light-GNOME_40+41/gnome-shell/assets/* $(THEMES_DIR)Skeuos-$@-Dark-GNOME_40+41/gnome-shell/assets/
-	$(foreach VARIANT,Light Dark,\
-	  cp $(THEMES_DIR)Skeuos-$@-Light-GNOME_40+41/gnome-shell/assets/* $(THEMES_DIR)Skeuos-$@-$(VARIANT)-FullPanel-GNOME_40+41/gnome-shell/assets/;)
-	$(foreach VARIANT,Light Dark,\
-	  cp $(THEMES_DIR)Skeuos-$@-Light-GNOME_40+41/gnome-shell/assets/* $(THEMES_DIR)Skeuos-$@-$(VARIANT)-GNOME_38+36/gnome-shell/assets/;)
-	$(foreach VARIANT,Light Dark,\
-	  cp $(THEMES_DIR)Skeuos-$@-Light-GNOME_40+41/gnome-shell/assets/* $(THEMES_DIR)Skeuos-$@-$(VARIANT)-FullPanel-GNOME_38+36/gnome-shell/assets/;)
+	mkdir -p $(THEMES_DIR)Skeuos-$@-Light-GNOME_$(BASE_THEME_VERSION)/gnome-shell/assets/
+	cp assets/* $(THEMES_DIR)Skeuos-$@-Light-GNOME_$(BASE_THEME_VERSION)/gnome-shell/assets/
+	sed 's/$(DEFAULT_THEME_COLOR)/$(COLOR_$@)/gi' -i $(THEMES_DIR)Skeuos-$@-Light-GNOME_$(BASE_THEME_VERSION)/gnome-shell/assets/*
+	$(foreach VERSION,$(THEME_VERSIONS),\
+	  $(foreach VARIANT,Light Dark,\
+	    $(foreach PANEL_VARIANT,- -FullPanel-,\
+	      mkdir -p $(THEMES_DIR)Skeuos-$@-$(VARIANT)$(PANEL_VARIANT)GNOME_$(VERSION)/gnome-shell/assets/;\
+	      cp $(THEMES_DIR)Skeuos-$@-Light-GNOME_$(BASE_THEME_VERSION)/gnome-shell/assets/* $(THEMES_DIR)Skeuos-$@-$(VARIANT)$(PANEL_VARIANT)GNOME_$(VERSION)/gnome-shell/assets/;)))
 
 clean:
