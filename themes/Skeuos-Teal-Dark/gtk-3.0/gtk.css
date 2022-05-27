@@ -6181,18 +6181,23 @@ list.tweak-categories separator {
       background-color: rgba(0, 0, 0, 0.27);
       color: inherit; }
 
-/* XFCE4 panel action */
-#XfcePanelWindowWrapper > widget > box > #xfce-panel-button > image {
-  -gtk-icon-style: symbolic;
-  -gtk-icon-transform: scale(0.7); }
+/* XFCE4 desktop */
+XfdesktopIconView.view {
+  background-color: transparent;
+  color: white;
+  text-shadow: 0 1px 2px black; }
 
-/* XFCE4 workspace switcher */
-wnck-pager {
-  background-color: #3d4251; }
-  wnck-pager:selected {
-    background-color: black; }
-  wnck-pager:hover {
-    background-color: black; }
+XfdesktopIconView.view:active {
+  background-color: rgba(0, 153, 161, 0.3);
+  color: rgba(0, 153, 161, 0.3);
+  border-radius: 4px; }
+
+XfdesktopIconView.label:active {
+  background-color: rgba(0, 153, 161, 0.3);
+  color: #ffffff; }
+
+XfdesktopIconView.rubberband {
+  background-color: rgba(0, 153, 161, 0.3); }
 
 /* LightDM */
 .lightdm-gtk-greeter #panel_window {

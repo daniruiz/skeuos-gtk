@@ -188,17 +188,26 @@ list.tweak-categories separator {
   }
 }
 
-/* XFCE4 panel action */
-#XfcePanelWindowWrapper > widget > box > #xfce-panel-button > image {
-  -gtk-icon-style: symbolic;
-  -gtk-icon-transform: scale(.7);
+/* XFCE4 desktop */
+XfdesktopIconView.view {
+  background-color: transparent;
+  color: white;
+  text-shadow: 0 1px 2px black;
 }
 
-/* XFCE4 workspace switcher */
-wnck-pager {
-  background-color: lighten($base_color, 10%);
-  &:selected { background-color: darken($bg_color, 20%); }
-  &:hover { background-color: darken($bg_color, 20%); }
+XfdesktopIconView.view:active {
+  background-color: transparentize($selected_bg_color, .7);
+  color: transparentize($selected_bg_color, .7);
+  border-radius: $button_radius;
+}
+
+XfdesktopIconView.label:active {
+  background-color: transparentize($selected_bg_color, .7);
+  color: $selected_fg_color;
+}
+
+XfdesktopIconView.rubberband {
+  background-color: transparentize($selected_bg_color, .7);
 }
 
 /* LightDM */
