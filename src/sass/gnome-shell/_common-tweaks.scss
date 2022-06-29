@@ -246,6 +246,17 @@ $dialog_box_shadow: 0 2px 6px -2px transparentize(black, .8);
   }
 }
 
+#panel :first-child > :first-child > .panel-button:hover {
+  border-radius: 8px;
+}
+
+#panel :last-child > :last-child > .panel-button:last-child {
+  &:hover, &:active, &:focus, &:overview, &:checked {
+    border-radius: 12px 8px 8px 12px;
+  }
+}
+
+
 /* Date/Time Menu */
 .datemenu-today-button {
   &:insensitive { color: inherit; }

@@ -2890,6 +2890,12 @@ StScrollBar {
     #panel #panelActivities.panel-button:overview StLabel {
       background-image: url("assets/view-grid-symbolic.svg"); }
 
+#panel :first-child > :first-child > .panel-button:hover {
+  border-radius: 8px; }
+
+#panel :last-child > :last-child > .panel-button:last-child:hover, #panel :last-child > :last-child > .panel-button:last-child:active, #panel :last-child > :last-child > .panel-button:last-child:focus, #panel :last-child > :last-child > .panel-button:last-child:overview, #panel :last-child > :last-child > .panel-button:last-child:checked {
+  border-radius: 12px 8px 8px 12px; }
+
 /* Date/Time Menu */
 .datemenu-today-button:insensitive {
   color: inherit; }
